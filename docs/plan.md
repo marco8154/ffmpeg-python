@@ -4,7 +4,7 @@ Stand: 17.11.2026. Schätzung für Meilenstein 1 auf swarvex: 17 Aufgaben (E9 in
 
 ## Globale Vorgaben (binden jede Aufgabe)
 
-- Python 3.10 bis 3.14, keine Laufzeitabhängigkeit, keine neuen Testabhängigkeiten.
+- Jede erschienene Python-Version ab 3.10 (heute 3.10 bis 3.15), keine Laufzeitabhängigkeit, keine neuen Testabhängigkeiten.
 - Öffentliche API, Argumentlisten und `ffmpeg.Error` bleiben unverändert (`AGENTS.md`, Abschnitt Kompatibilität).
 - Übernommene Patches behalten ihren Autor (`Co-authored-by`).
 - Neue Tests in eigenen Dateien `ffmpeg/tests/test_<thema>.py`.
@@ -24,7 +24,7 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | E2 | Python-2-Reste entfernen (`from __future__ import`, `from builtins import`, Zweige auf `sys.version_info`, Ausweich-Importe) in `ffmpeg/*.py` ohne Tests | Schwarm | B | E1, E4 | angelegt: Aufgabe #433, wartet auf #427 und #429 |
 | E3 | Python-2-Reste und zwei Warnungen in `ffmpeg/tests/test_ffmpeg.py` beheben (Rückgabewert in `test_fluent_complex_filter`, Regex-Warnung) | Schwarm | B | F0 | offen: Aufgabe #428 |
 | E4 | W-8: `mkstemp` statt `mktemp` in `ffmpeg/_view.py`, mit Test; übernommener Patch von Sarthak Munshi (grantnegri `c1ef452`) | Schwarm | B | F0 | offen: Aufgabe #429 |
-| E5 | W-5: Build über `pyproject.toml` mit setuptools, Name `ffmpeg-python-ng`, Version 0.3.0, keine Abhängigkeiten; `setup.py`, `setup.cfg`, `tox.ini`, `MANIFEST`, `requirements.txt` entfallen; `future` aus der Umgebung | Lead | D | E1, E2 | geplant |
+| E5 | W-5: Build über `pyproject.toml` mit setuptools, Name `ffmpeg-python-ng`, Version 0.3.0, keine Abhängigkeiten, `requires-python = ">=3.10"` ohne Obergrenze, Klassifizierer 3.10 bis 3.15; `setup.py`, `setup.cfg`, `tox.ini`, `MANIFEST`, `requirements.txt` entfallen; `future` aus der Umgebung | Lead | D | E1, E2 | geplant |
 | E6 | W-10: `CREDITS.md` mit den Autoren aus der Git-Historie | Schwarm | A | F0 | angenommen: Aufgabe #430 |
 | E7 | W-11, W-4: README (erste Zeile „Continuation of ffmpeg-python“, Umstiegshinweis, Badges und Links auf die Fortführung) und `CHANGELOG.md` | Schwarm | B | E5 | geplant |
 | E8 | W-9: `docs/inherited-pull-requests.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | eingereicht: Aufgabe #431 (Einreichung #545), wartet auf Peer-Review |

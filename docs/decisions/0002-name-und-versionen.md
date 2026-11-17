@@ -14,7 +14,9 @@ Das Original heißt auf PyPI `ffmpeg-python` und wird als `import ffmpeg` benutz
 - Das GitHub-Repo heißt `marco8154/ffmpeg-python`, wie das Original, nur mit anderem Besitzer. Ein kurzzeitiges Umbenennen in `ffmpeg-python-ng` am 17.11.2026 wurde am selben Tag zurückgenommen, nachdem ein Nutzer in #807 des Originals darum gebeten hatte; die Adresse mit Suffix leitet weiter.
 - Der Importname bleibt `ffmpeg`. Nutzer tauschen nur das Paket, nicht ihren Code.
 - Die erste Version ist 0.3.0. Sie setzt die Zählung des Originals (0.2.0) fort.
-- Unterstützt werden Python 3.10 bis 3.14. Python 2 und alles unter 3.10 entfallen.
+- Unterstützt wird jede erschienene Python-Version ab 3.10 (Visionär, 17.11.2026). Heute sind das 3.10 bis 3.15. Python 2 und alles unter 3.10 entfallen.
+- Eine neue Python-Version wird unterstützt, sobald sie erscheint: Die CI testet die neueste stabile Version automatisch (`3.x`) und die nächste schon als Vorabversion. Nach jedem Release wird sie in die feste Liste der CI aufgenommen und die Vorabversion um eins erhöht.
+- Die Paketangaben (ab `pyproject.toml`) setzen nur eine Untergrenze (`requires-python = ">=3.10"`), nie eine Obergrenze.
 
 ## Alternativen
 

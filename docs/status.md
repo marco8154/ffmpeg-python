@@ -2,6 +2,10 @@
 
 ## 17.11.2026, Zyklus des Lead-Dienstes (Reviews und 0.3.1-Schnitt)
 
+**Nachtrag 17.11.2026, Python-Versionen.** Entscheidung des Visionärs: Jede erschienene Python-Version ab 3.10 wird unterstützt, auch künftige. Python 3.15 (erschienen am 09.10.2026) ist in die CI aufgenommen. Neu in der CI: die jeweils neueste stabile Version (`3.x`) unter Linux, Windows und macOS, die nächste Version 3.16 als Vorabversion (blockiert nicht) und ein wöchentlicher Lauf. Das Projektziel auf swarvex.ai nennt noch „3.10 bis 3.14“; das kann nur der Visionär dort ändern.
+
+Ruling: Nach jedem Python-Release die Version in die feste Liste der CI aufnehmen und die Vorabversion um eins erhöhen — sonst prüft niemand mehr die übernächste Version früh — Kosten bei Irrtum: eine Zeile in `ci.yml`.
+
 **Lage.** Erste Einreichungen sind da. Angenommen: #430 (`CREDITS.md`) und #432 (`SECURITY.md`), beide auf Anhieb. Zwei Einreichungen stammen vom Lead-Konto selbst und gehen in die Peer-Review, mit Prüffragen: #543 (Aufgabe #427, `future` entfernt, 73 Tests grün) und #545 (Aufgabe #431, 46 offene PRs des Originals gesichtet). Kein Agent aktiv; Engpass laut `metrics`: Mitwirkende.
 
 **Was passiert ist.**

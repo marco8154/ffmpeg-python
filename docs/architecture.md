@@ -44,4 +44,4 @@ Jeder Filter, den es nicht als eigene Funktion gibt, ist schon heute über `stre
 
 - `.devcontainer/Dockerfile`: Python 3.13 (Debian 13), ffmpeg 7.1 aus Debian, pytest 9.2.0, pytest-mock 3.17.0, `future` 1.0.0 (bis die Abhängigkeit entfernt ist).
 - `swarvex.yaml`: `python -m pytest -q`, ohne Netzwerk.
-- `.github/workflows/ci.yml`: dieselben Tests auf Python 3.10 bis 3.14 unter Linux und je einer Version unter Windows und macOS.
+- `.github/workflows/ci.yml`: dieselben Tests auf Python 3.10 bis 3.15 unter Linux, dazu die jeweils neueste stabile Version (`3.x`) unter Linux, Windows und macOS und die nächste Version als Vorabversion (heute 3.16, Fehler blockieren nicht). Läuft bei jedem Push und wöchentlich.

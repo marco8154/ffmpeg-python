@@ -1,28 +1,45 @@
 name: CI
 on:
-  - push
-  - pull_request
+  push:
+  pull_request:
+  schedule:
+    # Weekly, so a new Python release is tested even without a push.
+    - cron: '0 6 * * 1'
 permissions:
   contents: read
 jobs:
   test:
+    name: test (${{ matrix.os }}, ${{ matrix.python-version }})
     runs-on: ${{ matrix.os }}
+    # Pre-releases of the next Python version warn early but do not block.
+    continue-on-error: ${{ matrix.prerelease == true }}
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        # Every released Python version from 3.10 on. Add each new release here.
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
         include:
+          # "3.x" is always the newest stable release, so a new Python version
+          # is tested on every platform as soon as GitHub Actions offers it.
+          - os: ubuntu-latest
+            python-version: "3.x"
           - os: windows-latest
-            python-version: "3.14"
+            python-version: "3.x"
           - os: macos-latest
-            python-version: "3.14"
+            python-version: "3.x"
+          # Next Python version while it is in alpha, beta or release candidate.
+          # Raise it by one after each final release.
+          - os: ubuntu-latest
+            python-version: "3.16"
+            prerelease: true
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
+          allow-prereleases: ${{ matrix.prerelease == true }}
       - name: Install ffmpeg (Linux)
         if: runner.os == 'Linux'
         run: |
@@ -38,5 +55,6 @@ jobs:
         run: python -m pip install -e . pytest pytest-mock
       - name: Test
         run: |
+          python --version
           ffmpeg -version
           python -m pytest -q

@@ -4,7 +4,7 @@
 
 ## Das Projekt in einem Satz
 
-`ffmpeg-python-ng` führt `ffmpeg-python` (https://github.com/kkroening/ffmpeg-python) fort: gleiche API, gleicher `import ffmpeg`, lauffähig auf Python 3.10 bis 3.14, ohne die Abhängigkeit `future`.
+`ffmpeg-python-ng` führt `ffmpeg-python` (https://github.com/kkroening/ffmpeg-python) fort: gleiche API, gleicher `import ffmpeg`, lauffähig auf jeder Python-Version ab 3.10 (heute 3.10 bis 3.15), ohne die Abhängigkeit `future`.
 Säulen: Kompatibilität, Aufräumen, Fixes mit Tests, Release. Details: `docs/project-brief.md`.
 
 ## So arbeitest du hier
@@ -46,7 +46,7 @@ Modulkarte und Datenfluss: `docs/architecture.md`.
 ## Codestil
 
 - Bezeichner, Kommentare, Docstrings, README und Changelog: Englisch. Aufgaben, Reviews und `docs/`: Deutsch.
-- Python 3.10 ist die älteste unterstützte Version. Neuer Code nutzt keine Python-2-Hilfen (`future`, `past`, `six`, `from __future__ import ...`).
+- Python 3.10 ist die älteste unterstützte Version; jede neuere, auch künftige, muss laufen. Nutze keine Funktion, die in einer erschienenen Version als veraltet gilt oder entfernt ist. Neuer Code nutzt keine Python-2-Hilfen (`future`, `past`, `six`, `from __future__ import ...`).
 - Stil wie im umgebenden Code: einfache Anführungszeichen, `snake_case` für Funktionen, `PascalCase` für Klassen, Zeilen bis 88 Zeichen.
 - Formatiere nur Zeilen, die du inhaltlich änderst.
 - Fehler nie stillschweigend schlucken.

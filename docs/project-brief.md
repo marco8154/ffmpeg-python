@@ -29,7 +29,7 @@ Zustände: **entschieden**, **Empfehlung angenommen**, **delegiert**, **offen**.
 | G2 | Kern in einem Satz | Gepflegte, API-kompatible Fortführung von ffmpeg-python für aktuelle Python-Versionen | Startassistent | – | Vision |
 | G4 | Säulen | Kompatibilität, Aufräumen, Fixes mit Tests, Release | Startassistent | – | Vision |
 | G5 | Nicht-Ziele | keine neue API, kein Umbau auf Typisierung wie typed-ffmpeg | Startassistent | – | Vision; mindestens ein drittes fehlt |
-| G6 | Erfolg Version 1 | Release auf PyPI, Tests grün auf 3.10 bis 3.14, `future` entfernt, Build mit aktuellen Werkzeugen | Startassistent | – | Ziel |
+| G6 | Erfolg Version 1 | Release auf PyPI, Tests grün auf 3.10 bis 3.15 (am 17.11.2026 erweitert, siehe G7), `future` entfernt, Build mit aktuellen Werkzeugen | Startassistent | – | Ziel |
 | G8 | Sprache | Python | Startassistent | – | |
 | G9 | Lizenz | Apache-2.0 (geerbt) / CC BY 4.0 | Startassistent | – | Pflicht bei Fortführung |
 | G10 | Projektsprache | Deutsch; Bezeichner, README und Changelog Englisch | Startassistent | – | Nutzer sind international |
@@ -41,7 +41,7 @@ Zustände: **entschieden**, **Empfehlung angenommen**, **delegiert**, **offen**.
 | F6 | Erstes Ziel | Release 0.3.0 „lebt wieder“: `future` entfernt, neuer Build, Tests grün, dazu der Sicherheitsfix `mkstemp` statt `mktemp` | Empfehlung angenommen | 1 | |
 | F7 | Übernommene PRs | 0.3.0: nur `mkstemp`. 0.3.1: `atrim`-Filter, Stream-Selektor mit Index 0, Pipe-Eingabe für `ffprobe`, `popen_args` für `run_async()`. Autoren bleiben in der Historie | Empfehlung angenommen | 1 | Vorauswahl grantnegri |
 | F8 | Upstream | Kommt der Maintainer zurück, gehen die Fixes als PRs an das Original; über eine Zusammenlegung entscheidet der Visionär | Empfehlung angenommen | 1 | |
-| G7 / T7 | Plattformen und Versionen | Python 3.10 bis 3.14, Python 2 entfällt. Linux mit allen fünf Versionen, Windows und macOS mit je einer. ffmpeg in der Testumgebung auf eine feste Version gesetzt | Empfehlung angenommen | 1 | 2 Tests hängen an der ffmpeg-Version |
+| G7 / T7 | Plattformen und Versionen | Jede erschienene Python-Version ab 3.10, heute 3.10 bis 3.15; künftige Versionen kommen mit ihrem Release dazu (Visionär, 17.11.2026). Python 2 entfällt. Linux mit allen fünf Versionen, Windows und macOS mit je einer. ffmpeg in der Testumgebung auf eine feste Version gesetzt | Empfehlung angenommen | 1 | 2 Tests hängen an der ffmpeg-Version |
 | G8a | Build | `pyproject.toml` mit setuptools statt `setup.py`; Veröffentlichung über PyPI Trusted Publishing, kein Token im Repo | Empfehlung angenommen | 1 | |
 | G15 | Budget | 0 Credits für Spendenaufträge, keine Assets nötig | Empfehlung angenommen | 1 | Schwarmgröße: Runde 2 |
 | G20 | Rolle des Visionärs | gibt frei: Release, PyPI-Veröffentlichung, alles, was nach außen an das Original geht. Alles andere entscheidet der Lead und berichtet wöchentlich | Empfehlung angenommen | 1 | |
@@ -83,7 +83,7 @@ Die folgenden Abschnitte fassen die Entscheidungen lesbar zusammen. Bei Widerspr
 
 ## Erfolgskriterien für 0.3.0
 
-- [ ] Tests grün auf Python 3.10 bis 3.14 unter Linux, dazu je eine Version unter Windows und macOS
+- [ ] Tests grün auf Python 3.10 bis 3.15 unter Linux, dazu die neueste Version unter Windows und macOS
 - [ ] `future` ist weder Abhängigkeit noch Import
 - [ ] Build über `pyproject.toml`, Wheel und sdist installierbar
 - [ ] `mkstemp` statt `mktemp`, mit Test
