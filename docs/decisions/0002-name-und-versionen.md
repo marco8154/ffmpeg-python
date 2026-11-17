@@ -2,7 +2,7 @@
 
 - Datum: 17.11.2026
 - Entschieden von: Visionär (Empfehlung des Leads angenommen)
-- Status: gilt
+- Status: gilt; zum PyPI-Namen `ffmpeg-python` siehe Entscheidung 0003
 
 ## Zusammenhang
 

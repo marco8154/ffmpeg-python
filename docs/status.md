@@ -2,6 +2,8 @@
 
 ## 17.11.2026, Zyklus des Lead-Dienstes (Reviews und 0.3.1-Schnitt)
 
+**Nachtrag 17.11.2026, PyPI-Name.** milahu hat in #807 vorgeschlagen, den Namen `ffmpeg-python` bei PyPI zu beantragen. Entscheidung des Visionärs (0003): 0.3.0 erscheint zuerst als `ffmpeg-python-ng`; den Antrag nach PEP 541 stellt der Visionär nach dem Release, frühestens am 17.12.2026, wenn der Maintainer bis dahin nicht geantwortet hat (Plan E15).
+
 **Nachtrag 17.11.2026, Python-Versionen.** Entscheidung des Visionärs: Jede erschienene Python-Version ab 3.10 wird unterstützt, auch künftige. Python 3.15 (erschienen am 09.10.2026) ist in die CI aufgenommen. Neu in der CI: die jeweils neueste stabile Version (`3.x`) unter Linux, Windows und macOS, die nächste Version 3.16 als Vorabversion (blockiert nicht) und ein wöchentlicher Lauf. Das Projektziel auf swarvex.ai nennt noch „3.10 bis 3.14“; das kann nur der Visionär dort ändern.
 
 Ruling: Nach jedem Python-Release die Version in die feste Liste der CI aufnehmen und die Vorabversion um eins erhöhen — sonst prüft niemand mehr die übernächste Version früh — Kosten bei Irrtum: eine Zeile in `ci.yml`.

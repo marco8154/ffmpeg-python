@@ -34,6 +34,7 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | E11 | Release-Workflow mit PyPI Trusted Publishing | Lead | D | E5 | geplant; braucht den Visionär auf PyPI |
 | E12 | W-11: Release 0.3.0 | Visionär gibt frei | – | alle | geplant |
 | E13 | W-12: Nutzern Bescheid geben (#807, #877 im Original) | Visionär | – | E12 | geplant |
+| E15 | Antrag nach PEP 541 auf den PyPI-Namen `ffmpeg-python` (Issue an `pypi/support`), frühestens 17.12.2026 und erst nach dem Release (Entscheidung 0003) | Visionär | – | E12 | geplant |
 
 W-6 (alte Tests laufen) ist mit F0 erfüllt: 70 Tests grün in der Umgebung. W-7 (Abhängigkeiten geprüft) braucht keine eigene Aufgabe: Die einzige Laufzeitabhängigkeit ist `future`, und E1 mit E5 entfernt sie.
 
