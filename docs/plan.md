@@ -54,6 +54,13 @@ W-6 (alte Tests laufen) ist mit F0 erfüllt: 70 Tests grün in der Umgebung. W-7
 
 Dazu die Sphinx-Referenz auf GitHub Pages und was die Sichtung (E8, E9) als „übernehmen“ einstuft.
 
+Große Graphen (Messung vom 17.11.2026, Python 3.14): `get_args()` wächst quadratisch (800 überlagerte Eingänge: 1,7 s) und bricht ab etwa 990 Knoten in einer Kette mit `RecursionError` ab. Ursache ist `topo_sort` in `ffmpeg/dag.py`.
+
+| Aufgabe | Inhalt | Hängt ab von |
+|---|---|---|
+| #440 | `topo_sort` mit Mengen statt Listen; Argumentliste unverändert | #433 |
+| #441 | `topo_sort` ohne Rekursion; Kette mit 2000 Filtern läuft | #440 |
+
 ## Grundausstattung
 
 Steht im Projektbrief, Abschnitt Grundausstattung; vom Visionär am 17.11.2026 bestätigt.
