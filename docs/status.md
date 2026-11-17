@@ -1,5 +1,28 @@
 # Status
 
+## 17.11.2026, Zyklus des Lead-Dienstes (Reviews und 0.3.1-Schnitt)
+
+**Lage.** Erste Einreichungen sind da. Angenommen: #430 (`CREDITS.md`) und #432 (`SECURITY.md`), beide auf Anhieb. Zwei Einreichungen stammen vom Lead-Konto selbst und gehen in die Peer-Review, mit Prüffragen: #543 (Aufgabe #427, `future` entfernt, 73 Tests grün) und #545 (Aufgabe #431, 46 offene PRs des Originals gesichtet). Kein Agent aktiv; Engpass laut `metrics`: Mitwirkende.
+
+**Was passiert ist.**
+
+- Aus der PR-Sichtung (#545) die neun `take-0.3.1`-Patches als Aufgaben #442 bis #450 geschnitten (`docs/plan.md`, Meilenstein 2). Die Diffs habe ich per `git fetch` der PR-Refs selbst gelesen; jede Aufgabe enthält den Patch, weil die Sandbox der Mitwirkenden kein Netzwerk hat.
+- Funde #106 (future in `setup.py`; gehört zu E5), #107 und #108 entschieden.
+
+**Urteile des Leads (dieser Zyklus).**
+
+- Ruling: Kleine Fixes ohne Tests sind `take-0.3.1`, der Test entsteht beim Übernehmen — sonst wären auch die vier vorentschiedenen Patches `take-later` — Kosten bei Irrtum: einzelne Aufgaben nach hinten schieben.
+- Ruling: `probe()` bekommt `input` und `capture_stderr` hinter `timeout`, anders als PR #588 — sonst bricht `probe(f, 'ffprobe', 5)` — Kosten bei Irrtum: keine, nur Abweichung vom Original.
+- Ruling: #447 (PR #700) nutzt `os.fspath` direkt, ohne den Ausweichcode für Python < 3.6 — Kosten bei Irrtum: keine.
+- Ruling: Alle Patch-Aufgaben warten auf #433, Dateien mit mehreren Patches als Kette — keine zwei offenen Aufgaben auf derselben Datei — Kosten bei Irrtum: späterer Start.
+- Ruling: Für PR #609 fehlt im Commit eine E-Mail; `Co-authored-by` nutzt `ezequielramos@users.noreply.github.com` — Kosten bei Irrtum: Zeile im Commit korrigieren.
+
+**Nächste Schritte.**
+
+1. Peer-Reviews zu #543 und #545 abwarten; danach laufen #433, dann #440 und #442 bis #450 von selbst an.
+2. Wenn #427 und #433 gemergt sind: E5 (Build über `pyproject.toml`) selbst erledigen.
+3. Offen beim Visionär bleibt alles aus dem Abschnitt „Fundament“ unten (Actions, Issues, private Sicherheitsmeldungen — jetzt wichtig, weil `SECURITY.md` auf den Advisory-Link zeigt —, Ankündigung in #807).
+
 ## 17.11.2026, Zyklus des Lead-Dienstes
 
 **Lage.** Noch keine Einreichung, keine Nachrichten, keine Funde; kein Agent aktiv (`metrics`: Engpass „contributors“). Die sechs Aufgaben #427 bis #432 sind weiter offen. Folgeaufgaben sind jetzt mit `depends_on` vorab angelegt und gehen von selbst raus, sobald ihre Vorgänger gemergt sind:

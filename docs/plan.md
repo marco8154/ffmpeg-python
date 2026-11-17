@@ -20,16 +20,16 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | W-3 | Lizenz geerbt | Lead | D | – | erledigt: `LICENSE` unverändert, keine `NOTICE`, keine Lizenzköpfe im Original |
 | W-4 | Name geklärt | Visionär | – | – | erledigt: Paket `ffmpeg-python-ng`, Repo `marco8154/ffmpeg-python` (Entscheidung 0002) |
 | F0 | Fundament: Testvertrag, Umgebung, `AGENTS.md`, Skills, CI, zwei Tests unabhängig von der ffmpeg-Version | Lead | D | – | erledigt: `5677b37`, `59a699d` |
-| E1 | `future` und `past` aus `ffmpeg/_utils.py`, `ffmpeg/_ffmpeg.py`, `ffmpeg/nodes.py` entfernen; Test: `import ffmpeg` gelingt ohne `future` | Schwarm | B | F0 | offen: Aufgabe #427 |
+| E1 | `future` und `past` aus `ffmpeg/_utils.py`, `ffmpeg/_ffmpeg.py`, `ffmpeg/nodes.py` entfernen; Test: `import ffmpeg` gelingt ohne `future` | Schwarm | B | F0 | eingereicht: Aufgabe #427 (Einreichung #543), wartet auf Peer-Review |
 | E2 | Python-2-Reste entfernen (`from __future__ import`, `from builtins import`, Zweige auf `sys.version_info`, Ausweich-Importe) in `ffmpeg/*.py` ohne Tests | Schwarm | B | E1, E4 | angelegt: Aufgabe #433, wartet auf #427 und #429 |
 | E3 | Python-2-Reste und zwei Warnungen in `ffmpeg/tests/test_ffmpeg.py` beheben (Rückgabewert in `test_fluent_complex_filter`, Regex-Warnung) | Schwarm | B | F0 | offen: Aufgabe #428 |
 | E4 | W-8: `mkstemp` statt `mktemp` in `ffmpeg/_view.py`, mit Test; übernommener Patch von Sarthak Munshi (grantnegri `c1ef452`) | Schwarm | B | F0 | offen: Aufgabe #429 |
 | E5 | W-5: Build über `pyproject.toml` mit setuptools, Name `ffmpeg-python-ng`, Version 0.3.0, keine Abhängigkeiten; `setup.py`, `setup.cfg`, `tox.ini`, `MANIFEST`, `requirements.txt` entfallen; `future` aus der Umgebung | Lead | D | E1, E2 | geplant |
-| E6 | W-10: `CREDITS.md` mit den Autoren aus der Git-Historie | Schwarm | A | F0 | offen: Aufgabe #430 |
+| E6 | W-10: `CREDITS.md` mit den Autoren aus der Git-Historie | Schwarm | A | F0 | angenommen: Aufgabe #430 |
 | E7 | W-11, W-4: README (erste Zeile „Continuation of ffmpeg-python“, Umstiegshinweis, Badges und Links auf die Fortführung) und `CHANGELOG.md` | Schwarm | B | E5 | geplant |
-| E8 | W-9: `docs/inherited-pull-requests.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | offen: Aufgabe #431 |
+| E8 | W-9: `docs/inherited-pull-requests.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | eingereicht: Aufgabe #431 (Einreichung #545), wartet auf Peer-Review |
 | E9 | W-9: offene Issues des Originals gesichtet, vier Blöcke nach Nummern unter `docs/inherited-issues/` | Schwarm | A | E8 | angelegt: Aufgaben #434 bis #437, warten auf #431 |
-| E10 | `SECURITY.md` (GitHub Security Advisories) | Schwarm | A | F0 | offen: Aufgabe #432 |
+| E10 | `SECURITY.md` (GitHub Security Advisories) | Schwarm | A | F0 | angenommen: Aufgabe #432 |
 | E14 | Issue-Vorlage für Fehlerberichte (`.github/ISSUE_TEMPLATE/`) | Lead | D | F0 | geplant; `.github/` ist geschützt |
 | E11 | Release-Workflow mit PyPI Trusted Publishing | Lead | D | E5 | geplant; braucht den Visionär auf PyPI |
 | E12 | W-11: Release 0.3.0 | Visionär gibt frei | – | alle | geplant |
@@ -43,14 +43,19 @@ W-6 (alte Tests laufen) ist mit F0 erfüllt: 70 Tests grün in der Umgebung. W-7
 
 ## Meilenstein 2: 0.3.1
 
-Übernommene Patches aus der Vorauswahl, je eine Aufgabe mit Test, der ohne den Patch rot ist:
+Übernommene Patches: die neun `take-0.3.1`-Einträge aus `docs/inherited-pull-requests.md`, je eine Aufgabe mit Test, der ohne den Patch rot ist, und `Co-authored-by`. Alle warten auf #433 (E2), weil E2 dieselben Dateien berührt. Gleiche Dateien laufen als Kette.
 
-| Inhalt | Autor im Original | Dateien |
-|---|---|---|
-| Filter `atrim` | Jason Cordial | `ffmpeg/_filters.py` |
-| Stream-Selektor mit Index 0 | Artem Eltyshev | `ffmpeg/nodes.py` |
-| Pipe-Eingabe für `ffprobe` | Rocky Cai | `ffmpeg/_probe.py` |
-| `popen_args` für `run_async()` | Michael Litvin | `ffmpeg/_run.py` |
+| Aufgabe | Inhalt | Autor im Original (PR) | Dateien | Hängt ab von |
+|---|---|---|---|---|
+| #442 | Stream-Selektor mit Index 0 | Artem Eltyshev (#490) | `ffmpeg/_run.py` | #433 |
+| #443 | `explicit_maps` für `get_args()`/`compile()` | Artem Eltyshev (#403) | `ffmpeg/_run.py` | #442 |
+| #444 | `popen_args` für `run_async()` | Michael Litvin (#675) | `ffmpeg/_run.py` | #443 |
+| #445 | Pipe-Eingabe für `probe()`; `input` nach `timeout` | Rocky Cai (#588) | `ffmpeg/_probe.py` | #433 |
+| #446 | `capture_stderr` für `probe()` | Ezequiel Ramos (#609) | `ffmpeg/_probe.py` | #445 |
+| #447 | Pfadobjekte als Dateinamen (`os.fspath`) | Brian Hou (#700) | `ffmpeg/_ffmpeg.py` | #433 |
+| #448 | `get_hash` mit `usedforsecurity=False` (FIPS) | Zachary Berry (#766) | `ffmpeg/_utils.py` | #433 |
+| #449 | relativer Import in `_view.py` | Shimpei Yamaguchi (#772) | `ffmpeg/_view.py` | #433 |
+| #450 | Filter `atrim` | Jason Cordial (#449) | `ffmpeg/_filters.py` | #433 |
 
 Dazu die Sphinx-Referenz auf GitHub Pages und was die Sichtung (E8, E9) als „übernehmen“ einstuft.
 
