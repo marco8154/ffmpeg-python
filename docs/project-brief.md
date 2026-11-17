@@ -37,7 +37,7 @@ Zustände: **entschieden**, **Empfehlung angenommen**, **delegiert**, **offen**.
 | F1 | Ausgangspunkt | Fork vom `master` des Originals (`df129c7`, 11.07.2022) mit voller Historie, nicht vom Tag 0.2.0 | Empfehlung angenommen | 1 | 41 Commits nach 0.2.0 enthalten bereits Fixes |
 | F2 | Aufgegeben? Wartezeit | Das Projekt startet sofort. Keine 30 Tage Wartezeit nach der Ankündigung in #807 | entschieden | 1 | Abweichung von der Handbuch-Empfehlung; Frage in #807 seit November 2023 ohne Antwort des Maintainers |
 | F3 | Lizenz | Apache-2.0 bleibt, `LICENSE` und Autoren unverändert | Empfehlung angenommen | 1 | Pflicht |
-| F4 / T11 | Name | PyPI-Paket `ffmpeg-python-ng`, Import bleibt `import ffmpeg`, GitHub-Repo wird in `ffmpeg-python-ng` umbenannt (Visionär). README: „continuation of ffmpeg-python“, nicht parallel zu `ffmpeg-python` installierbar | Empfehlung angenommen | 1 | Name auf PyPI frei |
+| F4 / T11 | Name | PyPI-Paket `ffmpeg-python-ng`, Import bleibt `import ffmpeg`, GitHub-Repo bleibt `marco8154/ffmpeg-python`, ohne Suffix (Visionär, 17.11.2026, nach Bitte in #807 des Originals). README: „continuation of ffmpeg-python“, nicht parallel zu `ffmpeg-python` installierbar | Empfehlung angenommen | 1 | Name auf PyPI frei |
 | F6 | Erstes Ziel | Release 0.3.0 „lebt wieder“: `future` entfernt, neuer Build, Tests grün, dazu der Sicherheitsfix `mkstemp` statt `mktemp` | Empfehlung angenommen | 1 | |
 | F7 | Übernommene PRs | 0.3.0: nur `mkstemp`. 0.3.1: `atrim`-Filter, Stream-Selektor mit Index 0, Pipe-Eingabe für `ffprobe`, `popen_args` für `run_async()`. Autoren bleiben in der Historie | Empfehlung angenommen | 1 | Vorauswahl grantnegri |
 | F8 | Upstream | Kommt der Maintainer zurück, gehen die Fixes als PRs an das Original; über eine Zusammenlegung entscheidet der Visionär | Empfehlung angenommen | 1 | |
@@ -129,4 +129,4 @@ Vom Visionär am 17.11.2026 bestätigt. M1 ist 0.3.0, M2 ist 0.3.1.
 ## Offen beim Visionär
 
 - [ ] Ankündigung in Issue #807 des Originals posten
-- [ ] GitHub-Repo in `ffmpeg-python-ng` umbenennen
+- [x] Repo-Name geklärt: `marco8154/ffmpeg-python`, ohne Suffix (17.11.2026)

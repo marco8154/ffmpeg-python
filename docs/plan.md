@@ -18,7 +18,7 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | W-1 | Original gefragt | Visionär | – | – | offen: Ankündigung in #807 fehlt; Start ohne Wartezeit entschieden (Entscheidung 0001) |
 | W-2 | Fork mit Historie | Lead | D | – | erledigt: Fork steht auf `df129c7` mit voller Historie; README-Hinweis offen (E7) |
 | W-3 | Lizenz geerbt | Lead | D | – | erledigt: `LICENSE` unverändert, keine `NOTICE`, keine Lizenzköpfe im Original |
-| W-4 | Name geklärt | Visionär | – | – | entschieden (Entscheidung 0002); Repo umbenennen offen |
+| W-4 | Name geklärt | Visionär | – | – | erledigt: Paket `ffmpeg-python-ng`, Repo `marco8154/ffmpeg-python` (Entscheidung 0002) |
 | F0 | Fundament: Testvertrag, Umgebung, `AGENTS.md`, Skills, CI, zwei Tests unabhängig von der ffmpeg-Version | Lead | D | – | erledigt: `5677b37`, `59a699d` |
 | E1 | `future` und `past` aus `ffmpeg/_utils.py`, `ffmpeg/_ffmpeg.py`, `ffmpeg/nodes.py` entfernen; Test: `import ffmpeg` gelingt ohne `future` | Schwarm | B | F0 | offen: Aufgabe #427 |
 | E2 | Python-2-Reste entfernen (`from __future__ import`, `from builtins import`, Zweige auf `sys.version_info`, Ausweich-Importe) in `ffmpeg/*.py` ohne Tests | Schwarm | B | E1, E4 | angelegt: Aufgabe #433, wartet auf #427 und #429 |

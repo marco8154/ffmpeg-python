@@ -11,6 +11,7 @@ Das Original heißt auf PyPI `ffmpeg-python` und wird als `import ffmpeg` benutz
 ## Entscheidung
 
 - Das Paket heißt auf PyPI `ffmpeg-python-ng`. Der Name war am 17.11.2026 frei.
+- Das GitHub-Repo heißt `marco8154/ffmpeg-python`, wie das Original, nur mit anderem Besitzer. Ein kurzzeitiges Umbenennen in `ffmpeg-python-ng` am 17.11.2026 wurde am selben Tag zurückgenommen, nachdem ein Nutzer in #807 des Originals darum gebeten hatte; die Adresse mit Suffix leitet weiter.
 - Der Importname bleibt `ffmpeg`. Nutzer tauschen nur das Paket, nicht ihren Code.
 - Die erste Version ist 0.3.0. Sie setzt die Zählung des Originals (0.2.0) fort.
 - Unterstützt werden Python 3.10 bis 3.14. Python 2 und alles unter 3.10 entfallen.
