@@ -42,7 +42,7 @@ Schätzung Meilenstein 1: von 14 auf 17 Aufgaben angehoben.
 
 - GitHub Actions auf dem Fork einschalten (Reiter „Actions“)
 - Ankündigung in #807 posten
-- Repo in `ffmpeg-python-ng` umbenennen
+- ~~Repo in `ffmpeg-python-ng` umbenennen~~ erledigt (Git meldet beim Push am 17.11.2026 den neuen Ort `marco8154/ffmpeg-python-ng`)
 - Private Sicherheitsmeldungen im Repo einschalten (Settings → Security), sonst führt der Link aus Aufgabe #432 ins Leere
 
 **Nächste Schritte.**
