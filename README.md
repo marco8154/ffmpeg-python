@@ -1,11 +1,25 @@
 # ffmpeg-python: Python bindings for FFmpeg
 
+**Continuation of [ffmpeg-python](https://github.com/kkroening/ffmpeg-python) by Karl Kroening.** The original has had no release since 0.2.0 in 2019. This fork keeps its API and its `import ffmpeg`, runs on every Python release from 3.10 on and is removing the `future` dependency.
+
 [![CI][ci-badge]][ci]
 
-[ci-badge]: https://github.com/kkroening/ffmpeg-python/actions/workflows/ci.yml/badge.svg
-[ci]: https://github.com/kkroening/ffmpeg-python/actions/workflows/ci.yml
+[ci-badge]: https://github.com/marco8154/ffmpeg-python/actions/workflows/ci.yml/badge.svg
+[ci]: https://github.com/marco8154/ffmpeg-python/actions/workflows/ci.yml
 
-<img src="https://raw.githubusercontent.com/kkroening/ffmpeg-python/master/doc/formula.png" alt="ffmpeg-python logo" width="60%" />
+<img src="https://raw.githubusercontent.com/marco8154/ffmpeg-python/master/doc/formula.png" alt="ffmpeg-python logo" width="60%" />
+
+## About this continuation
+
+- **Same API.** Existing code keeps working: the same function names, parameters and generated command lines, and the same `import ffmpeg`.
+- **Current Python.** Tested on Python 3.10 to 3.15 on Linux and on the newest release on Windows and macOS. Every future Python release is supported once it is out.
+- **No `future` dependency.** The package has no runtime dependencies (in progress for 0.3.0).
+- **Fixes with tests.** Pending fixes from the original's pull requests are carried over with tests, and their authors stay credited.
+- **Same licence.** Apache-2.0, like the original. The full Git history and all authors are kept ([CREDITS.md](CREDITS.md)).
+
+**Status:** in development. The first release, 0.3.0, will be published on PyPI as `ffmpeg-python-ng`. Until then, install from GitHub (see [Installation](#installation)).
+
+If the original project becomes active again, fixes from here will be offered back as pull requests. See [kkroening/ffmpeg-python#807](https://github.com/kkroening/ffmpeg-python/issues/807).
 
 ## Overview
 
@@ -37,12 +51,14 @@ import ffmpeg
 
 ## [API reference](https://kkroening.github.io/ffmpeg-python/)
 
+The API is unchanged, so the original project's reference applies. A reference for this continuation is planned for 0.3.1.
+
 ## Complex filter graphs
 FFmpeg is extremely powerful, but its command-line interface gets really complicated rather quickly - especially when working with signal graphs and doing anything more than trivial.
 
 Take for example a signal graph that looks like this:
 
-![Signal graph](https://raw.githubusercontent.com/kkroening/ffmpeg-python/master/doc/graph1.png)
+![Signal graph](https://raw.githubusercontent.com/marco8154/ffmpeg-python/master/doc/graph1.png)
 
 The corresponding command-line arguments are pretty gnarly:
 ```bash
@@ -75,7 +91,7 @@ overlay_file = ffmpeg.input('overlay.png')
 
 `ffmpeg-python` takes care of running `ffmpeg` with the command-line arguments that correspond to the above filter diagram, in familiar Python terms.
 
-<img src="https://raw.githubusercontent.com/kkroening/ffmpeg-python/master/doc/screenshot.png" alt="Screenshot" align="middle" width="60%" />
+<img src="https://raw.githubusercontent.com/marco8154/ffmpeg-python/master/doc/screenshot.png" alt="Screenshot" align="middle" width="60%" />
 
 Real-world signal graphs can get a heck of a lot more complex, but `ffmpeg-python` handles arbitrarily large (directed-acyclic) signal graphs.
 
@@ -83,17 +99,36 @@ Real-world signal graphs can get a heck of a lot more complex, but `ffmpeg-pytho
 
 ### Installing `ffmpeg-python`
 
-The latest version of `ffmpeg-python` can be acquired via a typical pip install:
+Python 3.10 or newer is required.
+
+Until the first release is on PyPI, install the continuation straight from GitHub:
 
 ```bash
-pip install ffmpeg-python
+pip install git+https://github.com/marco8154/ffmpeg-python.git
 ```
 
-Or the source can be cloned and installed from locally:
+Or clone it and install from the local copy:
 ```bash
-git clone git@github.com:kkroening/ffmpeg-python.git
+git clone https://github.com/marco8154/ffmpeg-python.git
 pip install -e ./ffmpeg-python
 ```
+
+From release 0.3.0 on, it will be available from PyPI:
+
+```bash
+pip install ffmpeg-python-ng
+```
+
+### Switching from the original `ffmpeg-python`
+
+Both packages install the same module `ffmpeg`, so they must not be installed side by side. Remove the original first; your code does not change:
+
+```bash
+pip uninstall ffmpeg-python
+pip install git+https://github.com/marco8154/ffmpeg-python.git
+```
+
+The only intended difference is that Python 2 and Python versions before 3.10 are no longer supported.
 
 > **Note**: `ffmpeg-python` makes no attempt to download/install FFmpeg, as `ffmpeg-python` is merely a pure-Python wrapper - whereas FFmpeg installation is platform-dependent/environment-specific, and is thus the responsibility of the user, as described below.
 
@@ -101,36 +136,35 @@ pip install -e ./ffmpeg-python
 
 Before using `ffmpeg-python`, FFmpeg must be installed and accessible via the `$PATH` environment variable.
 
-There are a variety of ways to install FFmpeg, such as the [official download links](https://ffmpeg.org/download.html), or using your package manager of choice (e.g. `sudo apt install ffmpeg` on Debian/Ubuntu, `brew install ffmpeg` on OS X, etc.).
+There are a variety of ways to install FFmpeg, such as the [official download links](https://ffmpeg.org/download.html), or using your package manager of choice (e.g. `sudo apt install ffmpeg` on Debian/Ubuntu, `brew install ffmpeg` on macOS, `winget install Gyan.FFmpeg` on Windows, etc.).
 
 Regardless of how FFmpeg is installed, you can check if your environment path is set correctly by running the `ffmpeg` command from the terminal, in which case the version information should appear, as in the following example (truncated for brevity):
 
 ```
 $ ffmpeg
-ffmpeg version 4.2.4-1ubuntu0.1 Copyright (c) 2000-2020 the FFmpeg developers
-  built with gcc 9 (Ubuntu 9.3.0-10ubuntu2)
+ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers
 ```
 
 > **Note**: The actual version information displayed here may vary from one system to another; but if a message such as `ffmpeg: command not found` appears instead of the version information, FFmpeg is not properly installed.
 
-## [Examples](https://github.com/kkroening/ffmpeg-python/tree/master/examples)
+## [Examples](examples)
 
-When in doubt, take a look at the [examples](https://github.com/kkroening/ffmpeg-python/tree/master/examples) to see if there's something that's close to whatever you're trying to do.
+When in doubt, take a look at the [examples](examples) to see if there's something that's close to whatever you're trying to do.
 
 Here are a few:
-- [Convert video to numpy array](https://github.com/kkroening/ffmpeg-python/blob/master/examples/README.md#convert-video-to-numpy-array)
-- [Generate thumbnail for video](https://github.com/kkroening/ffmpeg-python/blob/master/examples/README.md#generate-thumbnail-for-video)
-- [Read raw PCM audio via pipe](https://github.com/kkroening/ffmpeg-python/blob/master/examples/README.md#convert-sound-to-raw-pcm-audio)
+- [Convert video to numpy array](examples/README.md#convert-video-to-numpy-array)
+- [Generate thumbnail for video](examples/README.md#generate-thumbnail-for-video)
+- [Read raw PCM audio via pipe](examples/README.md#convert-sound-to-raw-pcm-audio)
 
-- [JupyterLab/Notebook stream editor](https://github.com/kkroening/ffmpeg-python/blob/master/examples/README.md#jupyter-stream-editor)
+- [JupyterLab/Notebook stream editor](examples/README.md#jupyter-stream-editor)
 
-<img src="https://raw.githubusercontent.com/kkroening/ffmpeg-python/master/doc/jupyter-demo.gif" alt="jupyter demo" width="75%" />
+<img src="https://raw.githubusercontent.com/marco8154/ffmpeg-python/master/doc/jupyter-demo.gif" alt="jupyter demo" width="75%" />
 
-- [Tensorflow/DeepDream streaming](https://github.com/kkroening/ffmpeg-python/blob/master/examples/README.md#tensorflow-streaming)
+- [Tensorflow/DeepDream streaming](examples/README.md#tensorflow-streaming)
 
-<img src="https://raw.githubusercontent.com/kkroening/ffmpeg-python/master/examples/graphs/dream.png" alt="deep dream streaming" width="40%" />
+<img src="https://raw.githubusercontent.com/marco8154/ffmpeg-python/master/examples/graphs/dream.png" alt="deep dream streaming" width="40%" />
 
-See the [Examples README](https://github.com/kkroening/ffmpeg-python/tree/master/examples) for additional examples.
+See the [Examples README](examples) for additional examples.
 
 ## Custom Filters
 
@@ -205,19 +239,19 @@ Expressions to be interpreted by ffmpeg can be included as string parameters and
     ffmpeg
     .input('in.mp4')
     .filter('crop', 'in_w-2*10', 'in_h-2*20')
-    .input('out.mp4')
+    .output('out.mp4')
 )
 ```
 
 <br />
 
-When in doubt, refer to the [existing filters](https://github.com/kkroening/ffmpeg-python/blob/master/ffmpeg/_filters.py), [examples](https://github.com/kkroening/ffmpeg-python/tree/master/examples), and/or the [official ffmpeg documentation](https://ffmpeg.org/ffmpeg-filters.html).
+When in doubt, refer to the [existing filters](ffmpeg/_filters.py), [examples](examples), and/or the [official ffmpeg documentation](https://ffmpeg.org/ffmpeg-filters.html).
 
 ## Frequently asked questions
 
 **Why do I get an import/attribute/etc. error from `import ffmpeg`?**
 
-Make sure you ran `pip install ffmpeg-python` and _**not**_ `pip install ffmpeg` (wrong) or `pip install python-ffmpeg` (also wrong).
+Make sure only one of `ffmpeg-python` and `ffmpeg-python-ng` is installed, and _**not**_ `ffmpeg` (wrong) or `python-ffmpeg` (also wrong). Those other packages also provide a module named `ffmpeg`. `pip list` shows what is installed.
 
 **Why did my audio stream get dropped?**
 
@@ -225,7 +259,7 @@ Some ffmpeg filters drop audio streams, and care must be taken to preserve the a
 
 This dilemma is intrinsic to ffmpeg, and ffmpeg-python tries to stay out of the way while users may refer to the official ffmpeg documentation as to why certain filters drop audio.
 
-As usual, take a look at the [examples](https://github.com/kkroening/ffmpeg-python/tree/master/examples#audiovideo-pipeline) (*Audio/video pipeline* in particular).
+As usual, take a look at the [examples](examples#audiovideo-pipeline) (*Audio/video pipeline* in particular).
 
 **How can I find out the used command line arguments?**
 
@@ -233,40 +267,40 @@ You can run `stream.get_args()` before `stream.run()` to retrieve the command li
 
 **How do I do XYZ?**
 
-Take a look at each of the links in the [Additional Resources](https://kkroening.github.io/ffmpeg-python/) section at the end of this README.  If you look everywhere and can't find what you're looking for and have a question that may be relevant to other users, you may open an issue asking how to do it, while providing a thorough explanation of what you're trying to do and what you've tried so far.
+Take a look at each of the links in the [Additional Resources](#additional-resources) section at the end of this README.  If you look everywhere and can't find what you're looking for and have a question that may be relevant to other users, you may open an issue asking how to do it, while providing a thorough explanation of what you're trying to do and what you've tried so far.
 
 Issues not directly related to `ffmpeg-python` or issues asking others to write your code for you or how to do the work of solving a complex signal processing problem for you that's not relevant to other users will be closed.
 
-That said, we hope to continue improving our documentation and provide a community of support for people using `ffmpeg-python` to do cool and exciting things.
-
 ## Contributing
 
-<img align="right" src="https://raw.githubusercontent.com/kkroening/ffmpeg-python/master/doc/logo.png" alt="ffmpeg-python logo" width="20%" />
+<img align="right" src="https://raw.githubusercontent.com/marco8154/ffmpeg-python/master/doc/logo.png" alt="ffmpeg-python logo" width="20%" />
 
-One of the best things you can do to help make `ffmpeg-python` better is to answer [open questions](https://github.com/kkroening/ffmpeg-python/labels/question) in the issue tracker.  The questions that are answered will be tagged and incorporated into the documentation, examples, and other learning resources.
+Bug reports, questions and feature requests go to the [issue tracker](https://github.com/marco8154/ffmpeg-python/issues). Please include your Python version, your FFmpeg version (`ffmpeg -version`), your operating system and, if possible, the output of `stream.get_args()`.
 
-If you notice things that could be better in the documentation or overall development experience, please say so in the [issue tracker](https://github.com/kkroening/ffmpeg-python/issues).  And of course, feel free to report any bugs or submit feature requests.
+Security issues are reported privately, as described in [SECURITY.md](SECURITY.md).
 
-Pull requests are welcome as well, but it wouldn't hurt to touch base in the issue tracker or hop on the [Matrix chat channel](https://riot.im/app/#/room/#ffmpeg-python:matrix.org) first.
-
-Anyone who fixes any of the [open bugs](https://github.com/kkroening/ffmpeg-python/labels/bug) or implements [requested enhancements](https://github.com/kkroening/ffmpeg-python/labels/enhancement) is a hero, but changes should include passing tests.
+Code contributions are coordinated as tasks on [swarvex.ai](https://swarvex.ai/en/projects/ffmpeg-python-ng): each task names the files to change and the tests that must pass. The rules for contributors are in [AGENTS.md](AGENTS.md). Every change comes with tests, and existing behaviour stays compatible.
 
 ### Running tests
 
+FFmpeg must be installed (see [Installing FFmpeg](#installing-ffmpeg)).
+
 ```bash
-git clone git@github.com:kkroening/ffmpeg-python.git
+git clone https://github.com/marco8154/ffmpeg-python.git
 cd ffmpeg-python
-virtualenv venv
-. venv/bin/activate  # (OS X / Linux)
-venv\bin\activate    # (Windows)
-pip install -e .[dev]
-pytest
+python -m venv venv
+. venv/bin/activate     # Linux / macOS
+venv\Scripts\activate   # Windows
+pip install -e . pytest pytest-mock
+python -m pytest
 ```
 
 <br />
 
 ### Special thanks
 
+- [Karl Kroening](https://github.com/kkroening), who wrote and maintained `ffmpeg-python`
+- Everyone who contributed to the original project, listed in [CREDITS.md](CREDITS.md)
 - [Fabrice Bellard](https://bellard.org/)
 - [The FFmpeg team](https://ffmpeg.org/donations.html)
 - [Arne de Laat](https://github.com/153957)
@@ -276,12 +310,12 @@ pytest
 
 ## Additional Resources
 
-- [API Reference](https://kkroening.github.io/ffmpeg-python/)
-- [Examples](https://github.com/kkroening/ffmpeg-python/tree/master/examples)
-- [Filters](https://github.com/kkroening/ffmpeg-python/blob/master/ffmpeg/_filters.py)
+- [API Reference](https://kkroening.github.io/ffmpeg-python/) (original project)
+- [Examples](examples)
+- [Filters](ffmpeg/_filters.py)
 - [FFmpeg Homepage](https://ffmpeg.org/)
 - [FFmpeg Documentation](https://ffmpeg.org/ffmpeg.html)
 - [FFmpeg Filters Documentation](https://ffmpeg.org/ffmpeg-filters.html)
-- [Test cases](https://github.com/kkroening/ffmpeg-python/blob/master/ffmpeg/tests/test_ffmpeg.py)
-- [Issue tracker](https://github.com/kkroening/ffmpeg-python/issues)
-- Matrix Chat: [#ffmpeg-python:matrix.org](https://riot.im/app/#/room/#ffmpeg-python:matrix.org)
+- [Test cases](ffmpeg/tests/test_ffmpeg.py)
+- [Issue tracker](https://github.com/marco8154/ffmpeg-python/issues)
+- [Original project](https://github.com/kkroening/ffmpeg-python)
