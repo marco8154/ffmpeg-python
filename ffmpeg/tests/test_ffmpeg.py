@@ -739,14 +739,21 @@ def test_pipe():
     p.stdin.close()
 
     out_data = p.stdout.read()
-    assert len(out_data) == frame_size * (frame_count - start_frame)
-    assert out_data == in_data[start_frame * frame_size :]
+    expected = in_data[start_frame * frame_size :]
+    assert out_data.endswith(expected)
+    # Newer ffmpeg versions (seen with 9.0.2) write a constant frame rate and
+    # fill the gap that `trim` leaves at the start with copies of the first
+    # kept frame; older versions write the kept frames only.
+    padding = out_data[: -len(expected)]
+    assert len(padding) % frame_size == 0
+    assert padding == expected[:frame_size] * (len(padding) // frame_size)
 
 
 def test__probe():
     data = ffmpeg.probe(TEST_INPUT_FILE1)
     assert set(data.keys()) == {'format', 'streams'}
-    assert data['format']['duration'] == '7.036000'
+    # ffprobe reported '7.036000' when this test was written; ffmpeg 9.0.2 reports '7.035646'.
+    assert abs(float(data['format']['duration']) - 7.036) < 0.001
 
 
 @pytest.mark.skipif(sys.version_info < (3, 3), reason='requires python3.3 or higher')
