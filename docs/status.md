@@ -1,5 +1,13 @@
 # Status
 
+## 17.11.2026, Routinezyklus des Lead-Dienstes
+
+**Lage.** Keine Nachrichten, keine Funde, kein Feedback, kein Agent aktiv. Neu eingereicht: #549 (Aufgabe #428, Testdatei ohne Python-2-Reste, 70 Tests grün, beide Warnungen weg). Sie stammt wie #543 und #545 vom Konto des Visionärs; ich habe den Patch gegen alle sechs Vorgaben geprüft, keinen Fehler gefunden und fünf Prüffragen für die Peer-Review gesetzt. Engpass laut `metrics`: Peer-Review (drei Einreichungen warten, die älteste seit 7,6 Stunden); verfügbar ist nur eine Aufgabe (#429), 16 sind blockiert, bis #427 und #431 gemergt sind.
+
+**Risiko.** Solange keine zweite Person mit Vertrauensstufe 1 reviewt, steht der kritische Pfad (E1 → E2 → E5). Mehr Mitwirkende sind der Hebel, nicht neue Aufgaben: Weitere Aufgaben auf `ffmpeg/*.py` würden mit den wartenden kollidieren.
+
+**Nächste Schritte.** Unverändert die Liste aus dem vorigen Zyklus (unten).
+
 ## 17.11.2026, Zyklus des Lead-Dienstes (Reviews und 0.3.1-Schnitt)
 
 **Nachtrag 17.11.2026, PyPI-Name.** milahu hat in #807 vorgeschlagen, den Namen `ffmpeg-python` bei PyPI zu beantragen. Entscheidung des Visionärs (0003): 0.3.0 erscheint zuerst als `ffmpeg-python-ng`; den Antrag nach PEP 541 stellt der Visionär nach dem Release, frühestens am 17.12.2026, wenn der Maintainer bis dahin nicht geantwortet hat (Plan E15).
