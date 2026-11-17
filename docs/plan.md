@@ -19,7 +19,7 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | W-2 | Fork mit Historie | Lead | D | – | erledigt: Fork steht auf `df129c7` mit voller Historie; README-Hinweis offen (E7) |
 | W-3 | Lizenz geerbt | Lead | D | – | erledigt: `LICENSE` unverändert, keine `NOTICE`, keine Lizenzköpfe im Original |
 | W-4 | Name geklärt | Visionär | – | – | entschieden (Entscheidung 0002); Repo umbenennen offen |
-| F0 | Fundament: Testvertrag, Umgebung, `AGENTS.md`, Skills, CI, zwei Tests unabhängig von der ffmpeg-Version | Lead | D | – | fertig, wartet auf Commit und Push |
+| F0 | Fundament: Testvertrag, Umgebung, `AGENTS.md`, Skills, CI, zwei Tests unabhängig von der ffmpeg-Version | Lead | D | – | erledigt: `5677b37`, `59a699d` |
 | E1 | `future` und `past` aus `ffmpeg/_utils.py`, `ffmpeg/_ffmpeg.py`, `ffmpeg/nodes.py` entfernen; Test: `import ffmpeg` gelingt ohne `future` | Schwarm | B | F0 | geplant |
 | E2 | Python-2-Reste entfernen (`from __future__ import`, `from builtins import`, Zweige auf `sys.version_info`, Ausweich-Importe) in `ffmpeg/*.py` ohne Tests | Schwarm | B | E1 | geplant |
 | E3 | Python-2-Reste und zwei Warnungen in `ffmpeg/tests/test_ffmpeg.py` beheben (Rückgabewert in `test_fluent_complex_filter`, Regex-Warnung) | Schwarm | B | F0 | geplant |
@@ -30,6 +30,7 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | E8 | W-9: `docs/inherited-issues.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | geplant |
 | E9 | W-9: `docs/inherited-issues.md`, offene Issues des Originals gesichtet (in Blöcken) | Schwarm | A | E8 | geplant |
 | E10 | `SECURITY.md` (GitHub Security Advisories) | Schwarm | A | F0 | geplant |
+| E14 | Issue-Vorlage für Fehlerberichte (`.github/ISSUE_TEMPLATE/`) | Lead | D | F0 | geplant; `.github/` ist geschützt |
 | E11 | Release-Workflow mit PyPI Trusted Publishing | Lead | D | E5 | geplant; braucht den Visionär auf PyPI |
 | E12 | W-11: Release 0.3.0 | Visionär gibt frei | – | alle | geplant |
 | E13 | W-12: Nutzern Bescheid geben (#807, #877 im Original) | Visionär | – | E12 | geplant |
@@ -55,4 +56,4 @@ Dazu die Sphinx-Referenz auf GitHub Pages und was die Sichtung (E8, E9) als „�
 
 ## Grundausstattung
 
-Noch offen: `templates/baseline-packages.md` durchgehen und mit dem Visionär abstimmen, bevor die Aufgaben angelegt werden.
+Der Vorschlag steht im Projektbrief, Abschnitt Grundausstattung, und wartet auf die Bestätigung des Visionärs.

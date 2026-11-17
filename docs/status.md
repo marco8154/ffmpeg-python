@@ -2,14 +2,14 @@
 
 ## 17.11.2026
 
-**Lage.** Der Projektbrief ist nach zwei Interviewrunden vom Visionär bestätigt. Das Fundament steht lokal: Testvertrag, Umgebung, Projektregeln, Skills, CI und die Projektdateien unter `docs/`. `swarvex env` ist grün: 70 Tests bestanden auf Python 3.13 mit ffmpeg 7.1.5, ohne Netzwerk. Aufgaben sind noch keine angelegt.
+**Lage.** Der Projektbrief ist nach zwei Interviewrunden vom Visionär bestätigt. Das Fundament ist am 17.11.2026 auf `master` des Forks gepusht (`5677b37`, `59a699d`): Testvertrag, Umgebung, Projektregeln, Skills, CI und die Projektdateien unter `docs/`. `swarvex env` ist grün: 70 Tests bestanden auf Python 3.13 mit ffmpeg 7.1.5, ohne Netzwerk. Aufgaben sind noch keine angelegt.
 
 **Was passiert ist.**
 
 - Fork `marco8154/ffmpeg-python` geklont; er steht auf `df129c7`, dem letzten Commit des Originals.
 - Zwei Tests hingen an der ffmpeg-Version und waren mit ffmpeg 7.1 und 9.0 rot: `test_pipe` und `test__probe`. Beide prüfen jetzt dasselbe Verhalten unabhängig von der Version.
 - Die Umgebung kommt aus `.devcontainer/Dockerfile`, weil die Sandbox ein schreibgeschütztes Systemverzeichnis hat und ffmpeg deshalb im Image stecken muss.
-- CI neu geschrieben: Python 3.10 bis 3.14 unter Linux, 3.14 unter Windows und macOS. Sie ist noch nie gelaufen.
+- CI neu geschrieben: Python 3.10 bis 3.14 unter Linux, 3.14 unter Windows und macOS. Nach dem Push ist kein Lauf gestartet: GitHub Actions ist auf dem Fork noch nicht eingeschaltet.
 
 **Urteile des Leads.**
 
@@ -26,13 +26,13 @@
 
 **Offen beim Visionär.**
 
-- Git-Identität für die Commits des Leads festlegen und den Push auf `master` des Forks erlauben
+- GitHub Actions auf dem Fork einschalten (Reiter „Actions“)
 - Ankündigung in #807 posten
 - Repo in `ffmpeg-python-ng` umbenennen
-- Grundausstattung bestätigen (folgt)
+- Grundausstattung bestätigen (Vorschlag steht im Projektbrief)
 
 **Nächste Schritte.**
 
-1. Fundament committen und pushen, CI beobachten.
-2. Grundausstattung durchgehen und bestätigen lassen.
+1. Grundausstattung bestätigen lassen.
+2. Ersten CI-Lauf prüfen, sobald Actions eingeschaltet ist.
 3. Aufgaben E1, E3, E4, E6, E8, E10 anlegen (`docs/plan.md`).

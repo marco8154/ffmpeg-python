@@ -99,7 +99,32 @@ Die folgenden Abschnitte fassen die Entscheidungen lesbar zusammen. Bei Widerspr
 
 ## Grundausstattung
 
-Folgt in Phase 2 (`templates/baseline-packages.md`) und wird hier nachgetragen.
+Vorschlag des Leads vom 17.11.2026, wartet auf die Bestätigung des Visionärs. M1 ist 0.3.0, M2 ist 0.3.1.
+
+| ID | Baustein | Entscheidung | Grund |
+|---|---|---|---|
+| B1 | README | M1 | erste Zeile „Continuation of ffmpeg-python“, Installation, Umstiegshinweis (Plan E7) |
+| B2 | Lizenzen und Credits | M1 | `LICENSE` bleibt; `CREDITS.md` mit den Autoren der Historie (Plan E6) |
+| B3 | Version | M1 | Version steht in den Paketmetadaten (`importlib.metadata`); kein neuer Name `ffmpeg.__version__`, weil das die API erweitern würde |
+| B4 | Changelog und Versionsschema | M1 | `CHANGELOG.md`; Zählung des Originals geht weiter (0.3.0, 0.3.1) |
+| B5 | Release-Build | M1 | Wheel und sdist aus `pyproject.toml`, Veröffentlichung per Trusted Publishing (Plan E5, E11) |
+| B6 | Sicherheitskontakt | M1 | `SECURITY.md` (Plan E10) |
+| B7 | Weg für Fehlerberichte | M1 | Issue-Vorlage mit Version von Python, ffmpeg und Betriebssystem sowie der Ausgabe von `get_args()` |
+| B8 | Name, Logo | Name: M1 erledigt. Logo: nicht nötig | Name auf PyPI frei; das Bild des Originals in der README bleibt |
+| B9 | Material für die Projektseite | M1 | nur eine Kurzbeschreibung; Screenshots braucht eine Bibliothek nicht |
+| B10 | Automatische Prüfungen | nicht nötig | keine Laufzeitabhängigkeiten, also keine Lizenzen zu prüfen; das Original hat keine Lizenzköpfe |
+| L-1 | Öffentliche Schnittstelle, Referenz | M2 | Sphinx-Referenz auf GitHub Pages (T12) |
+| L-2 | Schnelleinstieg | M1 | steht in der README des Originals, wird auf den neuen Paketnamen angepasst |
+| L-3 | Beispiele in der Pipeline | M2 | nur die Beispiele ohne Zusatzpakete; die anderen brauchen numpy oder tensorflow |
+| L-4 | Versionierung und Abkündigung | M1 | ein Absatz im Changelog: Abkündigungen warnen mindestens eine Version vorher |
+| L-5 | Paket | M1 | `ffmpeg-python-ng` auf PyPI mit vollständigen Metadaten |
+| L-6 | Unterstützte Versionen | M1 | Matrix in der CI auf GitHub; die swarvex-Pipeline prüft nur Python 3.13 |
+| L-7 | Typen | nicht nötig | Nicht-Ziel (kein Umbau auf Typisierung) |
+| L-8 | Fehlertypen | nicht nötig | `ffmpeg.Error` bleibt unverändert (unantastbar) |
+| L-9 | Kein versteckter Zustand | M2 | ein Absatz zur Thread-Sicherheit in der Referenz |
+| L-10 | Abhängigkeiten | M1 | keine zur Laufzeit |
+| L-11 | Benchmarks | nicht nötig | keine Leistungsziele (T8) |
+| L-12 | Umstiegshinweis | M1 | in der README: Paket tauschen, Python 2 entfällt |
 
 ## Offen beim Visionär
 
