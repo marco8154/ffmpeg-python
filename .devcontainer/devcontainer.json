@@ -1,0 +1,4 @@
+{
+  "name": "ffmpeg-python-ng",
+  "build": { "dockerfile": "Dockerfile" }
+}

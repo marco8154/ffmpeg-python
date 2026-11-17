@@ -1,0 +1,58 @@
+# Plan
+
+Stand: 17.11.2026. Aufgaben-IDs werden eingetragen, sobald die Aufgaben auf swarvex angelegt sind.
+
+## Globale Vorgaben (binden jede Aufgabe)
+
+- Python 3.10 bis 3.14, keine Laufzeitabhängigkeit, keine neuen Testabhängigkeiten.
+- Öffentliche API, Argumentlisten und `ffmpeg.Error` bleiben unverändert (`AGENTS.md`, Abschnitt Kompatibilität).
+- Übernommene Patches behalten ihren Autor (`Co-authored-by`).
+- Neue Tests in eigenen Dateien `ffmpeg/tests/test_<thema>.py`.
+
+## Meilenstein 1: 0.3.0 „lebt wieder“
+
+Liste nach `templates/continuation.md` (W-1 bis W-12).
+
+| Punkt | Inhalt | Wer | Stufe | Hängt ab von | Stand |
+|---|---|---|---|---|---|
+| W-1 | Original gefragt | Visionär | – | – | offen: Ankündigung in #807 fehlt; Start ohne Wartezeit entschieden (Entscheidung 0001) |
+| W-2 | Fork mit Historie | Lead | D | – | erledigt: Fork steht auf `df129c7` mit voller Historie; README-Hinweis offen (E7) |
+| W-3 | Lizenz geerbt | Lead | D | – | erledigt: `LICENSE` unverändert, keine `NOTICE`, keine Lizenzköpfe im Original |
+| W-4 | Name geklärt | Visionär | – | – | entschieden (Entscheidung 0002); Repo umbenennen offen |
+| F0 | Fundament: Testvertrag, Umgebung, `AGENTS.md`, Skills, CI, zwei Tests unabhängig von der ffmpeg-Version | Lead | D | – | fertig, wartet auf Commit und Push |
+| E1 | `future` und `past` aus `ffmpeg/_utils.py`, `ffmpeg/_ffmpeg.py`, `ffmpeg/nodes.py` entfernen; Test: `import ffmpeg` gelingt ohne `future` | Schwarm | B | F0 | geplant |
+| E2 | Python-2-Reste entfernen (`from __future__ import`, `from builtins import`, Zweige auf `sys.version_info`, Ausweich-Importe) in `ffmpeg/*.py` ohne Tests | Schwarm | B | E1 | geplant |
+| E3 | Python-2-Reste und zwei Warnungen in `ffmpeg/tests/test_ffmpeg.py` beheben (Rückgabewert in `test_fluent_complex_filter`, Regex-Warnung) | Schwarm | B | F0 | geplant |
+| E4 | W-8: `mkstemp` statt `mktemp` in `ffmpeg/_view.py`, mit Test; übernommener Patch von Sarthak Munshi (grantnegri `c1ef452`) | Schwarm | B | F0 | geplant |
+| E5 | W-5: Build über `pyproject.toml` mit setuptools, Name `ffmpeg-python-ng`, Version 0.3.0, keine Abhängigkeiten; `setup.py`, `setup.cfg`, `tox.ini`, `MANIFEST`, `requirements.txt` entfallen; `future` aus der Umgebung | Lead | D | E1, E2 | geplant |
+| E6 | W-10: `CREDITS.md` mit den Autoren aus der Git-Historie | Schwarm | A | F0 | geplant |
+| E7 | W-11, W-4: README (erste Zeile „Continuation of ffmpeg-python“, Umstiegshinweis, Badges und Links auf die Fortführung) und `CHANGELOG.md` | Schwarm | B | E5 | geplant |
+| E8 | W-9: `docs/inherited-issues.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | geplant |
+| E9 | W-9: `docs/inherited-issues.md`, offene Issues des Originals gesichtet (in Blöcken) | Schwarm | A | E8 | geplant |
+| E10 | `SECURITY.md` (GitHub Security Advisories) | Schwarm | A | F0 | geplant |
+| E11 | Release-Workflow mit PyPI Trusted Publishing | Lead | D | E5 | geplant; braucht den Visionär auf PyPI |
+| E12 | W-11: Release 0.3.0 | Visionär gibt frei | – | alle | geplant |
+| E13 | W-12: Nutzern Bescheid geben (#807, #877 im Original) | Visionär | – | E12 | geplant |
+
+W-6 (alte Tests laufen) ist mit F0 erfüllt: 70 Tests grün in der Umgebung. W-7 (Abhängigkeiten geprüft) braucht keine eigene Aufgabe: Die einzige Laufzeitabhängigkeit ist `future`, und E1 mit E5 entfernt sie.
+
+**Kritischer Pfad:** F0 → E1 → E2 → E5 → E7 → E12.
+
+**Parallel ab F0:** E1, E3, E4, E6, E8, E10. Keine zwei davon schreiben in dieselbe Datei.
+
+## Meilenstein 2: 0.3.1
+
+Übernommene Patches aus der Vorauswahl, je eine Aufgabe mit Test, der ohne den Patch rot ist:
+
+| Inhalt | Autor im Original | Dateien |
+|---|---|---|
+| Filter `atrim` | Jason Cordial | `ffmpeg/_filters.py` |
+| Stream-Selektor mit Index 0 | Artem Eltyshev | `ffmpeg/nodes.py` |
+| Pipe-Eingabe für `ffprobe` | Rocky Cai | `ffmpeg/_probe.py` |
+| `popen_args` für `run_async()` | Michael Litvin | `ffmpeg/_run.py` |
+
+Dazu die Sphinx-Referenz auf GitHub Pages und was die Sichtung (E8, E9) als „übernehmen“ einstuft.
+
+## Grundausstattung
+
+Noch offen: `templates/baseline-packages.md` durchgehen und mit dem Visionär abstimmen, bevor die Aufgaben angelegt werden.
