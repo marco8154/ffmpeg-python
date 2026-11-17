@@ -1,7 +1,7 @@
 # Projektbrief: ffmpeg-python-ng
 
 > Ergebnis des Projektinterviews (LEAD.md, Phase 0). Aufgaben entstehen erst, wenn der Visionär den Brief bestätigt hat.
-> Status: 17.11.2026 · Interviewrunden: 2 · bestätigt: noch nicht
+> Status: 17.11.2026 · Interviewrunden: 2 · bestätigt vom Visionär am 17.11.2026 („gemeinsames Verständnis: ja“)
 
 ## Recherchierte Fakten (Stand 17.11.2026)
 
@@ -99,7 +99,7 @@ Die folgenden Abschnitte fassen die Entscheidungen lesbar zusammen. Bei Widerspr
 
 ## Grundausstattung
 
-Vorschlag des Leads vom 17.11.2026, wartet auf die Bestätigung des Visionärs. M1 ist 0.3.0, M2 ist 0.3.1.
+Vom Visionär am 17.11.2026 bestätigt. M1 ist 0.3.0, M2 ist 0.3.1.
 
 | ID | Baustein | Entscheidung | Grund |
 |---|---|---|---|

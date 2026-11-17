@@ -2,7 +2,7 @@
 
 ## 17.11.2026
 
-**Lage.** Der Projektbrief ist nach zwei Interviewrunden vom Visionär bestätigt. Das Fundament ist am 17.11.2026 auf `master` des Forks gepusht (`5677b37`, `59a699d`): Testvertrag, Umgebung, Projektregeln, Skills, CI und die Projektdateien unter `docs/`. `swarvex env` ist grün: 70 Tests bestanden auf Python 3.13 mit ffmpeg 7.1.5, ohne Netzwerk. Aufgaben sind noch keine angelegt.
+**Lage.** Der Projektbrief ist nach zwei Interviewrunden vom Visionär bestätigt. Das Fundament ist am 17.11.2026 auf `master` des Forks gepusht (`5677b37`, `59a699d`): Testvertrag, Umgebung, Projektregeln, Skills, CI und die Projektdateien unter `docs/`. `swarvex env` ist grün: 70 Tests bestanden auf Python 3.13 mit ffmpeg 7.1.5, ohne Netzwerk. Die ersten sechs Aufgaben sind offen: #427 bis #432 (`docs/plan.md`).
 
 **Was passiert ist.**
 
@@ -29,10 +29,11 @@
 - GitHub Actions auf dem Fork einschalten (Reiter „Actions“)
 - Ankündigung in #807 posten
 - Repo in `ffmpeg-python-ng` umbenennen
-- Grundausstattung bestätigen (Vorschlag steht im Projektbrief)
+- Private Sicherheitsmeldungen im Repo einschalten (Settings → Security), sonst führt der Link aus Aufgabe #432 ins Leere
 
 **Nächste Schritte.**
 
-1. Grundausstattung bestätigen lassen.
-2. Ersten CI-Lauf prüfen, sobald Actions eingeschaltet ist.
-3. Aufgaben E1, E3, E4, E6, E8, E10 anlegen (`docs/plan.md`).
+1. Einreichungen zu #427 bis #432 prüfen.
+2. Folgeaufgaben mit `depends_on` anlegen: E2 nach #427, E9 nach #431.
+3. Ersten CI-Lauf prüfen, sobald Actions eingeschaltet ist.
+4. E5 (Build über `pyproject.toml`) selbst erledigen, sobald #427 und E2 gemergt sind.

@@ -1,6 +1,6 @@
 # Plan
 
-Stand: 17.11.2026. Aufgaben-IDs werden eingetragen, sobald die Aufgaben auf swarvex angelegt sind.
+Stand: 17.11.2026. Schätzung für Meilenstein 1 auf swarvex: 14 Aufgaben.
 
 ## Globale Vorgaben (binden jede Aufgabe)
 
@@ -20,16 +20,16 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | W-3 | Lizenz geerbt | Lead | D | – | erledigt: `LICENSE` unverändert, keine `NOTICE`, keine Lizenzköpfe im Original |
 | W-4 | Name geklärt | Visionär | – | – | entschieden (Entscheidung 0002); Repo umbenennen offen |
 | F0 | Fundament: Testvertrag, Umgebung, `AGENTS.md`, Skills, CI, zwei Tests unabhängig von der ffmpeg-Version | Lead | D | – | erledigt: `5677b37`, `59a699d` |
-| E1 | `future` und `past` aus `ffmpeg/_utils.py`, `ffmpeg/_ffmpeg.py`, `ffmpeg/nodes.py` entfernen; Test: `import ffmpeg` gelingt ohne `future` | Schwarm | B | F0 | geplant |
+| E1 | `future` und `past` aus `ffmpeg/_utils.py`, `ffmpeg/_ffmpeg.py`, `ffmpeg/nodes.py` entfernen; Test: `import ffmpeg` gelingt ohne `future` | Schwarm | B | F0 | offen: Aufgabe #427 |
 | E2 | Python-2-Reste entfernen (`from __future__ import`, `from builtins import`, Zweige auf `sys.version_info`, Ausweich-Importe) in `ffmpeg/*.py` ohne Tests | Schwarm | B | E1 | geplant |
-| E3 | Python-2-Reste und zwei Warnungen in `ffmpeg/tests/test_ffmpeg.py` beheben (Rückgabewert in `test_fluent_complex_filter`, Regex-Warnung) | Schwarm | B | F0 | geplant |
-| E4 | W-8: `mkstemp` statt `mktemp` in `ffmpeg/_view.py`, mit Test; übernommener Patch von Sarthak Munshi (grantnegri `c1ef452`) | Schwarm | B | F0 | geplant |
+| E3 | Python-2-Reste und zwei Warnungen in `ffmpeg/tests/test_ffmpeg.py` beheben (Rückgabewert in `test_fluent_complex_filter`, Regex-Warnung) | Schwarm | B | F0 | offen: Aufgabe #428 |
+| E4 | W-8: `mkstemp` statt `mktemp` in `ffmpeg/_view.py`, mit Test; übernommener Patch von Sarthak Munshi (grantnegri `c1ef452`) | Schwarm | B | F0 | offen: Aufgabe #429 |
 | E5 | W-5: Build über `pyproject.toml` mit setuptools, Name `ffmpeg-python-ng`, Version 0.3.0, keine Abhängigkeiten; `setup.py`, `setup.cfg`, `tox.ini`, `MANIFEST`, `requirements.txt` entfallen; `future` aus der Umgebung | Lead | D | E1, E2 | geplant |
-| E6 | W-10: `CREDITS.md` mit den Autoren aus der Git-Historie | Schwarm | A | F0 | geplant |
+| E6 | W-10: `CREDITS.md` mit den Autoren aus der Git-Historie | Schwarm | A | F0 | offen: Aufgabe #430 |
 | E7 | W-11, W-4: README (erste Zeile „Continuation of ffmpeg-python“, Umstiegshinweis, Badges und Links auf die Fortführung) und `CHANGELOG.md` | Schwarm | B | E5 | geplant |
-| E8 | W-9: `docs/inherited-issues.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | geplant |
+| E8 | W-9: `docs/inherited-pull-requests.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | offen: Aufgabe #431 |
 | E9 | W-9: `docs/inherited-issues.md`, offene Issues des Originals gesichtet (in Blöcken) | Schwarm | A | E8 | geplant |
-| E10 | `SECURITY.md` (GitHub Security Advisories) | Schwarm | A | F0 | geplant |
+| E10 | `SECURITY.md` (GitHub Security Advisories) | Schwarm | A | F0 | offen: Aufgabe #432 |
 | E14 | Issue-Vorlage für Fehlerberichte (`.github/ISSUE_TEMPLATE/`) | Lead | D | F0 | geplant; `.github/` ist geschützt |
 | E11 | Release-Workflow mit PyPI Trusted Publishing | Lead | D | E5 | geplant; braucht den Visionär auf PyPI |
 | E12 | W-11: Release 0.3.0 | Visionär gibt frei | – | alle | geplant |
@@ -56,4 +56,4 @@ Dazu die Sphinx-Referenz auf GitHub Pages und was die Sichtung (E8, E9) als „�
 
 ## Grundausstattung
 
-Der Vorschlag steht im Projektbrief, Abschnitt Grundausstattung, und wartet auf die Bestätigung des Visionärs.
+Steht im Projektbrief, Abschnitt Grundausstattung; vom Visionär am 17.11.2026 bestätigt.
