@@ -35,7 +35,7 @@ Schätzung Meilenstein 1: von 14 auf 17 Aufgaben angehoben.
 **Risiken.**
 
 - Die Pipeline prüft nur Python 3.13. Die anderen Versionen und Betriebssysteme deckt allein die CI auf GitHub ab.
-- Python 3.10 hat im Oktober 2026 sein Lebensende erreicht. Der Brief nennt es trotzdem als älteste unterstützte Version.
+- Python 3.10 hat im Oktober 2026 sein Lebensende erreicht. Der Visionär hat am 17.11.2026 bestätigt, dass es bleibt (Entscheidung 0002).
 - Die Ankündigung in Issue #807 des Originals fehlt weiterhin.
 
 **Offen beim Visionär.**

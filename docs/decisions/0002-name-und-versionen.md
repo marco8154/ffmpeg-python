@@ -20,6 +20,7 @@ Das Original heißt auf PyPI `ffmpeg-python` und wird als `import ffmpeg` benutz
 
 - Neuer Importname (zum Beispiel `ffmpeg_ng`): beide Pakete wären nebeneinander installierbar, aber jeder Nutzer müsste seinen Code ändern. Das widerspricht der Säule Kompatibilität.
 - Python 3.8 und 3.9 weiter unterstützen: beide bekommen keine Sicherheitsupdates mehr.
+- Python 3.10 streichen (am 17.11.2026 erneut geprüft, abgelehnt): Die Bibliothek braucht nichts aus 3.11. Ubuntu 22.04 bringt 3.10 mit, und Nutzer dort könnten sonst nicht umsteigen und blieben beim Original mit `future`. Streichen später nur mit konkretem Grund, als eigene Entscheidung im Changelog.
 
 ## Folgen
 
