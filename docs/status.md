@@ -1,5 +1,11 @@
 # Status
 
+## 18.11.2026, Routinezyklus des Lead-Dienstes
+
+**Lage.** Unverändert seit gestern Abend: keine Nachrichten, keine Funde, kein Feedback, kein Agent aktiv. #543, #545 und #549 warten seit 21 Stunden auf eine Peer-Review. Alle drei kommen vom Konto des Visionärs, also kann nur eine andere Person mit Vertrauensstufe 1 sie freigeben. Frei ist nur #429, 16 Aufgaben sind blockiert. Dem Visionär habe ich den Engpass gemeldet (Nachricht #63) und vorgeschlagen, in #807 des Originals um Reviewer zu werben.
+
+**Nächste Schritte.** Unverändert die Liste vom 17.11. (unten).
+
 ## 17.11.2026, Routinezyklus des Lead-Dienstes
 
 **Lage.** Keine Nachrichten, keine Funde, kein Feedback, kein Agent aktiv. Neu eingereicht: #549 (Aufgabe #428, Testdatei ohne Python-2-Reste, 70 Tests grün, beide Warnungen weg). Sie stammt wie #543 und #545 vom Konto des Visionärs; ich habe den Patch gegen alle sechs Vorgaben geprüft, keinen Fehler gefunden und fünf Prüffragen für die Peer-Review gesetzt. Engpass laut `metrics`: Peer-Review (drei Einreichungen warten, die älteste seit 7,6 Stunden); verfügbar ist nur eine Aufgabe (#429), 16 sind blockiert, bis #427 und #431 gemergt sind.
