@@ -30,7 +30,7 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | E8 | W-9: `docs/inherited-pull-requests.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | eingereicht: Aufgabe #431 (Einreichung #545), wartet auf Peer-Review |
 | E9 | W-9: offene Issues des Originals gesichtet, vier Blöcke nach Nummern unter `docs/inherited-issues/` | Schwarm | A | E8 | angelegt: Aufgaben #434 bis #437, warten auf #431 |
 | E10 | `SECURITY.md` (GitHub Security Advisories) | Schwarm | A | F0 | angenommen: Aufgabe #432 |
-| E14 | Issue-Vorlage für Fehlerberichte (`.github/ISSUE_TEMPLATE/`) | Lead | D | F0 | geplant; `.github/` ist geschützt |
+| E14 | Issue-Vorlage für Fehlerberichte (`.github/ISSUE_TEMPLATE/`) | Lead | D | F0 | erledigt: Aufgabe #556 am 19.11.2026; wirkt, sobald Issues auf dem Repo eingeschaltet sind |
 | E11 | Release-Workflow mit PyPI Trusted Publishing | Lead | D | E5 | geplant; braucht den Visionär auf PyPI |
 | E12 | W-11: Release 0.3.0 | Visionär gibt frei | – | alle | geplant |
 | E13 | W-12: Nutzern Bescheid geben (#807, #877 im Original) | Visionär | – | E12 | geplant |

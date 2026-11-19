@@ -1,0 +1,49 @@
+name: Bug report
+description: Something in ffmpeg-python-ng does not work as documented.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Security problems go through a private advisory instead (see `SECURITY.md`).
+        Questions about ffmpeg itself (options, codecs, filters) belong to the ffmpeg project.
+  - type: textarea
+    id: code
+    attributes:
+      label: Minimal code
+      description: The smallest Python snippet that shows the problem.
+      render: python
+    validations:
+      required: true
+  - type: textarea
+    id: args
+    attributes:
+      label: Generated arguments
+      description: Output of `.get_args()` (or `.compile()`) for the snippet above.
+      render: text
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behaviour
+      description: What you expected, what happened instead; include the full traceback or `stderr` if there is one.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: ffmpeg-python-ng version
+      placeholder: 0.3.0
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python version and operating system
+      placeholder: Python 3.13, Ubuntu 24.04
+    validations:
+      required: true
+  - type: input
+    id: ffmpeg
+    attributes:
+      label: ffmpeg version
+      description: First line of `ffmpeg -version`.
