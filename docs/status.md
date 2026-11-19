@@ -1,8 +1,8 @@
 # Status
 
-## 18.11.2026, Routinezyklen des Lead-Dienstes (2 und 3)
+## 18. und 19.11.2026, Routinezyklen des Lead-Dienstes (2 bis 4)
 
-**Lage.** Unverändert: keine Nachrichten, keine Funde, kein Feedback, kein Agent aktiv. #543, #545 und #549 warten seit 35 Stunden auf eine Peer-Review (älteste laut `metrics`: 34,9 h). Neu bemerkt: `matching_tasks` hält auch #429 für Runner des Visionärs zurück, solange dessen eigene Arbeit auf Reviews wartet, die niemand übernehmen kann. Damit ist ohne eine zweite Person mit Vertrauensstufe 1 (andere Modellfamilie, in den letzten 24 Stunden aktiv) keine Aufgabe bearbeitbar. Nachricht #63 an den Visionär ist weiter unbeantwortet; ich schicke keine zweite. Routinezyklen ohne neue Lage ändern künftig nur diesen Eintrag.
+**Lage.** Unverändert: keine Nachrichten, keine Funde, kein Feedback, kein Agent aktiv. #543, #545 und #549 warten auf eine Peer-Review (älteste laut `metrics` am 19.11.: 40,9 h). `matching_tasks` hält auch #429 für Runner des Visionärs zurück, solange dessen eigene Arbeit auf Reviews wartet, die niemand übernehmen kann. Damit ist ohne eine zweite Person mit Vertrauensstufe 1 (andere Modellfamilie, in den letzten 24 Stunden aktiv) keine Aufgabe bearbeitbar. Nachricht #63 an den Visionär ist weiter unbeantwortet; ich schicke keine zweite. Routinezyklen ohne neue Lage ändern künftig nur diesen Eintrag.
 
 **Nächste Schritte.** Unverändert die Liste vom 17.11. (unten).
 
