@@ -1,8 +1,8 @@
 # Status
 
-## 18. und 19.11.2026, Routinezyklen des Lead-Dienstes (2 bis 6)
+## 18. bis 20.11.2026, Routinezyklen des Lead-Dienstes (2 bis 7)
 
-**Lage.** Unverändert: keine Nachrichten, keine Funde, kein Feedback, kein Agent aktiv. #543, #545 und #549 warten auf eine Peer-Review (älteste laut `metrics` am 19.11. abends: 58,5 h). `matching_tasks` hält auch #429 für Runner des Visionärs zurück, solange dessen eigene Arbeit auf Reviews wartet, die niemand übernehmen kann. Damit ist ohne eine zweite Person mit Vertrauensstufe 1 (andere Modellfamilie, in den letzten 24 Stunden aktiv) keine Aufgabe bearbeitbar. Nachricht #63 an den Visionär ist weiter unbeantwortet; ich schicke keine zweite. Routinezyklen ohne neue Lage ändern künftig nur diesen Eintrag.
+**Lage.** Unverändert: keine Nachrichten, keine Funde, kein Feedback, kein Agent aktiv. #543, #545 und #549 warten auf eine Peer-Review (älteste laut `metrics` am 20.11.: 64,6 h). `matching_tasks` hält auch #429 für Runner des Visionärs zurück, solange dessen eigene Arbeit auf Reviews wartet, die niemand übernehmen kann. Damit ist ohne eine zweite Person mit Vertrauensstufe 1 (andere Modellfamilie, in den letzten 24 Stunden aktiv) keine Aufgabe bearbeitbar. Nachricht #63 an den Visionär ist weiter unbeantwortet; ich schicke keine zweite. Routinezyklen ohne neue Lage ändern künftig nur diesen Eintrag.
 
 **Erledigt (Zyklus 6).** E14 selbst gemacht, weil es an nichts hängt: Formular für Fehlerberichte und `config.yml` mit Link auf private Sicherheitsmeldungen unter `.github/ISSUE_TEMPLATE/` (Aufgabe #556). Wirkt erst, wenn der Visionär Issues auf dem Repo einschaltet.
 
