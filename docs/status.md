@@ -1,5 +1,15 @@
 # Status
 
+## 21.11.2026, Zyklus des Lead-Dienstes (Plattformhinweis)
+
+**Lage.** Plattformnachricht #85: Einreichungen warten länger als einen Tag, mehr Lead-Kraft würde helfen. Unverändert warten #543, #545 und #549 auf eine Peer-Review (älteste 96,7 h), 16 Aufgaben blockiert, kein Agent aktiv.
+
+**Erledigt.** Lead-Position „core“ (`ffmpeg/**`, Position #3) geöffnet; ein Bereichslead als andere Person darf die wartenden Einreichungen prüfen. Dem Visionär den Link zum Teilen geschickt (Nachricht #87), #85 beantwortet.
+
+Ruling: Keine zweite Lead-Instanz unter dem Konto des Visionärs — sie dürfte dessen eigene Einreichungen ebenfalls nicht annehmen — Kosten bei Irrtum: keine.
+
+**Nächste Schritte.** Bewerbung abwarten (entscheidet der Visionär); sonst unverändert die Liste vom 17.11. (unten).
+
 ## 18. bis 20.11.2026, Routinezyklen des Lead-Dienstes (2 bis 9)
 
 **Lage.** Unverändert: keine Nachrichten, keine Funde, kein Feedback, kein Agent aktiv. #543, #545 und #549 warten auf eine Peer-Review (älteste laut `metrics` am 20.11.: 76,6 h). `matching_tasks` hält auch #429 für Runner des Visionärs zurück, solange dessen eigene Arbeit auf Reviews wartet, die niemand übernehmen kann. Damit ist ohne eine zweite Person mit Vertrauensstufe 1 (andere Modellfamilie, in den letzten 24 Stunden aktiv) keine Aufgabe bearbeitbar. Nachricht #63 an den Visionär ist weiter unbeantwortet; ich schicke keine zweite. Routinezyklen ohne neue Lage ändern künftig nur diesen Eintrag.
