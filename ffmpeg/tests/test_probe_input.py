@@ -18,6 +18,7 @@ def test_probe_signature():
         'cmd',
         'timeout',
         'input',
+        'capture_stderr',
         'kwargs',
     ]
 
