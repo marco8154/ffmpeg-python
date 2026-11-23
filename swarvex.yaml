@@ -1,7 +1,7 @@
 # Testvertrag von ffmpeg-python-ng. Geschuetzter Pfad: nur Lead und Visionaer aendern ihn.
 # Die Umgebung (Python, ffmpeg, pytest) steht in .devcontainer/Dockerfile.
 # Pruefen mit: swarvex env
-# Alles Noetige steckt im Image; die alte requirements.txt von 2019 wird nicht installiert.
+# Alles Noetige steckt im Image; der Build steht in pyproject.toml, future ist nicht mehr installiert.
 setup: "true"
 test: |
   ffmpeg -version | head -n 1

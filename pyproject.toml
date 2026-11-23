@@ -1,6 +1,80 @@
+[build-system]
+requires = ['setuptools>=77']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'ffmpeg-python-ng'
+version = '0.3.0'
+description = 'Python bindings for FFmpeg - with complex filtering support'
+readme = 'README.md'
+requires-python = '>=3.10'
+license = 'Apache-2.0'
+license-files = ['LICENSE']
+authors = [{ name = 'Karl Kroening', email = 'karlk@kralnet.us' }]
+dependencies = []
+keywords = [
+    '-vf',
+    'a/v',
+    'audio',
+    'dsp',
+    'FFmpeg',
+    'ffmpeg',
+    'ffprobe',
+    'filtering',
+    'filter_complex',
+    'movie',
+    'render',
+    'signals',
+    'sound',
+    'streaming',
+    'streams',
+    'vf',
+    'video',
+    'wrapper',
+    'aac',
+    'ac3',
+    'avi',
+    'bmp',
+    'flac',
+    'gif',
+    'mov',
+    'mp3',
+    'mp4',
+    'png',
+    'raw',
+    'rawvideo',
+    'wav',
+]
+classifiers = [
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3 :: Only',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+    'Programming Language :: Python :: 3.14',
+    'Programming Language :: Python :: 3.15',
+    'Topic :: Multimedia :: Sound/Audio',
+    'Topic :: Multimedia :: Video',
+]
+
+[project.urls]
+Homepage = 'https://github.com/marco8154/ffmpeg-python'
+Source = 'https://github.com/marco8154/ffmpeg-python'
+Original = 'https://github.com/kkroening/ffmpeg-python'
+Documentation = 'https://kkroening.github.io/ffmpeg-python/'
+
+[tool.setuptools]
+# Same as the original setup.py: the tests are not part of the package.
+packages = ['ffmpeg']
+
 [tool.black]
 skip-string-normalization = true
-target_version = ['py27']  # TODO: drop Python 2 support (... "Soon").
+target-version = ['py310']
 include = '\.pyi?$'
 exclude = '''
 (

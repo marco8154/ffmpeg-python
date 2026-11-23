@@ -1,6 +1,6 @@
 # Plan
 
-Stand: 17.11.2026. Schätzung für Meilenstein 1 auf swarvex: 17 Aufgaben (E9 in vier Blöcken).
+Stand: 23.11.2026. Schätzung für Meilenstein 1 auf swarvex: 17 Aufgaben (E9 in vier Blöcken).
 
 ## Globale Vorgaben (binden jede Aufgabe)
 
@@ -20,14 +20,14 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | W-3 | Lizenz geerbt | Lead | D | – | erledigt: `LICENSE` unverändert, keine `NOTICE`, keine Lizenzköpfe im Original |
 | W-4 | Name geklärt | Visionär | – | – | erledigt: Paket `ffmpeg-python-ng`, Repo `marco8154/ffmpeg-python` (Entscheidung 0002) |
 | F0 | Fundament: Testvertrag, Umgebung, `AGENTS.md`, Skills, CI, zwei Tests unabhängig von der ffmpeg-Version | Lead | D | – | erledigt: `5677b37`, `59a699d` |
-| E1 | `future` und `past` aus `ffmpeg/_utils.py`, `ffmpeg/_ffmpeg.py`, `ffmpeg/nodes.py` entfernen; Test: `import ffmpeg` gelingt ohne `future` | Schwarm | B | F0 | eingereicht: Aufgabe #427 (Einreichung #543), wartet auf Peer-Review |
-| E2 | Python-2-Reste entfernen (`from __future__ import`, `from builtins import`, Zweige auf `sys.version_info`, Ausweich-Importe) in `ffmpeg/*.py` ohne Tests | Schwarm | B | E1, E4 | angelegt: Aufgabe #433, wartet auf #427 und #429 |
-| E3 | Python-2-Reste und zwei Warnungen in `ffmpeg/tests/test_ffmpeg.py` beheben (Rückgabewert in `test_fluent_complex_filter`, Regex-Warnung) | Schwarm | B | F0 | eingereicht: Aufgabe #428 (Einreichung #549), wartet auf Peer-Review |
-| E4 | W-8: `mkstemp` statt `mktemp` in `ffmpeg/_view.py`, mit Test; übernommener Patch von Sarthak Munshi (grantnegri `c1ef452`) | Schwarm | B | F0 | offen: Aufgabe #429 |
-| E5 | W-5: Build über `pyproject.toml` mit setuptools, Name `ffmpeg-python-ng`, Version 0.3.0, keine Abhängigkeiten, `requires-python = ">=3.10"` ohne Obergrenze, Klassifizierer 3.10 bis 3.15; `setup.py`, `setup.cfg`, `tox.ini`, `MANIFEST`, `requirements.txt` entfallen; `future` aus der Umgebung | Lead | D | E1, E2 | geplant |
+| E1 | `future` und `past` aus `ffmpeg/_utils.py`, `ffmpeg/_ffmpeg.py`, `ffmpeg/nodes.py` entfernen; Test: `import ffmpeg` gelingt ohne `future` | Schwarm | B | F0 | gemergt: Aufgabe #427 (`815aa2c`) |
+| E2 | Python-2-Reste entfernen (`from __future__ import`, `from builtins import`, Zweige auf `sys.version_info`, Ausweich-Importe) in `ffmpeg/*.py` ohne Tests | Schwarm | B | E1, E4 | gemergt: Aufgabe #433 (`5c006b3`) |
+| E3 | Python-2-Reste und zwei Warnungen in `ffmpeg/tests/test_ffmpeg.py` beheben (Rückgabewert in `test_fluent_complex_filter`, Regex-Warnung) | Schwarm | B | F0 | gemergt: Aufgabe #428 (`56ef339`) |
+| E4 | W-8: `mkstemp` statt `mktemp` in `ffmpeg/_view.py`, mit Test; übernommener Patch von Sarthak Munshi (grantnegri `c1ef452`) | Schwarm | B | F0 | gemergt: Aufgabe #429 (`a2c0177`) |
+| E5 | W-5: Build über `pyproject.toml` mit setuptools, Name `ffmpeg-python-ng`, Version 0.3.0, keine Abhängigkeiten, `requires-python = ">=3.10"` ohne Obergrenze, Klassifizierer 3.10 bis 3.15; `setup.py`, `setup.cfg`, `tox.ini`, `MANIFEST`, `requirements.txt` entfallen; `future` aus der Umgebung | Lead | D | E1, E2 | erledigt: Aufgabe #604 am 23.11.2026; Build ungeprüft, bis die CI läuft (Sandbox ohne setuptools) |
 | E6 | W-10: `CREDITS.md` mit den Autoren aus der Git-Historie | Schwarm | A | F0 | angenommen: Aufgabe #430 |
 | E7 | W-11, W-4: README erledigt vom Lead am 17.11.2026 (Hinweis auf das Original, Umstiegshinweis, Installation von GitHub, Badges und Links auf die Fortführung). Offen: `CHANGELOG.md` und in der README die PyPI-Installation als Hauptweg, sobald 0.3.0 veröffentlicht ist | Schwarm | B | E5 | README erledigt, Rest geplant |
-| E8 | W-9: `docs/inherited-pull-requests.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | eingereicht: Aufgabe #431 (Einreichung #545), wartet auf Peer-Review |
+| E8 | W-9: `docs/inherited-pull-requests.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | Nacharbeit: Aufgabe #431; die Peer-Review hatte kein Netzwerk und konnte die Fakten nicht prüfen |
 | E9 | W-9: offene Issues des Originals gesichtet, vier Blöcke nach Nummern unter `docs/inherited-issues/` | Schwarm | A | E8 | angelegt: Aufgaben #434 bis #437, warten auf #431 |
 | E10 | `SECURITY.md` (GitHub Security Advisories) | Schwarm | A | F0 | angenommen: Aufgabe #432 |
 | E14 | Issue-Vorlage für Fehlerberichte (`.github/ISSUE_TEMPLATE/`) | Lead | D | F0 | erledigt: Aufgabe #556 am 19.11.2026; wirkt, sobald Issues auf dem Repo eingeschaltet sind |

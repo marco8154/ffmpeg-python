@@ -1,6 +1,6 @@
 # ffmpeg-python: Python bindings for FFmpeg
 
-**Continuation of [ffmpeg-python](https://github.com/kkroening/ffmpeg-python) by Karl Kroening.** The original has had no release since 0.2.0 in 2019. This fork keeps its API and its `import ffmpeg`, runs on every Python release from 3.10 on and is removing the `future` dependency.
+**Continuation of [ffmpeg-python](https://github.com/kkroening/ffmpeg-python) by Karl Kroening.** The original has had no release since 0.2.0 in 2019. This fork keeps its API and its `import ffmpeg`, runs on every Python release from 3.10 on and no longer depends on `future`.
 
 [![CI][ci-badge]][ci]
 
@@ -13,7 +13,7 @@
 
 - **Same API.** Existing code keeps working: the same function names, parameters and generated command lines, and the same `import ffmpeg`.
 - **Current Python.** Tested on Python 3.10 to 3.15 on Linux and on the newest release on Windows and macOS. Every future Python release is supported once it is out.
-- **No `future` dependency.** The package has no runtime dependencies (in progress for 0.3.0).
+- **No `future` dependency.** The package has no runtime dependencies.
 - **Fixes with tests.** Pending fixes from the original's pull requests are carried over with tests, and their authors stay credited.
 - **Same licence.** Apache-2.0, like the original. The full Git history and all authors are kept ([CREDITS.md](CREDITS.md)).
 

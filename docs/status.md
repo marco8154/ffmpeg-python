@@ -1,5 +1,27 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Review #775, E5)
+
+**Lage.** #774 (Aufgabe #429) ist gemergt (`a2c0177`). Kein Agent aktiv, keine Nachrichten, keine Funde. Engpass laut `metrics`: Mitwirkende.
+
+**Erledigt.**
+
+- #775 (Aufgabe #433, E2, Python-2-Reste aus dem Paket) angenommen. Nachgeprüft auf `a2c0177`: `test_no_py2.py` vorher rot (8 failed, 1 passed), nachher grün; 84 Tests grün; `__all__` bleibt bei 27. Gemergt als `5c006b3`; damit sind #440, #442, #445, #447, #448, #449 und #450 frei. Auf `5c006b3` mit gesperrtem `future`: 84 Tests grün.
+- E5 selbst erledigt (Aufgabe #604): `pyproject.toml` (setuptools ≥ 77, `ffmpeg-python-ng` 0.3.0, keine Abhängigkeiten, `requires-python = ">=3.10"`, Lizenz als SPDX-Ausdruck), `setup.py`, `setup.cfg`, `tox.ini`, `MANIFEST`, `requirements.txt` entfernt, `future` aus dem Dockerfile. Den CI-Job `build` (sdist, Wheel, `twine check --strict`, Wheel ohne `future` installieren) darf der Lead-Dienst nicht pushen (keine Rechte auf `.github/workflows/`); er ging als Text an den Visionär. Tests laufen mit gesperrtem `future` grün (75 auf `a2c0177`).
+
+Ruling: E5 vor dem Merge von #433 umgesetzt — E5 berührt kein `ffmpeg/`, und die verbliebenen Importe (`builtins`, `__future__`) sind Standardbibliothek, laufen also ohne `future` — Kosten bei Irrtum: Pipeline rot bis zum Merge von #433.
+
+**Risiko.** Den Build kann ich in der Sandbox nicht prüfen (kein setuptools, kein Netzwerk für pip). Ob `pyproject.toml` baut, zeigt erst der CI-Job `build`. Er läuft, wenn der Visionär ihn einträgt und Actions auf dem Fork einschaltet; bis dahin prüft der bestehende Job `pip install -e .` den Build zumindest teilweise.
+
+**#431 (PR-Sichtung) in Nacharbeit.** Der Peer-Reviewer (nevs84) hatte kein Netzwerk und konnte die 46 Zeilen nicht gegen GitHub prüfen; strukturell fand er alles in Ordnung, nur bei #625 soll der Grund eine der drei Regeln nennen. Die Aufgabe liegt 24 h beim Runner des Visionärs. Wenn sie wieder eingereicht ist: Prüffragen setzen, die offline prüfbar sind (Struktur, Summen, Regel je `decline`), und im Hinweis sagen, dass ich die `take-0.3.1`-Diffs am 17.11. selbst per `git fetch` gelesen habe.
+
+**Nächste Schritte.**
+
+1. Die freigegebenen Aufgaben (#440, #442 …) beobachten, Einreichungen prüfen.
+2. Wiedereinreichung von #431 mit Prüffragen versehen (siehe oben).
+3. E7 (`CHANGELOG.md`) und E11 (Release-Workflow) als Nächstes schneiden bzw. selbst machen; E11 braucht den Visionär auf PyPI.
+4. Offen beim Visionär: CI-Job `build` in `.github/workflows/ci.yml` eintragen (Nachricht vom 23.11.); unverändert Actions, Issues und private Sicherheitsmeldungen einschalten, Ankündigung in #807.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Review #774)
 
 **Lage.** Der Engpass bei der Peer-Review hat sich gelöst: #543 (Aufgabe #427, `future` entfernt) und #549 (#428, Testdatei) sind nach Peer-Review (nevs84) gemergt (`815aa2c`, `56ef339`). Drei Personen und vier Agenten haben inzwischen beigetragen. Keine Nachrichten, keine Funde.
