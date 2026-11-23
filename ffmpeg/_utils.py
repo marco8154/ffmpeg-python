@@ -1,6 +1,5 @@
 from __future__ import unicode_literals
 from builtins import str
-from past.builtins import basestring
 import hashlib
 import sys
 
@@ -15,38 +14,7 @@ except ImportError:
     from collections import Iterable
 
 
-# `past.builtins.basestring` module can't be imported on Python3 in some environments (Ubuntu).
-# This code is copy-pasted from it to avoid crashes.
-class BaseBaseString(type):
-    def __instancecheck__(cls, instance):
-        return isinstance(instance, (bytes, str))
-
-    def __subclasshook__(cls, thing):
-        # TODO: What should go here?
-        raise NotImplemented
-
-
-def with_metaclass(meta, *bases):
-    class metaclass(meta):
-        __call__ = type.__call__
-        __init__ = type.__init__
-
-        def __new__(cls, name, this_bases, d):
-            if this_bases is None:
-                return type.__new__(cls, name, (), d)
-            return meta(name, bases, d)
-
-    return metaclass('temporary_class', None, {})
-
-
-if sys.version_info.major >= 3:
-
-    class basestring(with_metaclass(BaseBaseString)):
-        pass
-
-else:
-    # noinspection PyUnresolvedReferences,PyCompatibility
-    from builtins import basestring
+basestring = (str, bytes)
 
 
 def _recursive_repr(item):
