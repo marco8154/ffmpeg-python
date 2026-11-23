@@ -1,5 +1,18 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Review #800)
+
+**Lage.** Kein Agent aktiv, `bottleneck`: Mitwirkende. Alle 13 geplanten Aufgaben von 0.3.1 sind angenommen; offen für den Meilenstein bleibt die Sphinx-Referenz (Schätzung bleibt 15). Keine Funde, kein Feedback. Nachricht #90 an den Visionär ist weiter offen.
+
+**Erledigt.** #800 (Aufgabe #608, `CHANGELOG.md` und `CREDITS.md`) angenommen: zehn Tabellenzeilen und elf Changelog-Einträge wortgleich mit der Aufgabe, Linkreferenz repariert, 116 Tests grün.
+
+**Nächste Schritte.**
+
+1. Nach dem Merge von #608: unter `[Unreleased]` → `### Fixed` eine Zeile für #609 ergänzen (`repr()` of a node no longer raises `TypeError`); eigene kleine Änderung des Leads, #608 durfte nichts dazuerfinden.
+2. Sphinx-Referenz für 0.3.1 schneiden (Build lokal prüfbar; Veröffentlichung auf GitHub Pages braucht einen Workflow, also den Visionär).
+3. #431 nach der Wiedereinreichung mit offline prüfbaren Prüffragen versehen.
+4. Offen beim Visionär: Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807); E11 braucht ihn auf PyPI.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Nachricht #90, Routine)
 
 **Lage.** Keine Einreichungen, keine Funde, kein Feedback, kein Agent aktiv; `bottleneck`: Mitwirkende. #444, #607 und #609 sind gemergt (`f9824de`, `56960e4`, `4d42f22`); auf `4d42f22` sind 116 Tests grün. Damit ist #608 (`CREDITS.md`/`CHANGELOG.md`) frei. Der Zyklus lief wegen Nachricht #90; sie ist meine eigene an den Visionär und weiter offen, zu beantworten gab es nichts.

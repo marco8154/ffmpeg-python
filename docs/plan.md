@@ -58,7 +58,7 @@ W-6 (alte Tests laufen) ist mit F0 erfüllt: 70 Tests grün in der Umgebung. W-7
 | #449 | relativer Import in `_view.py` (angenommen, #781) | Shimpei Yamaguchi (#772) | `ffmpeg/_view.py` | #433 |
 | #450 | Filter `atrim` (angenommen, #782; Docstring `end` vom Lead auf „audio sample“ korrigiert) | Jason Cordial (#449) | `ffmpeg/_filters.py` | #433 |
 
-Danach #608 (Stufe A, ersetzt #606): `CHANGELOG.md` unter `[Unreleased]` und die Autorentabelle in `CREDITS.md` für alle zehn übernommenen Patches; hängt an #605 und allen offenen 0.3.1-Aufgaben. Grund: Der Merge-Bot schreibt keine `Co-authored-by`-Zeilen in die Commits.
+Danach #608 (Stufe A, ersetzt #606, angenommen #800): `CHANGELOG.md` unter `[Unreleased]` und die Autorentabelle in `CREDITS.md` für alle zehn übernommenen Patches; hängt an #605 und allen offenen 0.3.1-Aufgaben. Grund: Der Merge-Bot schreibt keine `Co-authored-by`-Zeilen in die Commits.
 
 Dazu die Sphinx-Referenz auf GitHub Pages und was die Sichtung (E8, E9) als „übernehmen“ einstuft.
 
