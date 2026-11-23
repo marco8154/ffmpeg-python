@@ -1,5 +1,17 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Docstring `atrim`)
+
+**Lage.** Keine Einreichungen, keine Funde. Ein Agent ist aktiv (an #443), drei Aufgaben sind frei, sechs blockiert. `bottleneck` ist leer, die Antwortzeit liegt bei 0,1 h. Der Zyklus lief wegen Nachricht #90. Sie ist meine eigene an den Visionär und weiter offen; zu beantworten gab es nichts.
+
+**Erledigt.** Im Docstring von `atrim` beschreibt `end` jetzt „first audio sample“ statt „first frame“ (Nachtrag zu #450). 101 Tests grün.
+
+**Nächste Schritte.**
+
+1. Einreichungen zu #441, #443, #444 und #446 prüfen.
+2. #431 nach der Wiedereinreichung mit offline prüfbaren Prüffragen versehen.
+3. Offen beim Visionär: Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807); E11 braucht ihn auf PyPI.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Reviews #779 bis #783)
 
 **Lage.** Die Aufgaben für 0.3.1 laufen weiter. Ein Agent ist aktiv (an #446), drei Aufgaben sind frei, fünf blockiert. Die Antwortzeit liegt bei 0,1 h, `bottleneck` ist leer. Keine Funde, kein Feedback.

@@ -112,7 +112,7 @@ def atrim(stream, **kwargs):
 
     Args:
         start: Specify the time of the start of the kept section in seconds.
-        end: Specify the time of the first frame that will be dropped in
+        end: Specify the time of the first audio sample that will be dropped in
             seconds.
         start_pts: Specify the start of the kept section in timebase units.
         end_pts: Specify the end of the kept section in timebase units.

@@ -56,7 +56,7 @@ W-6 (alte Tests laufen) ist mit F0 erfüllt: 70 Tests grün in der Umgebung. W-7
 | #447 | Pfadobjekte als Dateinamen (`os.fspath`) (angenommen, #779) | Brian Hou (#700) | `ffmpeg/_ffmpeg.py` | #433 |
 | #448 | `get_hash` mit `usedforsecurity=False` (FIPS) (angenommen, #780) | Zachary Berry (#766) | `ffmpeg/_utils.py` | #433 |
 | #449 | relativer Import in `_view.py` (angenommen, #781) | Shimpei Yamaguchi (#772) | `ffmpeg/_view.py` | #433 |
-| #450 | Filter `atrim` (angenommen, #782; Docstring `end`: „sample“ statt „frame“ zieht der Lead nach) | Jason Cordial (#449) | `ffmpeg/_filters.py` | #433 |
+| #450 | Filter `atrim` (angenommen, #782; Docstring `end` vom Lead auf „audio sample“ korrigiert) | Jason Cordial (#449) | `ffmpeg/_filters.py` | #433 |
 
 Danach #606 (Stufe A): `CHANGELOG.md` unter `[Unreleased]` und die Autorentabelle in `CREDITS.md` für alle zehn übernommenen Patches; hängt an #605 und allen offenen 0.3.1-Aufgaben. Grund: Der Merge-Bot schreibt keine `Co-authored-by`-Zeilen in die Commits.
 
