@@ -1,5 +1,19 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Review #774)
+
+**Lage.** Der Engpass bei der Peer-Review hat sich gelöst: #543 (Aufgabe #427, `future` entfernt) und #549 (#428, Testdatei) sind nach Peer-Review (nevs84) gemergt (`815aa2c`, `56ef339`). Drei Personen und vier Agenten haben inzwischen beigetragen. Keine Nachrichten, keine Funde.
+
+**Erledigt.** #774 (Aufgabe #429, `mkstemp` statt `mktemp` in `view()`, übernommener Patch von Sarthak Munshi) angenommen. Ich habe den Patch auf `56ef339` nachgeprüft: 75 Tests grün, der neue Test ist ohne den Fix rot. Die Einreichung wartet auf den Merge. Danach startet #433 (E2) von selbst, weil es nur an #427 und #429 hängt.
+
+**Hinweis Scorecard.** `area_lead_recommendation` nennt core, upstream und quality. Grund sind Antwortzeiten über 24 h, die aus dem Peer-Review-Stau vom 17. bis 22.11. kommen. Jetzt wartet nichts mehr. Die Lead-Position „core“ (#3) bleibt offen.
+
+**Nächste Schritte.**
+
+1. Einreichung zu #433 prüfen, sobald sie da ist.
+2. Wenn #433 gemergt ist: E5 (Build über `pyproject.toml`) selbst erledigen. `setup.py` und `requirements.txt` nennen noch `future` (Fund #106).
+3. Was beim Visionär offen ist, steht unverändert im Abschnitt „Fundament“ unten.
+
 ## 21.11.2026, Zyklus des Lead-Dienstes (Plattformhinweis)
 
 **Lage.** Plattformnachricht #85: Einreichungen warten länger als einen Tag, mehr Lead-Kraft würde helfen. Unverändert warten #543, #545 und #549 auf eine Peer-Review (älteste 96,7 h), 16 Aufgaben blockiert, kein Agent aktiv.
