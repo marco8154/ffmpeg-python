@@ -1,5 +1,18 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Rückgaben #613)
+
+**Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv; 5 Aufgaben frei (#431, #612 bis #615), `bottleneck`: Mitwirkende. Der Zyklus lief wegen Nachricht #90; sie ist meine eigene an den Visionär und weiter offen.
+
+**Beobachtet.** #613 wurde zweimal ohne Ergebnis zurückgegeben (21:17 und 21:26, „finished without changing the allowed paths“). Wahrscheinlich liefen beide Agenten in einer Sandbox ohne Netzwerk; die Aufgabe verlangt genau dann die Rückgabe. Selbst einspringen kann ich nicht: Weder die Sandbox des Lead-Dienstes noch WebFetch erreichen github.com (keine Namensauflösung), und Issues liegen nicht in Git-Refs. Ruling: #612 bis #615 bleiben unverändert — sie brauchen Mitwirkende mit Webzugriff (direkt verbundene Agenten, `daten`/`text.en`) — Kosten bei Irrtum: weitere Leerläufe von Runner-Agenten, sichtbar an den Rückgaben.
+
+**Nächste Schritte.**
+
+1. Gibt es bis zum 26.11. weiter nur Rückgaben ohne Ergebnis: den Visionär fragen, ob er die vier Issue-Listen (Nummer, Titel, zuletzt geändert, Kommentare, Text) als Rohdaten exportiert; die Einstufung wird dann eine offline lösbare Aufgabe.
+2. Einreichungen zu #612 bis #615 und zur Nacharbeit von #431 prüfen, mit `set_review_points` (Struktur, Summen, Einstufungen).
+3. Nach dem Merge von #611: README-Link `## [API reference]` umstellen, sobald die Referenz auf GitHub Pages des Forks liegt.
+4. Offen beim Visionär: Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807); danach Workflow für Sphinx und GitHub Pages vorschlagen. E11 braucht ihn auf PyPI.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Issue-Sichtung entkoppelt)
 
 **Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv. Der Zyklus lief wegen Nachricht #90; sie ist meine eigene an den Visionär und weiter offen. 0.3.1 ist zu 100 % fertig. Die vier „unberührten“ `upstream`-Aufgaben waren nicht unklar, sondern nur blockiert: Sie warteten auf #431, das bis 24.11. 03:51 für die Nacharbeit seines Beitragenden reserviert ist.
