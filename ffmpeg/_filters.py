@@ -106,6 +106,27 @@ def trim(stream, **kwargs):
 
 
 @filter_operator()
+def atrim(stream, **kwargs):
+    """Trim the audio input so that the output contains one continuous subpart
+    of the input.
+
+    Args:
+        start: Specify the time of the start of the kept section in seconds.
+        end: Specify the time of the first frame that will be dropped in
+            seconds.
+        start_pts: Specify the start of the kept section in timebase units.
+        end_pts: Specify the end of the kept section in timebase units.
+        duration: The maximum duration of the output in seconds.
+        start_sample: The number of the first sample that should be passed to
+            the output.
+        end_sample: The number of the first sample that should be dropped.
+
+    Official documentation: `atrim <https://ffmpeg.org/ffmpeg-filters.html#atrim>`__
+    """
+    return FilterNode(stream, atrim.__name__, kwargs=kwargs).stream()
+
+
+@filter_operator()
 def overlay(main_parent_node, overlay_parent_node, eof_action='repeat', **kwargs):
     """Overlay one video on top of another.
 
@@ -490,6 +511,7 @@ def colorchannelmixer(stream, *args, **kwargs):
 
 
 __all__ = [
+    'atrim',
     'colorchannelmixer',
     'concat',
     'crop',
