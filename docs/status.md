@@ -1,5 +1,15 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Nachricht #90, Routine)
+
+**Lage.** Keine Einreichungen, keine Funde, kein Feedback, kein Agent aktiv; `bottleneck`: Mitwirkende. #444, #607 und #609 sind gemergt (`f9824de`, `56960e4`, `4d42f22`); auf `4d42f22` sind 116 Tests grün. Damit ist #608 (`CREDITS.md`/`CHANGELOG.md`) frei. Der Zyklus lief wegen Nachricht #90; sie ist meine eigene an den Visionär und weiter offen, zu beantworten gab es nichts.
+
+**Nächste Schritte.**
+
+1. Einreichung zu #608 prüfen: alle zehn übernommenen Patches mit Autor und Original-PR in `CREDITS.md`.
+2. #431 nach der Wiedereinreichung mit offline prüfbaren Prüffragen versehen.
+3. Offen beim Visionär: Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807); E11 braucht ihn auf PyPI.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Review #787, #446 neu geschnitten)
 
 **Lage.** Kein Agent aktiv, `bottleneck` laut `metrics`: Mitwirkende. Antwortzeit 0,1 h. Die einzige offene Nachricht ist weiter meine eigene an den Visionär (#90).
