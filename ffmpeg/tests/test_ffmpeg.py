@@ -1,20 +1,10 @@
-from __future__ import unicode_literals
-from builtins import bytes
-from builtins import range
-from builtins import str
 import ffmpeg
 import os
 import pytest
 import random
 import re
 import subprocess
-import sys
-
-
-try:
-    import mock  # python 2
-except ImportError:
-    from unittest import mock  # python 3
+from unittest import mock
 
 
 TEST_DIR = os.path.dirname(__file__)
@@ -72,7 +62,7 @@ def test_fluent_output():
 
 def test_fluent_complex_filter():
     in_file = ffmpeg.input('dummy.mp4')
-    return ffmpeg.concat(
+    ffmpeg.concat(
         in_file.trim(start_frame=10, end_frame=20),
         in_file.trim(start_frame=30, end_frame=40),
         in_file.trim(start_frame=50, end_frame=60),
@@ -756,7 +746,6 @@ def test__probe():
     assert abs(float(data['format']['duration']) - 7.036) < 0.001
 
 
-@pytest.mark.skipif(sys.version_info < (3, 3), reason='requires python3.3 or higher')
 def test__probe_timeout():
     with pytest.raises(subprocess.TimeoutExpired) as excinfo:
         ffmpeg.probe(TEST_INPUT_FILE1, timeout=0)
@@ -776,7 +765,7 @@ def test__probe__extra_args():
 
 
 def get_filter_complex_input(flt, name):
-    m = re.search(r'\[([^]]+)\]{}(?=[[;]|$)'.format(name), flt)
+    m = re.search(r'\[([^]]+)\]{}(?=[\[;]|$)'.format(name), flt)
     if m:
         return m.group(1)
     else:
