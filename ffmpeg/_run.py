@@ -209,6 +209,7 @@ def run_async(
     quiet=False,
     overwrite_output=False,
     cwd=None,
+    popen_args=None,
 ):
     """Asynchronously invoke ffmpeg for the supplied node graph.
 
@@ -222,6 +223,7 @@ def run_async(
             ``capture_stderr``.
         **kwargs: keyword-arguments passed to ``get_args()`` (e.g.
             ``overwrite_output=True``).
+        popen_args: A dictionary of keyword arguments passed to Popen().
 
     Returns:
         A `subprocess Popen`_ object representing the child process.
@@ -294,12 +296,15 @@ def run_async(
     if quiet:
         stderr_stream = subprocess.STDOUT
         stdout_stream = subprocess.DEVNULL
+    if popen_args is None:
+        popen_args = {}
     return subprocess.Popen(
         args,
         stdin=stdin_stream,
         stdout=stdout_stream,
         stderr=stderr_stream,
         cwd=cwd,
+        **popen_args,
     )
 
 
