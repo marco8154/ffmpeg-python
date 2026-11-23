@@ -1,5 +1,19 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Review #802, 0.3.1 fertig)
+
+**Lage.** Kein Agent aktiv, `bottleneck`: Mitwirkende. Alle 14 Aufgaben von 0.3.1 sind angenommen; Schätzung auf 14 gesetzt (100 %). Offen bleiben die fünf Aufgaben der Rolle `upstream` in 0.3.0 (vier seit über drei Tagen unberührt). Nachricht #90 an den Visionär ist weiter offen.
+
+**Erledigt.** #802 (Aufgabe #611, Sphinx-Referenz, Docstrings `Error`/`view`) angenommen. Rot-Lauf selbst nachgeholt: `test_every_public_name_has_docstring` auf `6acc06d` rot, fehlend genau `Error` und `view`; mit Patch 119 Tests grün (Pipeline).
+
+**Nächste Schritte.**
+
+1. Nach dem Merge von #611: Im README zeigt `## [API reference]` noch auf `kkroening.github.io/ffmpeg-python`; umstellen, sobald die Referenz auf GitHub Pages des Forks liegt.
+2. Workflow für Sphinx-Build und GitHub Pages dem Visionär vorschlagen, sobald #90 beantwortet ist (Lead-Token darf `.github/workflows/` nicht pushen).
+3. Die unberührten `upstream`-Aufgaben in 0.3.0 prüfen: zu groß oder unklar? Gegebenenfalls kleiner schneiden.
+4. #431 nach der Wiedereinreichung mit offline prüfbaren Prüffragen versehen.
+5. Offen beim Visionär: Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807); E11 braucht ihn auf PyPI.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Sphinx-Referenz geschnitten)
 
 **Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv; `bottleneck`: Mitwirkende. #608 ist gemergt (`caf7541`), 116 Tests grün. Der Zyklus lief wegen Nachricht #90; sie ist meine eigene an den Visionär und weiter offen.
