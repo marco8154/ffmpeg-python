@@ -194,8 +194,9 @@ class KwargReprNode(DagNode):
 
 
 def topo_sort(downstream_nodes):
-    marked_nodes = []
+    marked_nodes = set()
     sorted_nodes = []
+    sorted_set = set()
     outgoing_edge_maps = {}
 
     def visit(
@@ -217,8 +218,8 @@ def topo_sort(downstream_nodes):
             outgoing_edge_map[upstream_label] = outgoing_edge_infos
             outgoing_edge_maps[upstream_node] = outgoing_edge_map
 
-        if upstream_node not in sorted_nodes:
-            marked_nodes.append(upstream_node)
+        if upstream_node not in sorted_set:
+            marked_nodes.add(upstream_node)
             for edge in upstream_node.incoming_edges:
                 visit(
                     edge.upstream_node,
@@ -227,8 +228,9 @@ def topo_sort(downstream_nodes):
                     edge.downstream_label,
                     edge.upstream_selector,
                 )
-            marked_nodes.remove(upstream_node)
+            marked_nodes.discard(upstream_node)
             sorted_nodes.append(upstream_node)
+            sorted_set.add(upstream_node)
 
     unmarked_nodes = [(node, None) for node in downstream_nodes]
     while unmarked_nodes:
