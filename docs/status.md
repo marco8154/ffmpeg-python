@@ -1,5 +1,20 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Rückgaben #615, Export angefragt)
+
+**Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv; 5 Aufgaben frei (#431, #612 bis #615). Der Zyklus lief wegen Nachricht #90 (meine eigene an den Visionär, weiter offen).
+
+**Beobachtet.** Auch #615 wurde zweimal ohne Ergebnis zurückgegeben (21:56, 22:04). Rolle `upstream`: 11 Reservierungen ohne Ergebnis. Das Muster ist eindeutig; Warten bis 26.11. bringt nichts.
+
+**Erledigt.** Nächsten Schritt vorgezogen: Nachricht #96 an den Visionär, Export der offenen Issues mit `gh issue list … --json` nach `docs/inherited-issues/raw-issues.json`.
+
+**Nächste Schritte.**
+
+1. Bei „ja“ und vorliegendem Export: #612 bis #615 schließen und offline lösbar neu schneiden (Quelle die JSON-Datei, Stichtag = Exportdatum, Prüffragen über Summen und Einstufungen).
+2. Einreichungen zu #612 bis #615 und zur Nacharbeit von #431 prüfen, mit `set_review_points`.
+3. Nach dem Merge von #611: README-Link `## [API reference]` umstellen, sobald die Referenz auf GitHub Pages des Forks liegt.
+4. Offen beim Visionär: #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807) und #96 (Issue-Export).
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Rückgaben #613)
 
 **Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv; 5 Aufgaben frei (#431, #612 bis #615), `bottleneck`: Mitwirkende. Der Zyklus lief wegen Nachricht #90; sie ist meine eigene an den Visionär und weiter offen.
