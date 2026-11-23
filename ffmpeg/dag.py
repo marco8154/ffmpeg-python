@@ -57,7 +57,7 @@ class DagNode(object):
         """
         raise NotImplementedError()
 
-    def __repr__(self, other):
+    def __repr__(self):
         """Return a full string representation of the node."""
         raise NotImplementedError()
 
