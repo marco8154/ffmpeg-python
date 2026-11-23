@@ -1,17 +1,6 @@
-from __future__ import unicode_literals
-from builtins import str
 import hashlib
-import sys
 
-
-if sys.version_info.major == 2:
-    # noinspection PyUnresolvedReferences,PyShadowingBuiltins
-    str = str
-
-try:
-    from collections.abc import Iterable
-except ImportError:
-    from collections import Iterable
+from collections.abc import Iterable
 
 
 basestring = (str, bytes)

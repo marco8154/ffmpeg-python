@@ -1,4 +1,3 @@
-from __future__ import unicode_literals
 from . import nodes
 from . import _ffmpeg
 from . import _filters
