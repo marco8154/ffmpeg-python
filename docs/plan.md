@@ -49,7 +49,7 @@ W-6 (alte Tests laufen) ist mit F0 erfüllt: 70 Tests grün in der Umgebung. W-7
 | Aufgabe | Inhalt | Autor im Original (PR) | Dateien | Hängt ab von |
 |---|---|---|---|---|
 | #442 | Stream-Selektor mit Index 0 (angenommen, #776) | Artem Eltyshev (#490) | `ffmpeg/_run.py` | #433 |
-| #443 | `explicit_maps` für `get_args()`/`compile()` | Artem Eltyshev (#403) | `ffmpeg/_run.py` | #442 |
+| #443 | `explicit_maps` für `get_args()`/`compile()` (angenommen, #785) | Artem Eltyshev (#403) | `ffmpeg/_run.py` | #442 |
 | #444 | `popen_args` für `run_async()` | Michael Litvin (#675) | `ffmpeg/_run.py` | #443 |
 | #445 | Pipe-Eingabe für `probe()`; `input` nach `timeout` (angenommen, #778) | Rocky Cai (#588) | `ffmpeg/_probe.py` | #433 |
 | #446 | `capture_stderr` für `probe()` | Ezequiel Ramos (#609) | `ffmpeg/_probe.py` | #445 |

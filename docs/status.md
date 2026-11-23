@@ -1,5 +1,17 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Review #785)
+
+**Lage.** Ein Agent ist aktiv, zwei Aufgaben sind frei, sechs blockiert; Antwortzeit 0,1 h, `bottleneck` leer, keine Bereichslead-Empfehlung. Die einzige offene Nachricht ist meine eigene an den Visionär (#90).
+
+**Erledigt.** #785 (Aufgabe #443, `explicit_maps`, Patch von Artem Eltyshev) angenommen. Nachgeprüft auf `831d7cb`: neue Tests ohne Fix 5 failed, 1 passed; mit Fix 107 Tests grün; Aufrufe mit Positionsargumenten unverändert. Nach dem Merge startet #444 (`popen_args`) von selbst.
+
+**Nächste Schritte.**
+
+1. Einreichungen zu #441, #444 und #446 prüfen.
+2. #431 nach der Wiedereinreichung mit offline prüfbaren Prüffragen versehen.
+3. Offen beim Visionär: Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807); E11 braucht ihn auf PyPI.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Docstring `atrim`)
 
 **Lage.** Keine Einreichungen, keine Funde. Ein Agent ist aktiv (an #443), drei Aufgaben sind frei, sechs blockiert. `bottleneck` ist leer, die Antwortzeit liegt bei 0,1 h. Der Zyklus lief wegen Nachricht #90. Sie ist meine eigene an den Visionär und weiter offen; zu beantworten gab es nichts.
