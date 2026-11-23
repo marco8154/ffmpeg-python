@@ -52,17 +52,17 @@ W-6 (alte Tests laufen) ist mit F0 erfüllt: 70 Tests grün in der Umgebung. W-7
 | #443 | `explicit_maps` für `get_args()`/`compile()` (angenommen, #785) | Artem Eltyshev (#403) | `ffmpeg/_run.py` | #442 |
 | #444 | `popen_args` für `run_async()` | Michael Litvin (#675) | `ffmpeg/_run.py` | #443 |
 | #445 | Pipe-Eingabe für `probe()`; `input` nach `timeout` (angenommen, #778) | Rocky Cai (#588) | `ffmpeg/_probe.py` | #433 |
-| #446 | `capture_stderr` für `probe()` | Ezequiel Ramos (#609) | `ffmpeg/_probe.py` | #445 |
+| #607 | `capture_stderr` für `probe()` (ersetzt #446: `test_probe_input.py` fehlte in den Pfaden) | Ezequiel Ramos (#609) | `ffmpeg/_probe.py`, `ffmpeg/tests/test_probe_input.py` | #445 |
 | #447 | Pfadobjekte als Dateinamen (`os.fspath`) (angenommen, #779) | Brian Hou (#700) | `ffmpeg/_ffmpeg.py` | #433 |
 | #448 | `get_hash` mit `usedforsecurity=False` (FIPS) (angenommen, #780) | Zachary Berry (#766) | `ffmpeg/_utils.py` | #433 |
 | #449 | relativer Import in `_view.py` (angenommen, #781) | Shimpei Yamaguchi (#772) | `ffmpeg/_view.py` | #433 |
 | #450 | Filter `atrim` (angenommen, #782; Docstring `end` vom Lead auf „audio sample“ korrigiert) | Jason Cordial (#449) | `ffmpeg/_filters.py` | #433 |
 
-Danach #606 (Stufe A): `CHANGELOG.md` unter `[Unreleased]` und die Autorentabelle in `CREDITS.md` für alle zehn übernommenen Patches; hängt an #605 und allen offenen 0.3.1-Aufgaben. Grund: Der Merge-Bot schreibt keine `Co-authored-by`-Zeilen in die Commits.
+Danach #608 (Stufe A, ersetzt #606): `CHANGELOG.md` unter `[Unreleased]` und die Autorentabelle in `CREDITS.md` für alle zehn übernommenen Patches; hängt an #605 und allen offenen 0.3.1-Aufgaben. Grund: Der Merge-Bot schreibt keine `Co-authored-by`-Zeilen in die Commits.
 
 Dazu die Sphinx-Referenz auf GitHub Pages und was die Sichtung (E8, E9) als „übernehmen“ einstuft.
 
-Große Graphen (Messung vom 17.11.2026, Python 3.14): `get_args()` wächst quadratisch (800 überlagerte Eingänge: 1,7 s) und bricht ab etwa 990 Knoten in einer Kette mit `RecursionError` ab. Ursache ist `topo_sort` in `ffmpeg/dag.py`.
+Große Graphen (Messung vom 17.11.2026, Python 3.14): `get_args()` wächst quadratisch (800 überlagerte Eingänge: 1,7 s) und bricht ab etwa 990 Knoten in einer Kette mit `RecursionError` ab. Ursache ist `topo_sort` in `ffmpeg/dag.py`. Behoben: #440 (Mengen, angenommen #777) und #441 (ohne Rekursion, angenommen #787). Danach #609: `DagNode.__repr__` ohne Parameter `other` (Fund #157).
 
 | Aufgabe | Inhalt | Hängt ab von |
 |---|---|---|

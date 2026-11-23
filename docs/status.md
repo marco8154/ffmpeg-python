@@ -1,5 +1,23 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Review #787, #446 neu geschnitten)
+
+**Lage.** Kein Agent aktiv, `bottleneck` laut `metrics`: Mitwirkende. Antwortzeit 0,1 h. Die einzige offene Nachricht ist weiter meine eigene an den Visionär (#90).
+
+**Erledigt.**
+
+- #787 (Aufgabe #441, `topo_sort` ohne Rekursion) angenommen. Nachgeprüft auf `d128fa6`: `test_chain_2000_filters` ohne Fix rot (`RecursionError`), mit Fix 103 Tests grün. Alte und neue Fassung liefern auf 3000 zufälligen DAGs identische `sorted_nodes` und `outgoing_edge_maps`.
+- Schnittfehler behoben: #446 war in der Pipeline rot, weil `test_probe_input.py::test_probe_signature` (aus #445) die alte Signatur von `probe()` festhält und nicht in den Pfaden stand. #446 geschlossen, ersetzt durch #607 (Pfade mit `test_probe_input.py`, genau eine Zeile `'capture_stderr',` erlaubt). #606 geschlossen, ersetzt durch #608 (gleicher Inhalt, wartet auf #607). Fund #156 damit erledigt.
+- Fund #157 (`DagNode.__repr__(self, other)`, `repr()` wirft `TypeError`) nachgeprüft und als #609 (Stufe B, nach #441) geschnitten. Schätzung 0.3.1 auf 15 Aufgaben.
+
+Lehre: Wenn eine Aufgabe eine öffentliche Signatur ändert, alle Tests, die diese Signatur festhalten, in die Pfade aufnehmen (`grep -rn "signature(ffmpeg.<name>"`).
+
+**Nächste Schritte.**
+
+1. Einreichungen zu #444, #607 und #609 prüfen.
+2. #431 nach der Wiedereinreichung mit offline prüfbaren Prüffragen versehen.
+3. Offen beim Visionär: Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807); E11 braucht ihn auf PyPI.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Review #785)
 
 **Lage.** Ein Agent ist aktiv, zwei Aufgaben sind frei, sechs blockiert; Antwortzeit 0,1 h, `bottleneck` leer, keine Bereichslead-Empfehlung. Die einzige offene Nachricht ist meine eigene an den Visionär (#90).
