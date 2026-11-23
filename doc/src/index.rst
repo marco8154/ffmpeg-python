@@ -1,7 +1,11 @@
-ffmpeg-python: Python bindings for FFmpeg
-=========================================
+ffmpeg-python-ng: Python bindings for FFmpeg
+============================================
 
-:Github: https://github.com/kkroening/ffmpeg-python
+:Github: https://github.com/marco8154/ffmpeg-python
+
+ffmpeg-python-ng continues `ffmpeg-python` by Karl Kroening. The API and
+`import ffmpeg` stay the same, and it requires Python 3.10 or newer.
+See the original at https://github.com/kkroening/ffmpeg-python.
 
 .. toctree::
    :maxdepth: 2

@@ -19,6 +19,14 @@ from collections.abc import Iterable
 
 
 class Error(Exception):
+    """Raised by :func:`run` when ffmpeg exits with a non-zero code.
+
+    Attributes:
+        stdout: captured stdout (bytes) or ``None``, depending on whether
+            output was captured.
+        stderr: captured stderr (bytes) or ``None``, depending on whether
+            output was captured.
+    """
     def __init__(self, cmd, stdout, stderr):
         super(Error, self).__init__(
             '{} error (see stderr output for detail)'.format(cmd)

@@ -29,6 +29,16 @@ def _get_node_color(node):
 
 @stream_operator()
 def view(stream_spec, detail=False, filename=None, pipe=False, **kwargs):
+    """Render the filter graph with graphviz and open the image.
+
+    Requires the ``graphviz`` package; without it an ``ImportError`` is
+    raised.
+
+    Args:
+        detail: include argument details in the node labels.
+        filename: write the image to this file instead of opening it.
+        pipe: return the image as bytes instead of opening it.
+    """
     try:
         import graphviz
     except ImportError:
