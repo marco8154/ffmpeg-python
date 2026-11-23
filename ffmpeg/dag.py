@@ -199,41 +199,50 @@ def topo_sort(downstream_nodes):
     sorted_set = set()
     outgoing_edge_maps = {}
 
-    def visit(
-        upstream_node,
-        upstream_label,
-        downstream_node,
-        downstream_label,
-        downstream_selector=None,
-    ):
-        if upstream_node in marked_nodes:
-            raise RuntimeError('Graph is not a DAG')
-
-        if downstream_node is not None:
-            outgoing_edge_map = outgoing_edge_maps.get(upstream_node, {})
-            outgoing_edge_infos = outgoing_edge_map.get(upstream_label, [])
-            outgoing_edge_infos += [
-                (downstream_node, downstream_label, downstream_selector)
-            ]
-            outgoing_edge_map[upstream_label] = outgoing_edge_infos
-            outgoing_edge_maps[upstream_node] = outgoing_edge_map
-
-        if upstream_node not in sorted_set:
-            marked_nodes.add(upstream_node)
-            for edge in upstream_node.incoming_edges:
-                visit(
-                    edge.upstream_node,
-                    edge.upstream_label,
-                    edge.downstream_node,
-                    edge.downstream_label,
-                    edge.upstream_selector,
-                )
-            marked_nodes.discard(upstream_node)
-            sorted_nodes.append(upstream_node)
-            sorted_set.add(upstream_node)
-
     unmarked_nodes = [(node, None) for node in downstream_nodes]
     while unmarked_nodes:
         upstream_node, upstream_label = unmarked_nodes.pop()
-        visit(upstream_node, upstream_label, None, None)
+        if upstream_node in marked_nodes:
+            raise RuntimeError('Graph is not a DAG')
+        if upstream_node in sorted_set:
+            continue
+        marked_nodes.add(upstream_node)
+        # Each stack frame holds a node, its incoming edges (read once,
+        # because the property rebuilds the list on every access), and the
+        # index of the next edge to visit; this mirrors the call stack of the
+        # recursive depth-first search without recursion.
+        stack = [[upstream_node, upstream_node.incoming_edges, 0]]
+        while stack:
+            frame = stack[-1]
+            node, edges, index = frame
+            if index < len(edges):
+                frame[2] = index + 1
+                edge = edges[index]
+                if edge.upstream_node in marked_nodes:
+                    raise RuntimeError('Graph is not a DAG')
+                outgoing_edge_map = outgoing_edge_maps.get(edge.upstream_node, {})
+                outgoing_edge_infos = outgoing_edge_map.get(edge.upstream_label, [])
+                outgoing_edge_infos += [
+                    (
+                        edge.downstream_node,
+                        edge.downstream_label,
+                        edge.upstream_selector,
+                    )
+                ]
+                outgoing_edge_map[edge.upstream_label] = outgoing_edge_infos
+                outgoing_edge_maps[edge.upstream_node] = outgoing_edge_map
+                if edge.upstream_node not in sorted_set:
+                    marked_nodes.add(edge.upstream_node)
+                    stack.append(
+                        [
+                            edge.upstream_node,
+                            edge.upstream_node.incoming_edges,
+                            0,
+                        ]
+                    )
+            else:
+                stack.pop()
+                marked_nodes.discard(node)
+                sorted_nodes.append(node)
+                sorted_set.add(node)
     return sorted_nodes, outgoing_edge_maps
