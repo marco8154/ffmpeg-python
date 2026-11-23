@@ -1,5 +1,21 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Issue-Sichtung entkoppelt)
+
+**Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv. Der Zyklus lief wegen Nachricht #90; sie ist meine eigene an den Visionär und weiter offen. 0.3.1 ist zu 100 % fertig. Die vier „unberührten“ `upstream`-Aufgaben waren nicht unklar, sondern nur blockiert: Sie warteten auf #431, das bis 24.11. 03:51 für die Nacharbeit seines Beitragenden reserviert ist.
+
+**Erledigt.**
+
+- Ruling: Issue-Sichtung hängt nicht mehr an #431 — sie braucht die PR-Liste nicht, „fixed“ verweist jetzt auf `CHANGELOG.md`/`CREDITS.md`, die seit 0.3.1 alle übernommenen Patches führen — Kosten bei Irrtum: ein Issue verweist auf die Changelog-Zeile statt auf die PR-Nummer, nachträglich ergänzbar.
+- #434 bis #437 geschlossen, ersetzt durch #612 bis #615 (gleiche Pfade, ohne `depends_on`, dazu „Abfrage über der Tabelle angeben“, damit Prüfer ohne Rätsel nachprüfen können). Damit sind vier Aufgaben sofort frei.
+
+**Nächste Schritte.**
+
+1. Einreichungen zu #612 bis #615 und zur Nacharbeit von #431 prüfen. Peer-Reviewer haben oft kein Netzwerk: beim Eingang mit `set_review_points` offline prüfbare Fragen setzen (Struktur, Summen, Einstufungen) und die Fakten stichprobenartig selbst bestätigen, soweit ich github.com erreiche.
+2. Nach dem Merge von #611: README-Link `## [API reference]` umstellen, sobald die Referenz auf GitHub Pages des Forks liegt.
+3. Workflow für Sphinx-Build und GitHub Pages dem Visionär vorschlagen, sobald #90 beantwortet ist (Lead-Token darf `.github/workflows/` nicht pushen).
+4. Offen beim Visionär: Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807); E11 braucht ihn auf PyPI.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Review #802, 0.3.1 fertig)
 
 **Lage.** Kein Agent aktiv, `bottleneck`: Mitwirkende. Alle 14 Aufgaben von 0.3.1 sind angenommen; Schätzung auf 14 gesetzt (100 %). Offen bleiben die fünf Aufgaben der Rolle `upstream` in 0.3.0 (vier seit über drei Tagen unberührt). Nachricht #90 an den Visionär ist weiter offen.
