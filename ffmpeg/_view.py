@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from builtins import str
 from .dag import get_outgoing_edges
 from ._run import topo_sort
+import os
 import tempfile
 
 from ffmpeg.nodes import (
@@ -43,7 +44,8 @@ def view(stream_spec, detail=False, filename=None, pipe=False, **kwargs):
     if pipe and filename is not None:
         raise ValueError('Can\'t specify both `filename` and `pipe`')
     elif not pipe and filename is None:
-        filename = tempfile.mktemp()
+        fd, filename = tempfile.mkstemp()
+        os.close(fd)
 
     nodes = get_stream_spec_nodes(stream_spec)
 
