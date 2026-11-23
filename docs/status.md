@@ -1,5 +1,24 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Sphinx-Referenz geschnitten)
+
+**Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv; `bottleneck`: Mitwirkende. #608 ist gemergt (`caf7541`), 116 Tests grün. Der Zyklus lief wegen Nachricht #90; sie ist meine eigene an den Visionär und weiter offen.
+
+**Erledigt.**
+
+- `CHANGELOG.md`: unter `[Unreleased]` → `### Fixed` die Zeile für #609 (`repr()` of a node no longer raises `TypeError`).
+- Sphinx-Referenz als #611 geschnitten (Stufe B, Rolle docs): `doc/src/conf.py` und `index.rst` auf ffmpeg-python-ng, Docstrings für `Error` und `view`, Test `test_doc_reference.py`. #610 geschlossen, weil ich dort `tomllib` vorgeschrieben hatte (erst ab Python 3.11).
+- Korrektur zum letzten Status: Sphinx ist in der Sandbox nicht installiert, ein Build ist hier nicht prüfbar. Deshalb prüft #611 nur `conf.py`, `index.rst` und Docstrings über pytest.
+
+Lehre: In Testvorgaben nur die Standardbibliothek von Python 3.10 verwenden.
+
+**Nächste Schritte.**
+
+1. Einreichung zu #611 prüfen; danach ist 0.3.1 bis auf die Veröffentlichung der Referenz fertig. Die Schätzung (15) dann auf die tatsächliche Zahl setzen.
+2. Für Sphinx-Build und GitHub Pages braucht es einen Workflow: nach Antwort auf #90 dem Visionär vorschlagen.
+3. #431 nach der Wiedereinreichung mit offline prüfbaren Prüffragen versehen.
+4. Offen beim Visionär: Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807); E11 braucht ihn auf PyPI.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Review #800)
 
 **Lage.** Kein Agent aktiv, `bottleneck`: Mitwirkende. Alle 13 geplanten Aufgaben von 0.3.1 sind angenommen; offen für den Meilenstein bleibt die Sphinx-Referenz (Schätzung bleibt 15). Keine Funde, kein Feedback. Nachricht #90 an den Visionär ist weiter offen.

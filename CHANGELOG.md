@@ -21,6 +21,7 @@ The format follows Keep a Changelog, and the project uses Semantic Versioning.
 - `get_args()` works on FIPS systems (`md5` is called with `usedforsecurity=False`); patch by Zachary Berry.
 - `ffmpeg/_view.py` imports the package relatively, so a vendored copy under another name works; patch by Shimpei Yamaguchi.
 - `get_args()` handles large graphs: visited nodes are kept in sets, and long filter chains (2000 filters) no longer raise `RecursionError`.
+- `repr()` of a node no longer raises `TypeError`.
 
 ## [0.3.0] - unreleased
 

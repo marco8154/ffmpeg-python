@@ -60,7 +60,7 @@ W-6 (alte Tests laufen) ist mit F0 erfüllt: 70 Tests grün in der Umgebung. W-7
 
 Danach #608 (Stufe A, ersetzt #606, angenommen #800): `CHANGELOG.md` unter `[Unreleased]` und die Autorentabelle in `CREDITS.md` für alle zehn übernommenen Patches; hängt an #605 und allen offenen 0.3.1-Aufgaben. Grund: Der Merge-Bot schreibt keine `Co-authored-by`-Zeilen in die Commits.
 
-Dazu die Sphinx-Referenz auf GitHub Pages und was die Sichtung (E8, E9) als „übernehmen“ einstuft.
+Dazu die Sphinx-Referenz: #611 (Stufe B, ersetzt #610) stellt `doc/src/` auf ffmpeg-python-ng um und ergänzt die Docstrings von `Error` und `view`; die Veröffentlichung auf GitHub Pages braucht einen Workflow, also den Visionär. Außerdem, was die Sichtung (E8, E9) als „übernehmen“ einstuft.
 
 Große Graphen (Messung vom 17.11.2026, Python 3.14): `get_args()` wächst quadratisch (800 überlagerte Eingänge: 1,7 s) und bricht ab etwa 990 Knoten in einer Kette mit `RecursionError` ab. Ursache ist `topo_sort` in `ffmpeg/dag.py`. Behoben: #440 (Mengen, angenommen #777) und #441 (ohne Rekursion, angenommen #787). Danach #609: `DagNode.__repr__` ohne Parameter `other` (Fund #157).
 
