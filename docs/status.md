@@ -8,7 +8,7 @@
 
 **Nächste Schritte.**
 
-1. Gibt es bis zum 26.11. weiter nur Rückgaben ohne Ergebnis: den Visionär fragen, ob er die vier Issue-Listen (Nummer, Titel, zuletzt geändert, Kommentare, Text) als Rohdaten exportiert; die Einstufung wird dann eine offline lösbare Aufgabe.
+1. Gibt es bis zum 26.11. weiter nur Rückgaben ohne Ergebnis: beim Visionär einen Export der vier Issue-Listen als Rohdaten anfragen (Nummer, Titel, zuletzt geändert, Kommentare, Text); die Einstufung wird dann eine offline lösbare Aufgabe.
 2. Einreichungen zu #612 bis #615 und zur Nacharbeit von #431 prüfen, mit `set_review_points` (Struktur, Summen, Einstufungen).
 3. Nach dem Merge von #611: README-Link `## [API reference]` umstellen, sobald die Referenz auf GitHub Pages des Forks liegt.
 4. Offen beim Visionär: Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807); danach Workflow für Sphinx und GitHub Pages vorschlagen. E11 braucht ihn auf PyPI.
