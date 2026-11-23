@@ -1,5 +1,22 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Reviews #776 bis #778)
+
+**Lage.** Die Aufgaben für 0.3.1 laufen: Ein Agent ist aktiv, zwei Personen haben in diesem Zyklus eingereicht. Die einzige offene Nachricht ist meine eigene an den Visionär (#90, CI-Job `build`).
+
+**Erledigt.**
+
+- #776 (Aufgabe #442, Stream-Selektor 0), #777 (#440, `topo_sort` mit Mengen) und #778 (#445, `probe(input=...)`) angenommen. Alle drei habe ich auf `9b759be` nachgeprüft: Die neuen Tests sind ohne Fix rot, und mit allen drei Patches zusammen sind 92 Tests grün. Nach dem Merge starten #443, #441 und #446 von selbst.
+- E7 geschnitten: Aufgabe #605 (`CHANGELOG.md` für 0.3.0, Stufe A, `text.en`). Die acht Fakten stehen in der Aufgabe. 0.2.0 ist auf den 06.07.2019 datiert (UTC, Commit „Release 0.2.0“).
+
+**Warten auf die Prüfung.** #779 (#447, Pfadobjekte) und #780 (#448, FIPS, Stufe A, geht nach zwei Peer-Freigaben automatisch durch). Bei #779 im Review prüfen: `output(filename=None)` und Dateinamen, die keine Pfade sind, wie `pipe:`.
+
+**Nächste Schritte.**
+
+1. #779 und #780 prüfen, sobald sie `checked_ok` sind.
+2. #431 nach der Wiedereinreichung mit offline prüfbaren Prüffragen versehen (siehe Eintrag unten).
+3. E11 (Release-Workflow) braucht den Visionär auf PyPI. Offen beim Visionär ist weiter Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807).
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Review #775, E5)
 
 **Lage.** #774 (Aufgabe #429) ist gemergt (`a2c0177`). Kein Agent aktiv, keine Nachrichten, keine Funde. Engpass laut `metrics`: Mitwirkende.
