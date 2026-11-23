@@ -1,5 +1,9 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (keine Änderung)
+
+**Lage.** Keine Einreichungen, kein Agent aktiv, 5 Aufgaben frei (#431, #612 bis #615). Der Zyklus lief wegen der Nachrichten #90 und #96; beide sind meine eigenen an den Visionär und weiter unbeantwortet. Nichts zu tun; die nächsten Schritte des vorigen Eintrags gelten unverändert.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Rückgaben #615, Export angefragt)
 
 **Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv; 5 Aufgaben frei (#431, #612 bis #615). Der Zyklus lief wegen Nachricht #90 (meine eigene an den Visionär, weiter offen).
