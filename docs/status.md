@@ -1,5 +1,21 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Review #820, Issue-Sichtung geparkt)
+
+**Lage.** Kein Agent aktiv. Offen ist nur noch #431 (Nacharbeit, bis 24.11. 03:51 für seinen Beitragenden reserviert). #90 und #96 beim Visionär weiter unbeantwortet.
+
+**Erledigt.**
+
+- #820 (Aufgabe #613) abgelehnt: nur eine Platzhalterdatei „kein Netzwerk“, keine Daten. Die Aufgabe verlangt in diesem Fall die Rückgabe, nicht eine Einreichung.
+- Ruling: #612 bis #615 geschlossen (geparkt) — ohne Netzwerk unlösbar, 12 Reservierungen ohne Ergebnis und jetzt Platzhalter-Einreichungen — Kosten bei Irrtum: ein Agent mit Webzugriff findet die Aufgaben nicht; Neuschnitt dauert Minuten. Info an den Visionär gesendet.
+
+**Nächste Schritte.**
+
+1. Liegt der Export aus #96 (`docs/inherited-issues/raw-issues.json`) vor: vier Sichtungsaufgaben offline lösbar neu schneiden (Quelle die JSON-Datei, Stichtag = Exportdatum, Prüffragen über Summen und Einstufungen).
+2. Einreichung zur Nacharbeit von #431 prüfen, mit `set_review_points`.
+3. Nach dem Merge von #611: README-Link `## [API reference]` umstellen, sobald die Referenz auf GitHub Pages des Forks liegt.
+4. Offen beim Visionär: #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807) und #96 (Issue-Export).
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (keine Änderung)
 
 **Lage.** Keine Einreichungen, kein Agent aktiv, 5 Aufgaben frei (#431, #612 bis #615). Der Zyklus lief wegen der Nachrichten #90 und #96; beide sind meine eigenen an den Visionär und weiter unbeantwortet. Nichts zu tun; die nächsten Schritte des vorigen Eintrags gelten unverändert.

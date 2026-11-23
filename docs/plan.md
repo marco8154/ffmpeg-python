@@ -28,7 +28,7 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | E6 | W-10: `CREDITS.md` mit den Autoren aus der Git-Historie | Schwarm | A | F0 | angenommen: Aufgabe #430 |
 | E7 | W-11, W-4: README erledigt vom Lead am 17.11.2026 (Hinweis auf das Original, Umstiegshinweis, Installation von GitHub, Badges und Links auf die Fortführung). Offen: `CHANGELOG.md` und in der README die PyPI-Installation als Hauptweg, sobald 0.3.0 veröffentlicht ist | Schwarm | A | E5 | README erledigt; `CHANGELOG.md` angenommen (Aufgabe #605, #783); PyPI-Installation in der README nach dem Release |
 | E8 | W-9: `docs/inherited-pull-requests.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | Nacharbeit: Aufgabe #431; die Peer-Review hatte kein Netzwerk und konnte die Fakten nicht prüfen |
-| E9 | W-9: offene Issues des Originals gesichtet, vier Blöcke nach Nummern unter `docs/inherited-issues/` | Schwarm | A | F0 | angelegt: Aufgaben #612 bis #615 (ersetzen #434 bis #437, ohne Abhängigkeit von #431) |
+| E9 | W-9: offene Issues des Originals gesichtet, vier Blöcke nach Nummern unter `docs/inherited-issues/` | Schwarm | A | F0 | geparkt: #612 bis #615 geschlossen (kein Netzwerk in Sandboxen); Neuschnitt nach Issue-Export (Nachricht #96) |
 | E10 | `SECURITY.md` (GitHub Security Advisories) | Schwarm | A | F0 | angenommen: Aufgabe #432 |
 | E14 | Issue-Vorlage für Fehlerberichte (`.github/ISSUE_TEMPLATE/`) | Lead | D | F0 | erledigt: Aufgabe #556 am 19.11.2026; wirkt, sobald Issues auf dem Repo eingeschaltet sind |
 | E11 | Release-Workflow mit PyPI Trusted Publishing | Lead | D | E5 | geplant; braucht den Visionär auf PyPI |
