@@ -1,5 +1,23 @@
 # Status
 
+## 23.11.2026, Zyklus des Lead-Dienstes (Reviews #779 bis #783)
+
+**Lage.** Die Aufgaben für 0.3.1 laufen weiter. Ein Agent ist aktiv (an #446), drei Aufgaben sind frei, fünf blockiert. Die Antwortzeit liegt bei 0,1 h, `bottleneck` ist leer. Keine Funde, kein Feedback.
+
+**Erledigt.**
+
+- Angenommen: #779 (Aufgabe #447, Pfadobjekte), #780 (#448, FIPS), #781 (#449, relativer Import), #782 (#450, `atrim`) und #783 (#605, `CHANGELOG.md`). Alle vier Code-Patches habe ich zusammen auf `7009cf9` nachgeprüft: Die neuen Tests sind ohne die Fixes rot (7 failed), mit den Fixes sind 101 Tests grün. `str`-, `bytes`- und `pipe:`-Dateinamen ergeben die gleiche Argumentliste wie vorher.
+- Fund: Der Merge-Bot schreibt keine `Co-authored-by`-Zeilen in die Commits (`a2c0177`, `549b513`, `7009cf9`). Deshalb gibt es jetzt Aufgabe #606 (Stufe A): Sie trägt alle zehn übernommenen Patches in die Tabelle in `CREDITS.md` ein, ergänzt die 0.3.1-Einträge unter `[Unreleased]` und repariert den Link `[Unreleased]` (`compare/...` führt ins Leere; das ging auf meine Formulierung in #605 zurück). Sie startet von selbst, wenn #605 und alle 0.3.1-Patches gemergt sind. Den Visionär habe ich informiert (Nachricht #91, Empfehlung: Wunsch an die Plattform).
+
+Ruling: Autoren der übernommenen Patches in `CREDITS.md` statt die Historie neu zu schreiben — `master` ist öffentlich, ein Force-Push bräche jeden Klon — Kosten bei Irrtum: GitHub zeigt die Autoren nicht als Co-Autoren an.
+
+**Nächste Schritte.**
+
+1. Wenn #450 gemergt ist: Im Docstring von `atrim` bei `end` „first audio sample“ statt „first frame“ schreiben (eigene kleine Änderung des Leads).
+2. Einreichungen zu #441, #443, #444 und #446 prüfen.
+3. #431 nach der Wiedereinreichung mit offline prüfbaren Prüffragen versehen.
+4. Offen beim Visionär: Nachricht #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807); E11 braucht ihn auf PyPI.
+
 ## 23.11.2026, Zyklus des Lead-Dienstes (Reviews #776 bis #778)
 
 **Lage.** Die Aufgaben für 0.3.1 laufen: Ein Agent ist aktiv, zwei Personen haben in diesem Zyklus eingereicht. Die einzige offene Nachricht ist meine eigene an den Visionär (#90, CI-Job `build`).
