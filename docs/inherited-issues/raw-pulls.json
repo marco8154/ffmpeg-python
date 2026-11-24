@@ -1,0 +1,1074 @@
+[
+ {
+  "number": 201,
+  "title": "Asyncio support async/await",
+  "author": {
+   "login": "akolpakov"
+  },
+  "createdAt": "2019-05-04T22:03:42Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "Merge request related to  #200.\r\n\r\n**WARNING**: it breaks compatibility with python2, as it uses syntax introduced in python3.\r\n\r\nI'm not sure would you like to merge or not. But we can discuss.",
+  "comments": [
+   {
+    "author": {
+     "login": "kkroening"
+    },
+    "body": "Hey, thanks for the changes. We'll still be supporting Python 2 at least until the official drop-dead/EOL date of Jan 1, 2020. Until then, we'll have to find a way to get this to coexist if it's merged.\r\n\r\nIt seems that there are ways to do backwards-compatible async/await code, such as described in [this stack overflow post](https://stackoverflow.com/questions/30191556/coroutine-in-python-between-3-4-and-3-5-how-can-i-keep-backwords-compatibility). Any thoughts on using that sort of approach until we can kill off Py2 support?",
+    "createdAt": "2019-05-09T18:05:21Z"
+   },
+   {
+    "author": {
+     "login": "akolpakov"
+    },
+    "body": "@kkroening, yes, there is a way to do it compatible with python2.\r\n\r\nIf you think it is useful and you ready to merge. I can implement it with python2 compatibility.",
+    "createdAt": "2019-05-09T18:15:07Z"
+   },
+   {
+    "author": {
+     "login": "klardotsh"
+    },
+    "body": "It should be possible to conditionally add this method with `sys.version` checks + the decorator workaround. Not sure if that's okay by project standards, but it's technically doable.\r\n\r\nWould love to see this merged!",
+    "createdAt": "2019-07-03T05:43:05Z"
+   },
+   {
+    "author": {
+     "login": "thijstriemstra"
+    },
+    "body": "> We'll still be supporting Python 2 at least until the official drop-dead/EOL date of Jan 1, 2020. \r\n\r\nIs Python 2 support still needed at this point then? If not, please merge this.",
+    "createdAt": "2019-12-05T08:46:06Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "asyncio_support",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/201"
+ },
+ {
+  "number": 220,
+  "title": "upd: _filters.py : add \"vstack\" & \"hstack\"",
+  "author": {
+   "login": "russiaman"
+  },
+  "createdAt": "2019-06-18T10:42:09Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "I`ve added \"vstack\" and \"hstack\" filters support, which is useful for obtaining stereoscopic over\\under and side-by-side formats from two inputs.",
+  "comments": [
+   {
+    "author": {
+     "login": "russiaman"
+    },
+    "body": "by the way, there is an example of using this :\r\n```\r\ncodec_video = 'libx265'\r\nhstack = ffmpeg.hstack(in_1, in_2).node\r\nstacked_video = hstack[0]\r\nout_file = r'd:\\temp\\stacked_video_out.mp4'\r\nout = ffmpeg.output(stacked_video, out_file, vcodec=codec_video)\r\nout.run()\r\n```",
+    "createdAt": "2019-06-18T10:46:23Z"
+   },
+   {
+    "author": {
+     "login": "n0madic"
+    },
+    "body": "Are there any chances of merging this useful PR?",
+    "createdAt": "2021-04-06T18:35:42Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "patch-1",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/220"
+ },
+ {
+  "number": 233,
+  "title": "Drop `future` install-requirement",
+  "author": {
+   "login": "kkroening"
+  },
+  "createdAt": "2019-07-06T00:42:28Z",
+  "updatedAt": "2022-08-17T07:00:48Z",
+  "labels": [],
+  "body": "The `future` requirement has only been used for the `basestring` type, which was vendored into `_utils.py` in df9bd7316f and isn't actually necessary.\r\n\r\nBy stripping out the `future` requirement, ffmpeg-python no longer has any install-requirements, making installation less error-prone in certain cases.\r\n\r\nFixes #228 and #130.",
+  "comments": [
+   {
+    "author": {
+     "login": "kkroening"
+    },
+    "body": "Hmm, actually the `builtins` module comes from `future` as well and is referenced in several places, so this PR is a bit larger than expected. I'll probably hold off on merging it until others get a chance to  try it and comment in case it breaks anything.\r\n\r\nPython2+Python3 cross-compatibility can sure be annoying/finnicky, but Python 2 will be going away soon (for better or worse).",
+    "createdAt": "2019-07-06T00:53:06Z"
+   },
+   {
+    "author": {
+     "login": "MarSoft"
+    },
+    "body": "Will it be merged? For me it looks good. Although `future` is still referenced in dependencies for some reason.",
+    "createdAt": "2019-09-12T10:33:11Z"
+   },
+   {
+    "author": {
+     "login": "poetaster"
+    },
+    "body": "Just a note, I'm using ffmpeg python in a pyotherside (and QT/QML) app for phones. I've stripped all the python < 3 stuff (in the main what you've done here) to reduce the install. Your library is 500K future is 3.5 MB!\r\n\r\nThank you for the very fine wrapper! ",
+    "createdAt": "2022-08-16T14:52:41Z"
+   },
+   {
+    "author": {
+     "login": "poetaster"
+    },
+    "body": "Just for reference, the project I'm using without future: https://github.com/poetaster/harbour-clipper ",
+    "createdAt": "2022-08-17T07:00:47Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "norequires",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/233"
+ },
+ {
+  "number": 249,
+  "title": "Add support for extracting ffmpeg build data, such as hwaccels",
+  "author": {
+   "login": "rpatterson"
+  },
+  "createdAt": "2019-08-05T19:28:03Z",
+  "updatedAt": "2022-03-07T09:06:30Z",
+  "labels": [],
+  "body": "This can be useful for projects that want to auto-detect optimal options for\r\ninvoking ffmpeg.",
+  "comments": [
+   {
+    "author": {
+     "login": "kkroening"
+    },
+    "body": "I've been away for a while but will take a look at this soon. Thanks for the changes.",
+    "createdAt": "2019-08-16T16:06:41Z"
+   },
+   {
+    "author": {
+     "login": "ljwobker"
+    },
+    "body": "Is this likely to get merged at any point in the near future?  This is almost exactly what I was hoping to use...  ;-)\r\n",
+    "createdAt": "2020-11-10T19:38:11Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "master",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/249"
+ },
+ {
+  "number": 298,
+  "title": "Changed the order of the argumets for output to appear last",
+  "author": {
+   "login": "Nitaym"
+  },
+  "createdAt": "2019-12-10T21:12:43Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "Hi,\r\n\r\nThe output arguments are defaulted to appear before the global arguments - This could cause issues with ffmepg command line as it expects all the stream arguments to be between the -i and -f.\r\n\r\nSee this example:\r\nThis would work: `ffmpeg -i ~/Movies/sample.ts -map data -c copy -f data -`\r\nBut this would return a \"Stream not found\" error: `ffmpeg -i ~/Movies/oparea4.ts -f data - -map data -c copy`\r\n\r\nThis PR replaces the order so that output arguments would appear last",
+  "comments": [
+   {
+    "author": {
+     "login": "kkroening"
+    },
+    "body": "This needs unit-test changes. CI is failing.",
+    "createdAt": "2019-12-30T08:21:37Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "change-output-order",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/298"
+ },
+ {
+  "number": 300,
+  "title": "Added an example for checking if a video is good/bad and cuda example",
+  "author": {
+   "login": "cbitterfield"
+  },
+  "createdAt": "2019-12-21T18:42:27Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "I added an example for testing videos. It also has an example of using CUDA for acceleration.",
+  "comments": [
+   {
+    "author": {
+     "login": "weiyx16"
+    },
+    "body": "Thanks for your code.\r\nBut I think the function  `validate_video` doesn't use the params in `kwargs` when set `useCuda=True`. So I'm not sure this code will be accelerated by GPU.",
+    "createdAt": "2020-11-16T13:34:47Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "example_validate",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/300"
+ },
+ {
+  "number": 341,
+  "title": "Add sub parameters syntaxe for filters",
+  "author": {
+   "login": "cmehay"
+  },
+  "createdAt": "2020-03-06T22:10:52Z",
+  "updatedAt": "2026-04-01T14:21:41Z",
+  "labels": [],
+  "body": "Some filters have sub parameters like [`subtitles`](https://ffmpeg.org/ffmpeg-filters.html#toc-subtitles-1).\r\n\r\n`subtitles=sub.srt:force_style='FontName=DejaVu Serif,PrimaryColour=&HCCFF0000'`\r\n\r\nDue to char escape policy in `FilterNode`, it's impossible to pass the full options like this:\r\n\r\n```python\r\nfilter('subtitles', force_style=\"FontName=DejaVu Serif,PrimaryColour=&HCCFF0000\")\r\n```\r\n\r\nSo I added the possibility to pass a dictionary to the kwarg argument on filter:\r\n```python\r\nfilter('subtitles', force_style={\"FontName\": \"DejaVu Serif\", \"PrimaryColour\": \"&HCCFF0000\"})\r\n``` \r\n\r\n~But I made a hack to not escape coma when a dictionary is passed to a kward argument in filter.~\r\n\r\nYou can suggest me a better way to do this",
+  "comments": [
+   {
+    "author": {
+     "login": "cmehay"
+    },
+    "body": "I updated the commit, I figured out that the coma escape has been required to work properly.",
+    "createdAt": "2020-03-10T18:13:37Z"
+   },
+   {
+    "author": {
+     "login": "kellersefi"
+    },
+    "body": "This is a much-needed capability. \r\nIf I'm not mistaken, there is no way to include sub-params today.\r\n\r\nI hope it will be merged soon.",
+    "createdAt": "2021-09-06T12:26:24Z"
+   },
+   {
+    "author": {
+     "login": "thanhtoan1196"
+    },
+    "body": "any updates?",
+    "createdAt": "2023-03-23T09:55:20Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "sub_param_filter",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/341"
+ },
+ {
+  "number": 362,
+  "title": "Asyncio support",
+  "author": {
+   "login": "hdk5"
+  },
+  "createdAt": "2020-04-30T19:08:34Z",
+  "updatedAt": "2022-11-26T22:54:21Z",
+  "labels": [],
+  "body": "This pull request is based on #201 and solves #200\r\n\r\nI added compatibility with Python version prior to 3.4.\r\nThese changes are also not compatible with not yet released Python 3.10, though.",
+  "comments": [
+   {
+    "author": {
+     "login": "tonycpsu"
+    },
+    "body": "@kkroening, this looks good to merge, no?  Looks good from my testing and implements an important feature for anyone who wants to run ffmpeg as a coroutine in an asyncio application",
+    "createdAt": "2021-02-06T18:29:35Z"
+   },
+   {
+    "author": {
+     "login": "tonycpsu"
+    },
+    "body": ">  These changes are also not compatible with not yet released Python 3.10, though.\r\n\r\nJust tried this on Python 3.10 and not noticing any issues. Would still love to see it included in the pip release so I don't have to keep pointing at a fork to make use of asyncio.",
+    "createdAt": "2021-11-06T20:00:30Z"
+   },
+   {
+    "author": {
+     "login": "hdk5"
+    },
+    "body": "> Just tried this on Python 3.10 and not noticing any issues. Would still love to see it included in the pip release so I don't have to keep pointing at a fork to make use of asyncio.\r\n\r\nWell, asyncio docs say:\r\n\r\n> Support for generator-based coroutines is deprecated and is scheduled for removal in Python 3.10.\r\n\r\nand\r\n\r\n> Deprecated since version 3.8, removed in version 3.10: Use async def instead.\r\n\r\nI think it is possible to add conditional import there, like:\r\n\r\n```py\r\nif sys.version_info >= (3, 5):\r\n    # import async-def based\r\nelif sys.version_info >= (3, 4):\r\n    # import asyncio.coroutine based\r\n```\r\n\r\nThe proper solution in this day would be to drop python<3.5 support, but that's not for me to decide",
+    "createdAt": "2021-11-07T10:35:46Z"
+   },
+   {
+    "author": {
+     "login": "blakev"
+    },
+    "body": "This is sorely needed still -- alternatively you could add an additional argument to `run`, `loop=None`, and return a future if `loop is not None`. Then you wouldn't have to deal with Python version compatibility and you'd have to be explicit you want to use asyncio.",
+    "createdAt": "2021-12-03T17:08:49Z"
+   },
+   {
+    "author": {
+     "login": "rjy7wb"
+    },
+    "body": "whats the holdup on this, this is crucial for large workloads, python3.6 is EOL and no longer supported so this should be a no issue",
+    "createdAt": "2022-09-19T01:51:40Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "asyncio_support",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/362"
+ },
+ {
+  "number": 403,
+  "title": "Explicit maps option",
+  "author": {
+   "login": "e1ty"
+  },
+  "createdAt": "2020-08-04T07:56:34Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "There are cases when you need `-map 0` to be in the command.\r\nSo I added explicit_maps option to `get_args` and `compile`.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "explicit-maps",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/403"
+ },
+ {
+  "number": 418,
+  "title": "Source node (revamp of #62)",
+  "author": {
+   "login": "silviot"
+  },
+  "createdAt": "2020-09-16T10:50:34Z",
+  "updatedAt": "2023-02-23T08:04:45Z",
+  "labels": [],
+  "body": "I continued the work @Depau did in #62 implementing the requested change, rebasing against current master and overriding the SourceNode __hash__ method to allow more than one instance of the same input in the graph.",
+  "comments": [
+   {
+    "author": {
+     "login": "eladg"
+    },
+    "body": "This looks wonderful. It's been 2 years since the #62 source node implementation, @silviot @Depau, I would love to help move Source Node forward.  Is there anyway I can help make this happen? Would appreciate your guidance. Thanks!\r\n\r\ncc: @kkroening ",
+    "createdAt": "2020-12-02T12:11:56Z"
+   },
+   {
+    "author": {
+     "login": "depau"
+    },
+    "body": "TBH I'd love to review it but I barely remember how this library works, it's been 2 years and I don't even remember what I ate for lunch yesterday.\r\n\r\nThe code seems well written and it has tests (edit: lol okay I wrote those), but I don't remember a lot. I'd ask @kkroening to take a look but there are a bunch of outstanding pull requests that nobody's taken a look at anyway.\r\n\r\nSo, IDK but I have other stuff going on and I don't have time to re-learn how ffmpeg-python works :(",
+    "createdAt": "2020-12-02T14:46:41Z"
+   },
+   {
+    "author": {
+     "login": "depau"
+    },
+    "body": "Actually I see the review comments in #62 aren't fully addressed, could you please address them and let me know?",
+    "createdAt": "2020-12-02T14:53:09Z"
+   },
+   {
+    "author": {
+     "login": "eladg"
+    },
+    "body": "@Depau currently traveling, but yes! will be available to look into it next week. I have all the intention to contribute but I have a sense that my work will hang similar to this PR or #62 . \r\n\r\nIt's OK if \"Source Node\" is outside of the project scope, I agree it's fairly an advance feature that may complicate the project and users trying to use it. That is why I'm asking: is SourceNode serving the project's goals or it's just a little too advance and will just make the project harder to maintain... ?\r\n\r\nIf we want this feature in, I will be happy to bring this PR to completion. If no, it's ok that SourceNode will just be added to a fork.\r\n\r\nWould be good to get your thoughts @kkroening \r\n",
+    "createdAt": "2020-12-03T11:22:29Z"
+   },
+   {
+    "author": {
+     "login": "TimPeterson"
+    },
+    "body": "I would very much like to see this merged. I need to be able to use a `color` source as part of my filter graph, and I see no reason why this shouldn't be supported. I've been making it work by just changing the hard-coded `min_inputs=1` to `0` in `FilterNode.__init__`, but a cleaner implementation would be much appreciated.",
+    "createdAt": "2021-09-24T17:39:43Z"
+   },
+   {
+    "author": {
+     "login": "commonism"
+    },
+    "body": "[color is easy](https://github.com/kkroening/ffmpeg-python/issues/111#issuecomment-998616059):\r\n```python\r\nffmpeg.input(\"color=c=black:s=1920x1080\", f=\"lavfi\")\r\n```",
+    "createdAt": "2023-02-23T06:47:15Z"
+   },
+   {
+    "author": {
+     "login": "silviot"
+    },
+    "body": "@kkroening I have not used this project since I did this work, but I think others might benefit from this work. If there are no objections to this code maybe it should be merged. If there are objections I'm happy to volunteer some time to do the required fixes.",
+    "createdAt": "2023-02-23T08:04:44Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "source-node",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/418"
+ },
+ {
+  "number": 438,
+  "title": "subtitles example with show progress",
+  "author": {
+   "login": "innayatullah"
+  },
+  "createdAt": "2020-10-27T12:21:30Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "An example for merging subtitles with ass templates.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "inb/subtitles-example",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/438"
+ },
+ {
+  "number": 447,
+  "title": "add referfrence to ffmpeg-go",
+  "author": {
+   "login": "u2takey"
+  },
+  "createdAt": "2020-11-11T11:32:28Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "patch-2",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/447"
+ },
+ {
+  "number": 449,
+  "title": "Adds atrim filter.",
+  "author": {
+   "login": "jcordial"
+  },
+  "createdAt": "2020-11-18T20:11:23Z",
+  "updatedAt": "2024-11-27T10:17:37Z",
+  "labels": [],
+  "body": "I had been trying to trim audio files using the `trim` filter. After reading a bunch of ffmpeg documentation, it turns out you don't trim audio files with `trim`. I needed to use `atrim`, which hadn't been added to the api. Sooooo.... I added it. \r\n\r\nI'm not 100% sure what the best testing strategy is for adding new filters, they don't seem to be tested directly. If you need me to add a test, let me know.",
+  "comments": [
+   {
+    "author": {
+     "login": "jcordial"
+    },
+    "body": "Actually, I reread the documentation - I see there's the generic \"filter\" method for  things like this. Feel free to close this PR if you don't want to support this particular filter directly.",
+    "createdAt": "2020-11-18T23:56:45Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "feature/atrim",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/449"
+ },
+ {
+  "number": 482,
+  "title": "Running utests (tox+pytest) on Github Action CI",
+  "author": {
+   "login": "yoyonel"
+  },
+  "createdAt": "2021-01-21T10:51:57Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "## Description/Motivation\r\n\r\nPerform CI (with pytest+tox) on Github Action:\r\n[(![image](https://user-images.githubusercontent.com/7001058/105340391-19e16000-5bde-11eb-99c3-ba0c3e3c7d88.png)](https://github.com/yoyonel/ffmpeg-python/pull/1/checks)\r\n\r\n## Tests\r\n\r\nYou can see CI results on this (closed) PR/branch (on my fork repo):  [ci: add github-action support for utests #1](https://github.com/yoyonel/ffmpeg-python/pull/1)\r\n\r\n\r\n## Discussions\r\n\r\n- I have to remove python 3.4 because this python interpreter version isn't compatible with `tox-gh-actions`: \r\n![image](https://user-images.githubusercontent.com/7001058/105341966-059e6280-5be0-11eb-8482-f3582014a6d2.png)\r\n\r\n\r\n# Future\r\n\r\n- Propose a github action for C(ontinuous) D(elivry) on pypi to release and push pypi package from ffmpeg-python\r\n- Adding some code quality tools/control like flake8, black, pylint, etc ... and perform this check/formatter with Github Action (on PR, commits with precommits, Release, etc ...)",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "github-action",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/482"
+ },
+ {
+  "number": 485,
+  "title": "Add an example for assembling a video from numpy frames",
+  "author": {
+   "login": "Noiredd"
+  },
+  "createdAt": "2021-01-27T10:56:38Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "My particular use case was that frames were generated on the fly and in great number so I wanted to stream them directly into a video instead of storing them all. Yes I realize this is a simplified version of the Tensorflow Streaming example, but I'd argue that it's good to have it in the \"assemble video from sequence\" section for clarity (e.g. it didn't occur to me to look at the TF case - I looked at the \"assemble\" section and found nothing helpful so I gave up on this article and looked elsewhere).",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "patch-1",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/485"
+ },
+ {
+  "number": 490,
+  "title": "Support zero index stream selectors",
+  "author": {
+   "login": "e1ty"
+  },
+  "createdAt": "2021-02-09T14:46:35Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "Hey 👋 \r\nI've just find out, that the library is not working as I expected in the case, when I tried to select stream with index 0.\r\nExamples:\r\n```python\r\nffmpeg.input('input.mp4').filter('scale', 360, -1).output('out.mp4').get_args()\r\n# ['-i', 'input.mp4', '-filter_complex', '[0]scale=360:-1[s0]', '-map', '[s0]', 'out.mp4']\r\n\r\nffmpeg.input('input.mp4').node.stream(selector=1).filter('scale', 360, -1).output('out.mp4').get_args()\r\n['-i', 'input.mp4', '-filter_complex', '[0:1]scale=360:-1[s0]', '-map', '[s0]', 'out.mp4']\r\n```\r\nEverything is ok, but:\r\n```python\r\nffmpeg.input('input.mp4').node.stream(selector=0).filter('scale', 360, -1).output('out.mp4').get_args()\r\n# ['-i', 'input.mp4', '-filter_complex', '[0]scale=360:-1[s0]', '-map', '[s0]', 'out.mp4']\r\n```\r\nInstead of selecting specific stream, the whole input was selected.\r\nI think it should be:\r\n```python\r\nffmpeg.input('input.mp4').node.stream(selector=0).filter('scale', 360, -1).output('out.mp4').get_args()\r\n# ['-i', 'input.mp4', '-filter_complex', '[0:0]scale=360:-1[s0]', '-map', '[s0]', 'out.mp4']\r\n```",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "support_zero_selectors",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/490"
+ },
+ {
+  "number": 538,
+  "title": "Avoid overriding \"pipe\" option with \"quiet\"",
+  "author": {
+   "login": "ArchieMeng"
+  },
+  "createdAt": "2021-04-27T07:06:48Z",
+  "updatedAt": "2022-03-09T06:31:58Z",
+  "labels": [],
+  "body": "It is related to #195 #417 \r\nPR #417 has fixed the issue #195 , but overriding pipe_stdout and pipe_stderr options.\r\nThere is a situation in my project where the video decoding subprocess need to mute stderr while piping frames via stdout to python process. With the current \"quiet\" implementation, the pipe_stdout will be muted.\r\n\r\nIn fact, this is still under testing, but reviews are welcome.\r\n\r\nSigned-off-by: ArchieMeng <archiemeng@protonmail.com>",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "master",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/538"
+ },
+ {
+  "number": 553,
+  "title": "Support path-like objects as well",
+  "author": {
+   "login": "Harsh-br0"
+  },
+  "createdAt": "2021-05-16T06:24:59Z",
+  "updatedAt": "2021-05-16T06:38:50Z",
+  "labels": [],
+  "body": "Even _[PEP 519](https://www.python.org/dev/peps/pep-0519/#standard-library-changes)_ considers it a standard to represent path in objects while having other ways as str or bytes representations ;)",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "patch-1",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/553"
+ },
+ {
+  "number": 588,
+  "title": "Support pipe input in ffprobe",
+  "author": {
+   "login": "misaka-10032"
+  },
+  "createdAt": "2021-08-17T18:13:39Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "Usage: `ffmpeg.probe('pipe:', input=video_bytes)`.\r\n\r\nThe API is similar to `fmpeg.run()`.\r\nhttps://github.com/kkroening/ffmpeg-python/tree/master/examples#tensorflow-streaming\r\n\r\nThis is helpful when we want to probe the video bytes in a database.\r\n",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "patch-1",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/588"
+ },
+ {
+  "number": 609,
+  "title": "new param on probe to get stderr",
+  "author": {
+   "login": "ezequielramos"
+  },
+  "createdAt": "2021-11-03T17:10:54Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "I need to get the stderr from probe even when it doesn't fail.\r\nThe reason why this is necessary is because there're important information to me on \"Warning logs\" `-v warning`.\r\n\r\nSo I created a new parameter `capture_stderr` with `False` as default value, what should make older versions working exactly the same way, but when using the `True` value, the function will return a tuple with the default return value on first position and the stderr on the second position.",
+  "comments": [
+   {
+    "author": {
+     "login": "ezequielramos"
+    },
+    "body": "If you need me to add a test, let me know.\r\nI have a video to use as example, but it has like 300kb, I don't know if you want me to upload this on the repo.",
+    "createdAt": "2021-11-03T17:27:40Z"
+   },
+   {
+    "author": {
+     "login": "ezequielramos"
+    },
+    "body": "https://github.com/kkroening/ffmpeg-python/issues/614",
+    "createdAt": "2021-11-20T18:31:59Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "master",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/609"
+ },
+ {
+  "number": 625,
+  "title": "Fix Issue #92",
+  "author": {
+   "login": "sota0121"
+  },
+  "createdAt": "2022-01-16T15:03:17Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [],
+  "body": "Close #92 \r\n\r\n## Overview\r\n\r\n- Fixed version information for easy access\r\n- I implemented `__version__` style with reference to `yapf` from google. ( cf. [google/yapf](https://github.com/google/yapf) )\r\n\r\n\r\n## What I checked\r\n\r\n- All tests are green\r\n- I can access version via `ffmpeg.__version__`\r\n\r\n## Resources\r\n\r\nSee:\r\n- https://github.com/google/yapf/blob/main/setup.py\r\n- https://github.com/google/yapf/blob/main/yapf/__init__.py\r\n\r\n",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "feature/92_enhancement",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/625"
+ },
+ {
+  "number": 640,
+  "title": "Bump numpy from 1.16.4 to 1.21.0",
+  "author": {
+   "login": "dependabot[bot]"
+  },
+  "createdAt": "2022-03-06T21:25:09Z",
+  "updatedAt": "2022-03-07T09:06:29Z",
+  "labels": [
+   {
+    "name": "dependencies"
+   }
+  ],
+  "body": "Bumps [numpy](https://github.com/numpy/numpy) from 1.16.4 to 1.21.0.\n<details>\n<summary>Release notes</summary>\n<p><em>Sourced from <a href=\"https://github.com/numpy/numpy/releases\">numpy's releases</a>.</em></p>\n<blockquote>\n<h2>v1.21.0</h2>\n<h1>NumPy 1.21.0 Release Notes</h1>\n<p>The NumPy 1.21.0 release highlights are</p>\n<ul>\n<li>continued SIMD work covering more functions and platforms,</li>\n<li>initial work on the new dtype infrastructure and casting,</li>\n<li>universal2 wheels for Python 3.8 and Python 3.9 on Mac,</li>\n<li>improved documentation,</li>\n<li>improved annotations,</li>\n<li>new <code>PCG64DXSM</code> bitgenerator for random numbers.</li>\n</ul>\n<p>In addition there are the usual large number of bug fixes and other\nimprovements.</p>\n<p>The Python versions supported for this release are 3.7-3.9. Official\nsupport for Python 3.10 will be added when it is released.</p>\n<p>:warning:  Warning: there are unresolved problems compiling NumPy 1.21.0 with gcc-11.1 .</p>\n<ul>\n<li>Optimization level <code>-O3</code> results in many wrong warnings when running the tests.</li>\n<li>On some hardware NumPy will hang in an infinite loop.</li>\n</ul>\n<h2>New functions</h2>\n<h3>Add PCG64DXSM BitGenerator</h3>\n<p>Uses of the PCG64 BitGenerator in a massively-parallel context have\nbeen shown to have statistical weaknesses that were not apparent at the\nfirst release in numpy 1.17. Most users will never observe this weakness\nand are safe to continue to use PCG64. We have introduced a new\nPCG64DXSM BitGenerator that will eventually become the new default\nBitGenerator implementation used by <code>default_rng</code> in future releases.\nPCG64DXSM solves the statistical weakness while preserving the\nperformance and the features of PCG64.</p>\n<p>See <code>upgrading-pcg64</code> for more details.</p>\n<p>(<a href=\"https://github-redirect.dependabot.com/numpy/numpy/pull/18906\">gh-18906</a>)</p>\n<h2>Expired deprecations</h2>\n<ul>\n<li>The <code>shape</code> argument <code>numpy.unravel_index</code> cannot be\npassed as <code>dims</code> keyword argument anymore. (Was deprecated in NumPy\n1.16.)</li>\n</ul>\n<!-- raw HTML omitted -->\n</blockquote>\n<p>... (truncated)</p>\n</details>\n<details>\n<summary>Commits</summary>\n<ul>\n<li><a href=\"https://github.com/numpy/numpy/commit/b235f9e701e14ed6f6f6dcba885f7986a833743f\"><code>b235f9e</code></a> Merge pull request <a href=\"https://github-redirect.dependabot.com/numpy/numpy/issues/19283\">#19283</a> from charris/prepare-1.21.0-release</li>\n<li><a href=\"https://github.com/numpy/numpy/commit/34aebc2824cf8c2bdbe19040b82f98f18557c8ba\"><code>34aebc2</code></a> MAINT: Update 1.21.0-notes.rst</li>\n<li><a href=\"https://github.com/numpy/numpy/commit/493b64bfe9c5396498325b87e5e80e1917555c41\"><code>493b64b</code></a> MAINT: Update 1.21.0-changelog.rst</li>\n<li><a href=\"https://github.com/numpy/numpy/commit/07d7e72ab6880c05b5fdd98482cf88982e778393\"><code>07d7e72</code></a> MAINT: Remove accidentally created directory.</li>\n<li><a href=\"https://github.com/numpy/numpy/commit/032fca5e2e9749b152ec56153f476e05efdff287\"><code>032fca5</code></a> Merge pull request <a href=\"https://github-redirect.dependabot.com/numpy/numpy/issues/19280\">#19280</a> from charris/backport-19277</li>\n<li><a href=\"https://github.com/numpy/numpy/commit/7d25b81025a50cc0368f5727c65e875ca769469a\"><code>7d25b81</code></a> BUG: Fix refcount leak in ResultType</li>\n<li><a href=\"https://github.com/numpy/numpy/commit/fa5754e8c159a37fcd9345df261cf82821088ea0\"><code>fa5754e</code></a> BUG: Add missing DECREF in new path</li>\n<li><a href=\"https://github.com/numpy/numpy/commit/61127bb4d46d523b699da1b63abaa5035670da27\"><code>61127bb</code></a> Merge pull request <a href=\"https://github-redirect.dependabot.com/numpy/numpy/issues/19268\">#19268</a> from charris/backport-19264</li>\n<li><a href=\"https://github.com/numpy/numpy/commit/143d45fff3ed9e051bdeef7bdb4df38025ea7d1c\"><code>143d45f</code></a> Merge pull request <a href=\"https://github-redirect.dependabot.com/numpy/numpy/issues/19269\">#19269</a> from charris/backport-19228</li>\n<li><a href=\"https://github.com/numpy/numpy/commit/d80e4738f781a1d206bbc04a2e863299e5f2e104\"><code>d80e473</code></a> BUG: Removed typing for == and != in dtypes</li>\n<li>Additional commits viewable in <a href=\"https://github.com/numpy/numpy/compare/v1.16.4...v1.21.0\">compare view</a></li>\n</ul>\n</details>\n<br />\n\n\n[![Dependabot compatibility score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=numpy&package-manager=pip&previous-version=1.16.4&new-version=1.21.0)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)\n\nDependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `@dependabot rebase`.\n\n[//]: # (dependabot-automerge-start)\n[//]: # (dependabot-automerge-end)\n\n---\n\n<details>\n<summary>Dependabot commands and options</summary>\n<br />\n\nYou can trigger Dependabot actions by commenting on this PR:\n- `@dependabot rebase` will rebase this PR\n- `@dependabot recreate` will recreate this PR, overwriting any edits that have been made to it\n- `@dependabot merge` will merge this PR after your CI passes on it\n- `@dependabot squash and merge` will squash and merge this PR after your CI passes on it\n- `@dependabot cancel merge` will cancel a previously requested merge and block automerging\n- `@dependabot reopen` will reopen this PR if it is closed\n- `@dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually\n- `@dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)\n- `@dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)\n- `@dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)\n- `@dependabot use these labels` will set the current labels as the default for future PRs for this repo and language\n- `@dependabot use these reviewers` will set the current reviewers as the default for future PRs for this repo and language\n- `@dependabot use these assignees` will set the current assignees as the default for future PRs for this repo and language\n- `@dependabot use this milestone` will set the current milestone as the default for future PRs for this repo and language\n\nYou can disable automated security fix PRs for this repo from the [Security Alerts page](https://github.com/kkroening/ffmpeg-python/network/alerts).\n\n</details>",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "dependabot/pip/numpy-1.21.0",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/640"
+ },
+ {
+  "number": 675,
+  "title": "Added popen_args parameter to run_async()",
+  "author": {
+   "login": "michaelitvin"
+  },
+  "createdAt": "2022-06-26T11:21:21Z",
+  "updatedAt": "2022-06-26T11:21:21Z",
+  "labels": [],
+  "body": "This allows setting bufsize and other params of the process.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "master",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/675"
+ },
+ {
+  "number": 700,
+  "title": "Use fspath to consistently support PathLike objects as input/output filenames.",
+  "author": {
+   "login": "brianhou"
+  },
+  "createdAt": "2022-08-21T21:48:10Z",
+  "updatedAt": "2022-08-22T17:30:58Z",
+  "labels": [],
+  "body": "Path-like objects were already supported by `input` and by `output` when the filename was explicitly specified as a keyword argument. (`subprocess.Popen` accepts path-like objects in addition to strings.) However, implicitly specifying the output filename as the last element of a list of output streams/filename did not permit a path-like object; instead, this raises a ValueError with a somewhat misleading error message.\r\n\r\n```python\r\n>>> import ffmpeg\r\n>>> from pathlib import Path\r\n>>> ffmpeg.input(\"input.mp4\").output(\"output.mp4\")\r\noutput(filename='output.mp4')[None] <1fa880dddf3d>\r\n>>> ffmpeg.input(\"input.mp4\").output(filename=\"output.mp4\")\r\noutput(filename='output.mp4')[None] <1fa880dddf3d>\r\n>>> ffmpeg.input(Path(\"input.mp4\")).output(filename=\"output.mp4\")\r\noutput(filename='output.mp4')[None] <3105870c5a1e>\r\n>>> ffmpeg.input(Path(\"input.mp4\")).output(filename=Path(\"output.mp4\"))\r\noutput(filename=PosixPath('output.mp4'))[None] <3cf3744481bb>\r\n>>> ffmpeg.input(Path(\"input.mp4\")).output(Path(\"output.mp4\"))\r\nTraceback (most recent call last):\r\n  File \"<stdin>\", line 1, in <module>\r\n  File \".../ffmpeg/_ffmpeg.py\", line 85, in output\r\n    raise ValueError('A filename must be provided')\r\nValueError: A filename must be provided\r\n```\r\n\r\nThis PR uses a patched version of `os.fspath` to explicitly convert all path-like objects to strings (or raise an error). Once support is dropped for versions before 3.6, this should be updated to use `os.fspath` directly.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "master",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/700"
+ },
+ {
+  "number": 711,
+  "title": "Introduce script_filename parameter to get_args",
+  "author": {
+   "login": "utdemir"
+  },
+  "createdAt": "2022-10-02T00:29:28Z",
+  "updatedAt": "2024-04-27T22:51:12Z",
+  "labels": [],
+  "body": "This PR adds the `script_filename` parameter to `get_args` and `compile` functions, introducing the ability to sidestep the \"command line too long\" error that can arise from complex filtergraphs, described in the issue https://github.com/kkroening/ffmpeg-python/issues/161.\r\n\r\nIt is a backwards compatible change, defaulting to the current behaviour when `script_filename` is not defined.",
+  "comments": [
+   {
+    "author": {
+     "login": "Bilal-USANG"
+    },
+    "body": "Really great addition, I would like to add to that that, you can also pass the args to the script_filename with the movie filter by adding it on top of the script filename, as per the answer of Arnon Weiberg here:\r\nhttps://stackoverflow.com/questions/64407313/is-it-possible-to-provide-input-files-list-to-ffmpeg-in-a-text-file-instead-of-o\r\n\r\n(I am a bit lazy to do it sorry haha)",
+    "createdAt": "2024-04-27T22:50:44Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "ud/introduce_script_filename",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/711"
+ },
+ {
+  "number": 719,
+  "title": "Quote filenames to handle paths with spaces in commands created with `.compile()`",
+  "author": {
+   "login": "alexdelorenzo"
+  },
+  "createdAt": "2022-11-17T00:49:07Z",
+  "updatedAt": "2025-10-04T17:40:12Z",
+  "labels": [],
+  "body": "## Problem\r\n\r\n`ffmpeg-python`'s `.compile()` method to generate FFmpeg commands doesn't quote or escape filenames with spaces, so it will generate commands like so:\r\n```bash\r\n>>> ' '.join(output.compile())\r\nffmpeg -fflags +genpts -i /tmp/video with spaces in name.mkv \\\r\n -acodec copy -movflags faststart -scodec copy -threads 12 -vcodec libx264 -vlevel 4.1 \\\r\n /tmp/video with spaces in name [out].mkv -y\r\n```\r\n\r\n(Note that I edited escaped new lines into this example's output for readability, they don't exist in `.compile()`'s output before or after merging this pull request.)\r\n\r\nRunning that compiled command fails:\r\n```bash\r\n/tmp/video: No such file or directory\r\n```\r\n\r\n## Solution\r\nThis pull request quotes filenames using `shlex.quote()` by wrapping filenames parsed by `.compile()`'s helper functions.\r\n\r\nAs a result, the following command can run correctly because filenames with spaces were quoted:\r\n```bash\r\n>>> ' '.join(output.compile())\r\nffmpeg -fflags +genpts -i '/tmp/video with spaces in name.mkv' \\\r\n  -acodec copy -movflags faststart -scodec copy -threads 12 -vcodec libx264 -vlevel 4.1 \\\r\n  '/tmp/video with spaces in name [out].mkv' -y\r\n```\r\n(Again, escaped new lines were just added to this example for readability, this pull request does not add them to output.)\r\n",
+  "comments": [
+   {
+    "author": {
+     "login": "charlesgwaldman"
+    },
+    "body": "Having dealt with similar issues, I can tell you that the `shlex.quote` approach will fail on the Windows platform.  `shlex.quote` will use single quotes, which are not effective in the Windows \"shell\", you need double-quotes there.  As the Python docs spell out \"Warning: The shlex module is only designed for Unix shells.\"  https://docs.python.org/3/library/shlex.html#shlex.quote",
+    "createdAt": "2023-04-04T19:18:45Z"
+   },
+   {
+    "author": {
+     "login": "gsauthof"
+    },
+    "body": "Since ffmpeg-python's `compile()`  returns a list and nobody forces you to `' '.join` that list, why don't you simply supply the whole list to `subprocess.run()`, which expects the command as a list, by default, anyways?\r\n\r\nIf you can't use a sane API that supports command lists - such as subprocess - then this is out of scope for ffmpeg-python, I would argue.",
+    "createdAt": "2025-10-04T17:40:12Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "master",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/719"
+ },
+ {
+  "number": 726,
+  "title": "Fix ffmpeg/tests/test_ffmpeg.py: test_pipe() (v1: ignore duplicate frames)",
+  "author": {
+   "login": "xiota"
+  },
+  "createdAt": "2022-12-11T02:11:19Z",
+  "updatedAt": "2024-08-04T00:00:06Z",
+  "labels": [],
+  "body": "FFmpeg 5.x duplicates trimmed frames instead of removing them.  Resolves #636\r\n\r\nThis PR checks for the presence of duplicate frames.",
+  "comments": [
+   {
+    "author": {
+     "login": "emilazy"
+    },
+    "body": "This works for me on FFmpeg 7, unlike https://github.com/kkroening/ffmpeg-python/pull/737.\r\n\r\nHowever I also had to replace `7.036000` with `7.035646` elsewhere in the file (increased precision from FFmpeg, I suppose?)",
+    "createdAt": "2024-08-03T23:59:08Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "fix_test_pipe",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/726"
+ },
+ {
+  "number": 730,
+  "title": "fix(sec): upgrade py to 1.10.0",
+  "author": {
+   "login": "chncaption"
+  },
+  "createdAt": "2022-12-23T02:16:19Z",
+  "updatedAt": "2022-12-23T02:16:19Z",
+  "labels": [],
+  "body": "### What happened？\nThere are 1 security vulnerabilities found in py 1.8.0\n- [CVE-2020-29651](https://www.oscs1024.com/hd/CVE-2020-29651)\n\n\n### What did I do？\nUpgrade py from 1.8.0 to 1.10.0 for vulnerability fix\n\n### What did you expect to happen？\nIdeally, no insecure libs should be used.\n\n### The specification of the pull request\n[PR Specification](https://www.oscs1024.com/docs/pr-specification/) from OSCS",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "oscs_fix_ceiguqoau51p84uio9b0",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/730"
+ },
+ {
+  "number": 734,
+  "title": "fix(sec): upgrade urllib3 to 1.26.5",
+  "author": {
+   "login": "chncaption"
+  },
+  "createdAt": "2023-01-09T12:52:59Z",
+  "updatedAt": "2023-01-09T12:52:59Z",
+  "labels": [],
+  "body": "### What happened？\nThere are 1 security vulnerabilities found in urllib3 1.25.3\n- [CVE-2021-33503](https://www.oscs1024.com/hd/CVE-2021-33503)\n\n\n### What did I do？\nUpgrade urllib3 from 1.25.3 to 1.26.5 for vulnerability fix\n\n### What did you expect to happen？\nIdeally, no insecure libs should be used.\n\n### The specification of the pull request\n[PR Specification](https://www.oscs1024.com/docs/pr-specification/) from OSCS",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "oscs_fix_ceu0s90au51u0ah91c50",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/734"
+ },
+ {
+  "number": 751,
+  "title": "Feature error cmdline",
+  "author": {
+   "login": "mattia-lecci"
+  },
+  "createdAt": "2023-03-06T17:03:41Z",
+  "updatedAt": "2023-03-06T17:03:41Z",
+  "labels": [],
+  "body": "With this update, I'm proposing to add a `cmdline` argument to `ffmpeg.Error`.\r\nThis helps a lot when writing complex ffmpeg commands which might not work on the first attempt (e.g., wrong filename, filter name, filter, inputs, etc).\r\n\r\nExamples are updated accordingly.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "feature-error-cmdline",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/751"
+ },
+ {
+  "number": 766,
+  "title": "Fix hashlib error on FIPS=1 systems",
+  "author": {
+   "login": "zberry"
+  },
+  "createdAt": "2023-05-04T15:04:33Z",
+  "updatedAt": "2023-05-04T15:04:33Z",
+  "labels": [],
+  "body": "Error when calling hashlib.md5 on systems where the FIPS=1 option is set",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "fix_hashlib_error",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/766"
+ },
+ {
+  "number": 772,
+  "title": "fix _view.py import",
+  "author": {
+   "login": "ShimYama"
+  },
+  "createdAt": "2023-06-08T03:21:00Z",
+  "updatedAt": "2023-06-08T03:21:00Z",
+  "labels": [],
+  "body": "Other file uses relative path for input, but this file doesn't.\r\nIf you use ffmpeg-python without installing from pip, this may occur import errors.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "patch-1",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/772"
+ },
+ {
+  "number": 777,
+  "title": "fix a typo in README.md",
+  "author": {
+   "login": "mightbesimon"
+  },
+  "createdAt": "2023-06-24T15:14:41Z",
+  "updatedAt": "2023-06-24T15:14:41Z",
+  "labels": [],
+  "body": "I believe this is a typo and is meant to be `.output('out.mp4')` instead of `.input('out.mp4')`",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "patch-1",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/777"
+ },
+ {
+  "number": 783,
+  "title": "Fix #782: Force stdin=subprocess.DEVNULL for compatibility with joblib/loki",
+  "author": {
+   "login": "charlienewey"
+  },
+  "createdAt": "2023-07-17T16:21:01Z",
+  "updatedAt": "2023-07-17T16:21:01Z",
+  "labels": [],
+  "body": "As above. See bug report in #782 for complete context and justification the fix.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "bugfix/782",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/783"
+ },
+ {
+  "number": 790,
+  "title": "disabled window creation on windows",
+  "author": {
+   "login": "amamic1803"
+  },
+  "createdAt": "2023-08-25T15:07:16Z",
+  "updatedAt": "2024-06-16T19:15:03Z",
+  "labels": [],
+  "body": "If this package is used with PyInstaller --noconsole option, console window still opens when ffmpeg gets run. I added a creation flag to the subprocess.Popen that disables that behaviour (because if the user packages their script with --noconsole option, they probably don't want to see ffmepg output either). Note that this doesn't disable ffmpeg output to console, so if the program is run with the console (or used with PyInstaller without --noconsole flag), ffmpeg output can still be seen, which is in my opinion desirable behaviour. I also added a check so that this flag gets set only under Windows OS because I think the problem is specific to it.\r\n\r\nResolves #686, but in a better way than I first suggested there because using shell=True can be unsafe. This solution is better for described issue.",
+  "comments": [
+   {
+    "author": {
+     "login": "austinulfers"
+    },
+    "body": "Would like to second this addition.",
+    "createdAt": "2024-01-25T22:46:29Z"
+   },
+   {
+    "author": {
+     "login": "amamic1803"
+    },
+    "body": "This project seems abandoned, no PRs are getting merged. While I will keep my fork with PR open, and you can use it by URL instead of this repository, I think you are better off just using ffmpeg directly. At least that's what I do when I need to do any work with videos. This project would be great if few things (like this PR) could be fixed, but that doesn't seem probable to happen.",
+    "createdAt": "2024-01-26T00:05:36Z"
+   },
+   {
+    "author": {
+     "login": "biggestsonicfan"
+    },
+    "body": "I understand this is an _ancient_ PR that's unlikely to be merged, however there are some circumstances in which ffmpeg prompts for user input, such as overwriting an existing file. In that case, the script can not progress and the ffmpeg instance must be force-closed.\r\n\r\nJust throwing an edge-case out there in case anyone wishes to take the monumental undertaking of piping it to the python console, lol.",
+    "createdAt": "2024-06-10T10:42:51Z"
+   },
+   {
+    "author": {
+     "login": "amamic1803"
+    },
+    "body": "I'm not sure what you are saying, or how it relates to this PR. This PR just disables creation of new terminal window when using PyInstaller. And even then new window is not created but the output is still piped to specified location. Nothing else is changed. If some app has GUI and is packaged with PyInstalller --no-console, then obviously we don't want the terminal popping up. It is up to the dev to check what is ffmpeg output to stdout or stderr which should be piped and easily available. The dev could then potentially implement functionality to ask the user to overwrite the file or whatever.",
+    "createdAt": "2024-06-11T13:45:51Z"
+   },
+   {
+    "author": {
+     "login": "biggestsonicfan"
+    },
+    "body": "While you are correct, it relates to the PR in the fact that if drop-in-replaced with an existing `ffmpeg-python` implementation, you can potentially create scripts which hang indefinitely. Someone who wasn't aware that ffmpeg would be trying to ask for user input will simply have a script that will never finish.",
+    "createdAt": "2024-06-16T19:12:09Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "master",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/790"
+ },
+ {
+  "number": 791,
+  "title": "Use mkstemp instead of unsafe mktemp",
+  "author": {
+   "login": "kingroryg"
+  },
+  "createdAt": "2023-09-02T00:26:05Z",
+  "updatedAt": "2023-09-02T01:06:53Z",
+  "labels": [],
+  "body": "The `tempfile.mktemp` function is unsafe and deprecated as per https://docs.python.org/3/library/tempfile.html#tempfile.mktemp. The security impact is mentioned here https://cwe.mitre.org/data/definitions/377.html.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "master",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/791"
+ },
+ {
+  "number": 795,
+  "title": "Remove dependency on `future`",
+  "author": {
+   "login": "frenzymadness"
+  },
+  "createdAt": "2023-09-20T12:39:42Z",
+  "updatedAt": "2025-08-20T08:55:17Z",
+  "labels": [],
+  "body": "Fixes: #784 ",
+  "comments": [
+   {
+    "author": {
+     "login": "abenson"
+    },
+    "body": "Can this be merged and a new version be released? This would solve a lot if issues with current version of Python. Thanks!",
+    "createdAt": "2023-11-20T20:59:08Z"
+   },
+   {
+    "author": {
+     "login": "mmxgn"
+    },
+    "body": "Hi! \r\n\r\nSorry for bringing this up.\r\n\r\nCan we get this merged?\r\n\r\nThanks for the work in ffmpeg-python!",
+    "createdAt": "2024-05-27T13:06:46Z"
+   },
+   {
+    "author": {
+     "login": "hagen00"
+    },
+    "body": "Just noting it here as well. There is now a vulnerability in future as per: https://github.com/kkroening/ffmpeg-python/issues/784 \r\n\r\nhere for details: https://nvd.nist.gov/vuln/detail/CVE-2025-50817 \r\n\r\n",
+    "createdAt": "2025-08-20T08:55:16Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "rm_future",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/795"
+ },
+ {
+  "number": 814,
+  "title": "[kkroening/ffmpeg-python/issues/463] add basic metadata file support",
+  "author": {
+   "login": "grantnegri"
+  },
+  "createdAt": "2023-12-13T16:38:06Z",
+  "updatedAt": "2025-04-07T02:18:12Z",
+  "labels": [],
+  "body": "Fixes kkroening/ffmpeg-python/issues/463.\r\n\r\nCheck if the stream name has already been specified as a metadata stream. there are no guarantees that the user has done this **correctly.**",
+  "comments": [
+   {
+    "author": {
+     "login": "matracey"
+    },
+    "body": "@kkroening Is this library still actively maintained? My use case involves manipulating file metadata, which is currently broken due to the issue outlined in #463. This PR appears to be relatively small in size, so is it possible to review and merge?",
+    "createdAt": "2025-04-07T02:18:11Z"
+   }
+  ],
+  "isDraft": false,
+  "headRefName": "metadata-support",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/814"
+ },
+ {
+  "number": 829,
+  "title": "Fixed potential issues in examples/show_progress.py",
+  "author": {
+   "login": "DavidSingh3"
+  },
+  "createdAt": "2024-03-29T16:18:13Z",
+  "updatedAt": "2024-03-29T16:18:13Z",
+  "labels": [],
+  "body": "Because the `examples/show_progress.py` file monkey patches modules using `gevent.monkey.patch_all()`, implementing it like this in a real project can lead to weird errors:\r\n\r\n```\r\nTraceback (most recent call last):\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/threading.py\", line 953, in run\r\n    self._target(*self._args, **self._kwargs)\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/multiprocessing/managers.py\", line 189, in accepter\r\n    c = self.listener.accept()\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/multiprocessing/connection.py\", line 463, in accept\r\n    c = self._listener.accept()\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/multiprocessing/connection.py\", line 609, in accept\r\n    s, self._last_accepted = self._socket.accept()\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/site-packages/gevent/_socket3.py\", line 212, in accept\r\n    self._wait(self._read_event)\r\n  File \"src/gevent/_hub_primitives.py\", line 317, in gevent._gevent_c_hub_primitives.wait_on_socket\r\n  File \"src/gevent/_hub_primitives.py\", line 322, in gevent._gevent_c_hub_primitives.wait_on_socket\r\n  File \"src/gevent/_hub_primitives.py\", line 304, in gevent._gevent_c_hub_primitives._primitive_wait\r\n  File \"src/gevent/_hub_primitives.py\", line 46, in gevent._gevent_c_hub_primitives.WaitOperationsGreenlet.wait\r\n  File \"src/gevent/_hub_primitives.py\", line 46, in gevent._gevent_c_hub_primitives.WaitOperationsGreenlet.wait\r\n  File \"src/gevent/_hub_primitives.py\", line 55, in gevent._gevent_c_hub_primitives.WaitOperationsGreenlet.wait\r\n  File \"src/gevent/_waiter.py\", line 154, in gevent._gevent_c_waiter.Waiter.get\r\n  File \"src/gevent/_greenlet_primitives.py\", line 61, in gevent._gevent_c_greenlet_primitives.SwitchOutGreenletWithLoop.switch\r\n  File \"src/gevent/_greenlet_primitives.py\", line 61, in gevent._gevent_c_greenlet_primitives.SwitchOutGreenletWithLoop.switch\r\n  File \"src/gevent/_greenlet_primitives.py\", line 65, in gevent._gevent_c_greenlet_primitives.SwitchOutGreenletWithLoop.switch\r\n  File \"src/gevent/_gevent_c_greenlet_primitives.pxd\", line 35, in gevent._gevent_c_greenlet_primitives._greenlet_switch\r\ngreenlet.error: cannot switch to a different thread\r\npython-BaseException\r\nTraceback (most recent call last):\r\n  File \"/home/david/.config/JetBrains/PyCharm2024.1/scratches/scratch_37.py\", line 9, in <module>\r\n    print(manager.list())\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/multiprocessing/managers.py\", line 723, in temp\r\n    token, exp = self._create(typeid, *args, **kwds)\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/multiprocessing/managers.py\", line 606, in _create\r\n    conn = self._Client(self._address, authkey=self._authkey)\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/multiprocessing/connection.py\", line 508, in Client\r\n    answer_challenge(c, authkey)\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/multiprocessing/connection.py\", line 752, in answer_challenge\r\n    message = connection.recv_bytes(256)         # reject large message\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/multiprocessing/connection.py\", line 216, in recv_bytes\r\n    buf = self._recv_bytes(maxlength)\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/multiprocessing/connection.py\", line 414, in _recv_bytes\r\n    buf = self._recv(4)\r\n  File \"/home/david/ffmpeg-python/.venv/lib/python3.10/multiprocessing/connection.py\", line 379, in _recv\r\n    chunk = read(handle, remaining)\r\nBlockingIOError: [Errno 11] Resource temporarily unavailable\r\npython-BaseException\r\n\r\nProcess finished with exit code 1\r\n```\r\n\r\nThe above error occurs when the project includes something like this codeblock after the patching has been done:\r\n\r\n```\r\nfrom multiprocessing import Manager\r\n\r\nwith Manager() as manager:\r\n    print(manager.list())\r\n```\r\n\r\nAfter some trial and error, I found that it's only necessary to patch the `selectors` module instead of running `patch_all()`.\r\nI implemented this in a context manager that restores the original `selectors` module afterwards, to avoid any other potential issues further down in a project when this module has been patched for no reason.\r\n\r\nI also moved the main logic to a separate function, so that this issue can be tested more easily with a scratch file like this:\r\n```\r\nfrom multiprocessing import Manager\r\n\r\nfrom examples import show_progress\r\n\r\nif __name__ == \"__main__\":\r\n    show_progress.main()\r\n\r\n    with Manager() as manager:\r\n        print(manager.list())\r\n```\r\n\r\nThis resolves the error I mentioned, and the progress bar still works correctly.\r\n\r\nThanks for providing this repository, it has been nice using ffmpeg video generation in my project while having the progress bar instead of the default output.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "master",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/829"
+ },
+ {
+  "number": 844,
+  "title": "Fix empty strings returned in arguments ",
+  "author": {
+   "login": "AmirhBrt"
+  },
+  "createdAt": "2024-06-26T14:26:20Z",
+  "updatedAt": "2024-06-26T14:29:13Z",
+  "labels": [],
+  "body": "Due to [this](https://github.com/kkroening/ffmpeg-python/issues/842) issue I mentioned, I filtered empty  strings returned by get_args so compile and run functions can run properly.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "master",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/844"
+ },
+ {
+  "number": 848,
+  "title": "Fix `test__probe` on FFmpeg 7",
+  "author": {
+   "login": "emilazy"
+  },
+  "createdAt": "2024-08-04T00:07:08Z",
+  "updatedAt": "2024-08-04T00:07:08Z",
+  "labels": [],
+  "body": "We now get the (more precise?) result 7.035646, so make the check less exact.\r\n\r\nCombined with https://github.com/kkroening/ffmpeg-python/pull/726, all the tests pass for me with FFmpeg 7.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "push-zzlwlzosrruu",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/848"
+ },
+ {
+  "number": 858,
+  "title": "Fixed formatting of filter_multi_output() docstring.",
+  "author": {
+   "login": "abingham"
+  },
+  "createdAt": "2024-10-22T08:55:21Z",
+  "updatedAt": "2024-10-22T08:55:21Z",
+  "labels": [],
+  "body": "The code block example in the docstring was improperly formatted, resulting in garbled output.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "master",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/858"
+ },
+ {
+  "number": 863,
+  "title": "Update split_silence.py",
+  "author": {
+   "login": "emamirazavi"
+  },
+  "createdAt": "2024-11-07T06:56:08Z",
+  "updatedAt": "2024-11-07T06:59:12Z",
+  "labels": [],
+  "body": "```\r\noutput = p.communicate()[1].decode('utf-8')\r\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xa9 in position 1888: invalid start byte\r\n```\r\n\r\nThere was an important error for media files containing invalid characters in meta data or other aspects. With this correction bug resolved completely.",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "emamirazavi-patch-1",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/863"
+ },
+ {
+  "number": 864,
+  "title": "Correct -re argument in example readme",
+  "author": {
+   "login": "LazerLotus"
+  },
+  "createdAt": "2024-11-07T13:46:40Z",
+  "updatedAt": "2024-11-07T13:46:40Z",
+  "labels": [],
+  "body": "According to the ffmpeg document(https://ffmpeg.org/ffmpeg.html), the -re argument is an input option, not a global argument .\r\n\r\n```\r\n-re (input)\r\nRead input at native frame rate. This is equivalent to setting -readrate 1.\r\n```\r\nThe example in the readme ## Stream from a local video to HTTP server part code is not work, so I made a tiny correction.\r\n\r\n\r\n",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "correct-re-args-in-example",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/864"
+ },
+ {
+  "number": 871,
+  "title": "make overwrite_output=None default & False pass '-n' arg",
+  "author": {
+   "login": "curtiola"
+  },
+  "createdAt": "2025-03-22T21:25:58Z",
+  "updatedAt": "2025-03-22T21:25:58Z",
+  "labels": [],
+  "body": "Closes #253\r\n\r\nChanged 'overwrite_output' parameter behaviour to be more intuitive",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "overwrite_output-parameter-change",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/871"
+ },
+ {
+  "number": 886,
+  "title": "Fix potentially vulnerable cloned function",
+  "author": {
+   "login": "npt-1707"
+  },
+  "createdAt": "2026-05-17T23:32:23Z",
+  "updatedAt": "2026-08-30T00:12:19Z",
+  "labels": [],
+  "body": "Hi,\r\n\r\nOur tool identified a potential vulnerability in a clone function in `doc/html/_static/jquery-3.2.1.js` sourced from [jquery/jquery](https://github.com/jquery/jquery). This issue, originally reported in CVE-2015-9251, was resolved in the repository via this commit https://github.com/jquery/jquery/commit/2546bb35b89413da5198d54a4539e4ed0aaf6e49.\r\n\r\nThis PR suggests applying the corresponding patch to fix the vulnerabilities in this codebase.\r\n\r\nPlease review at your convenience. Thank you!",
+  "comments": [],
+  "isDraft": false,
+  "headRefName": "fix_CVE-2015-9251",
+  "baseRefName": "master",
+  "url": "https://github.com/kkroening/ffmpeg-python/pull/886"
+ }
+]
