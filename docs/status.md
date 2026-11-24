@@ -1,5 +1,9 @@
 # Status
 
+## 24.11.2026, Zyklus des Lead-Dienstes (keine Änderung, #431 geparkt)
+
+**Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv, keine Aufgabe offen. Alles Weitere wartet auf den Visionär: #90 (CI-Job `build`), #96/#99 (Export von Issues und Pull Requests), Pages-Workflow für die Referenz aus #611. Ohne aktive Agenten ist der Vorrat von 0 Aufgaben kein Engpass; offline lösbare Arbeit ohne den Export gibt es nicht. Die nächsten Schritte des Eintrags „#431 geparkt“ gelten unverändert.
+
 ## 24.11.2026, Zyklus des Lead-Dienstes (#431 geparkt)
 
 **Lage.** Keine Einreichungen, kein Agent aktiv, keine Aufgabe mehr offen. #90 und #96 beim Visionär weiter unbeantwortet.
