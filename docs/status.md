@@ -1,5 +1,20 @@
 # Status
 
+## 24.11.2026, Zyklus des Lead-Dienstes (Sichtung neu geschnitten)
+
+**Lage.** Der Visionär hat #90 und #96/#99 umgesetzt (`cdb986c`): Job `build` in `ci.yml` und der Export der offenen Issues (478) und Pull Requests (46) des Originals unter `docs/inherited-issues/`. Keine Einreichungen, kein Agent aktiv.
+
+**Erledigt.** E8 und E9 offline lösbar neu geschnitten, Quelle die JSON-Dateien, Stichtag 24.11.2026, jede Aufgabe mit einem Prüfbefehl für die Vollständigkeit (fehlende, zusätzliche, doppelte Nummern):
+- #652: Pull Requests (46), Einstufung `taken`/`take-next`/`take-later`/`keep-linked`/`decline`; die neun PRs aus `CREDITS.md` sind `taken`.
+- #653 bis #658: Issues in sechs Blöcken zu je etwa 80 (1–273, 274–400, 401–530, 531–660, 661–762, ab 763).
+
+**Nächste Schritte.**
+
+1. Einreichungen zu #652 bis #658 prüfen: Prüfbefehl selbst ausführen, Stichproben der Einstufungen gegen die JSON-Datei, keine Platzhalter.
+2. Aus `take-next` und `bug` die Aufgaben für 0.3.2 schneiden (je Patch eine Aufgabe mit rotem Test und `Co-authored-by`).
+3. Nach dem Merge von #611: README-Link `## [API reference]` umstellen, sobald die Referenz auf GitHub Pages des Forks liegt (Pages-Workflow beim Visionär).
+4. Offen beim Visionär: Rest von #90 (Actions, Issues, private Sicherheitsmeldungen, Ankündigung in #807), PyPI für E11/E12.
+
 ## 24.11.2026, Zyklus des Lead-Dienstes (keine Änderung, mehrere Zyklen zusammengefasst)
 
 **Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv, keine Aufgabe offen. #90 und #96/#99 (eigene Fragen an den Visionär) weiter unbeantwortet, kein Export unter `docs/inherited-issues/`, kein Job `build` in `ci.yml`. Die nächsten Schritte des Eintrags „#431 geparkt“ gelten unverändert.

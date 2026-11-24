@@ -1,6 +1,6 @@
 # Plan
 
-Stand: 23.11.2026. Schätzung für Meilenstein 1 auf swarvex: 17 Aufgaben (E9 in vier Blöcken).
+Stand: 24.11.2026. Schätzung für Meilenstein 1 auf swarvex: 17 Aufgaben (E9 in sechs Blöcken).
 
 ## Globale Vorgaben (binden jede Aufgabe)
 
@@ -27,8 +27,8 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | E5 | W-5: Build über `pyproject.toml` mit setuptools, Name `ffmpeg-python-ng`, Version 0.3.0, keine Abhängigkeiten, `requires-python = ">=3.10"` ohne Obergrenze, Klassifizierer 3.10 bis 3.15; `setup.py`, `setup.cfg`, `tox.ini`, `MANIFEST`, `requirements.txt` entfallen; `future` aus der Umgebung | Lead | D | E1, E2 | erledigt: Aufgabe #604 am 23.11.2026; Build ungeprüft, bis die CI läuft (Sandbox ohne setuptools) |
 | E6 | W-10: `CREDITS.md` mit den Autoren aus der Git-Historie | Schwarm | A | F0 | angenommen: Aufgabe #430 |
 | E7 | W-11, W-4: README erledigt vom Lead am 17.11.2026 (Hinweis auf das Original, Umstiegshinweis, Installation von GitHub, Badges und Links auf die Fortführung). Offen: `CHANGELOG.md` und in der README die PyPI-Installation als Hauptweg, sobald 0.3.0 veröffentlicht ist | Schwarm | A | E5 | README erledigt; `CHANGELOG.md` angenommen (Aufgabe #605, #783); PyPI-Installation in der README nach dem Release |
-| E8 | W-9: `docs/inherited-pull-requests.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | Nacharbeit: Aufgabe #431; die Peer-Review hatte kein Netzwerk und konnte die Fakten nicht prüfen |
-| E9 | W-9: offene Issues des Originals gesichtet, vier Blöcke nach Nummern unter `docs/inherited-issues/` | Schwarm | A | F0 | geparkt: #612 bis #615 geschlossen (kein Netzwerk in Sandboxen); Neuschnitt nach Issue-Export (Nachricht #96) |
+| E8 | W-9: `docs/inherited-pull-requests.md`, offene Pull Requests des Originals gesichtet: übernehmen, verlinkt lassen, schließen | Schwarm | A | F0 | offen: Aufgabe #652 (offline aus `docs/inherited-issues/raw-pulls.json`, ersetzt #431) |
+| E9 | W-9: offene Issues des Originals gesichtet, sechs Blöcke nach Nummern unter `docs/inherited-issues/` | Schwarm | A | F0 | offen: Aufgaben #653 bis #658 (offline aus `raw-issues.json`, Export des Visionärs `cdb986c`; ersetzen #612 bis #615) |
 | E10 | `SECURITY.md` (GitHub Security Advisories) | Schwarm | A | F0 | angenommen: Aufgabe #432 |
 | E14 | Issue-Vorlage für Fehlerberichte (`.github/ISSUE_TEMPLATE/`) | Lead | D | F0 | erledigt: Aufgabe #556 am 19.11.2026; wirkt, sobald Issues auf dem Repo eingeschaltet sind |
 | E11 | Release-Workflow mit PyPI Trusted Publishing | Lead | D | E5 | geplant; braucht den Visionär auf PyPI |
