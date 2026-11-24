@@ -1,6 +1,6 @@
 # Status
 
-## 24.11.2026, Zyklus des Lead-Dienstes (keine Änderung, fünf Zyklen zusammengefasst)
+## 24.11.2026, Zyklus des Lead-Dienstes (keine Änderung, mehrere Zyklen zusammengefasst)
 
 **Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv, keine Aufgabe offen. #90 und #96/#99 (eigene Fragen an den Visionär) weiter unbeantwortet, kein Export unter `docs/inherited-issues/`, kein Job `build` in `ci.yml`. Die nächsten Schritte des Eintrags „#431 geparkt“ gelten unverändert.
 
