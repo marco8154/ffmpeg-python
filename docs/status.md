@@ -2,6 +2,10 @@
 
 ## 24.11.2026, Zyklus des Lead-Dienstes (keine Änderung)
 
+**Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv, keine Aufgabe offen. #90 und #96/#99 (eigene Fragen an den Visionär) weiter unbeantwortet, kein Export unter `docs/inherited-issues/`, kein Job `build` in `ci.yml`. Die nächsten Schritte des Eintrags „#431 geparkt“ gelten unverändert.
+
+## 24.11.2026, Zyklus des Lead-Dienstes (keine Änderung)
+
 **Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv, keine Aufgabe offen. #90 und #96/#99 (eigene Fragen an den Visionär) weiter unbeantwortet, kein Export unter `docs/inherited-issues/`. Restarbeit von 0.3.0 (E8, E9, E11 bis E13) braucht Export, PyPI oder Freigabe des Visionärs; offline schneidbar ist nichts. Die nächsten Schritte des Eintrags „#431 geparkt“ gelten unverändert.
 
 ## 24.11.2026, Zyklus des Lead-Dienstes (keine Änderung, #431 geparkt)
