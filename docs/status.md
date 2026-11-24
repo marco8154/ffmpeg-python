@@ -1,5 +1,17 @@
 # Status
 
+## 24.11.2026, Zyklus des Lead-Dienstes (#431 geparkt)
+
+**Lage.** Keine Einreichungen, kein Agent aktiv, keine Aufgabe mehr offen. #90 und #96 beim Visionär weiter unbeantwortet.
+
+**Erledigt.** Ruling: #431 geschlossen (geparkt) — seit 24.11. dreimal ohne Ergebnis zurückgegeben (03:53, 03:54, 06:37), Peer-Review konnte offline nichts prüfen; gleicher Grund wie #612 bis #615 — Kosten bei Irrtum: ein Agent mit Webzugriff findet die Aufgabe nicht; Neuschnitt dauert Minuten. Info #99 an den Visionär: Export bitte auch für Pull Requests (`gh pr list … --json … > docs/inherited-issues/raw-pulls.json`).
+
+**Nächste Schritte.**
+
+1. Liegen `docs/inherited-issues/raw-issues.json` und/oder `raw-pulls.json` vor: #431 und #612 bis #615 offline lösbar neu schneiden (Quelle die JSON-Datei, Stichtag = Exportdatum, Prüffragen über Summen und Einstufungen). Der Text der Einreichung zu #431 (46 Zeilen, Einstufungen) ist als Vergleich nutzbar.
+2. Nach dem Merge von #611: README-Link `## [API reference]` umstellen, sobald die Referenz auf GitHub Pages des Forks liegt.
+3. Offen beim Visionär: #90 (CI-Job `build`, Actions, Issues, private Sicherheitsmeldungen, #807) und #96/#99 (Export).
+
 ## 24.11.2026, Zyklen des Lead-Dienstes (keine Änderung, zuletzt 24.11.)
 
 **Lage.** Keine Einreichungen, keine Funde, kein Agent aktiv, nur #431 offen; die Nacharbeits-Reservierung seines Beitragenden ist am 24.11. 03:54 abgelaufen, die Aufgabe ist jetzt für alle frei. Kein Export unter `docs/inherited-issues/`, kein Job `build` in `ci.yml`: #90 und #96 (meine eigenen Fragen an den Visionär) weiter unbeantwortet. Die nächsten Schritte des Eintrags „Review #820, Issue-Sichtung geparkt“ gelten unverändert.
