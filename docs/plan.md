@@ -69,6 +69,18 @@ Große Graphen (Messung vom 17.11.2026, Python 3.14): `get_args()` wächst quadr
 | #440 | `topo_sort` mit Mengen statt Listen; Argumentliste unverändert (angenommen, #777) | #433 |
 | #441 | `topo_sort` ohne Rekursion; Kette mit 2000 Filtern läuft | #440 |
 
+## Meilenstein 3: 0.3.2
+
+Quelle: die Sichtung des Originals (#652 bis #658; angenommen 25.11.: #897, #898, #900, #902, #904). Je Fix eine Aufgabe mit Regressionstest, der auf dem alten Code rot ist. Vor dem Schnitt gegen den aktuellen Code geprüft: #654 und #611 (Issues) sind schon behoben, #656 (crop) ist im heutigen Code kein Fehler (Signatur und Docstring stimmen überein).
+
+| Aufgabe | Inhalt | Quelle | Dateien | Hängt ab von |
+|---|---|---|---|---|
+| #681 | `quiet=True` behält angeforderte Pipes | PR #538 (ArchieMeng) | `ffmpeg/_run.py`, `CHANGELOG.md` | – |
+| #682 | `get_args()` ohne Ausgang: klare `TypeError`-Meldung (Klasse bleibt) | Fund #176 | `ffmpeg/_run.py` | #681 |
+| #683 | RTSP-Beispiel ohne Platzhalter | Issue #310 | `examples/README.md` | – |
+
+Offen zur Entscheidung (ändern die Argumentliste für heute fehlerhafte Eingaben, also nur mit Ruling oder Visionär): #406 (Dateiname mit `-`), #416 (Apostroph-Escaping), #461/PR #844 (leere Flag-Argumente); #108/#116/PR #783 (stdin). Kandidaten ohne Bedenken: PR #220 (`vstack`/`hstack`, ergänzt nur Filter wie `atrim`).
+
 ## Grundausstattung
 
 Steht im Projektbrief, Abschnitt Grundausstattung; vom Visionär am 17.11.2026 bestätigt.

@@ -1,5 +1,19 @@
 # Status
 
+## 25.11.2026, Zyklus des Lead-Dienstes (Sichtung angenommen, 0.3.2 begonnen)
+
+**Lage.** Ein Agent aktiv, #657/#658 (Issues ab 661) laufen noch. Keine offenen Nachrichten.
+
+**Erledigt.**
+- Angenommen: #897 (PRs, #652), #898 (#653), #900 (#654), #902 (#655), #904 (#656). Selbst geprüft gegen die JSON-Exporte: vollständig, sortiert; Datum, Kommentare, Autor und Draft stimmen in allen Zeilen, Summen stimmen. #902 trotz `request_changes` im Peer-Review angenommen: die Beschreibung erlaubt `decline` für „nicht nachvollziehbar“ (#408, #475); der Widerspruch lag in meinem Abnahmekriterium. Künftige Sichtungsaufgaben: Kriterium und Beschreibung gleich formulieren.
+- Meilenstein 0.3.2 angelegt (Schätzung 8): #681 (quiet und Pipes, PR #538), #682 (Fund #176, hängt an #681), #683 (RTSP-Beispiel, Issue #310). #684 versehentlich als Duplikat von #682 angelegt und sofort geschlossen.
+
+**Nächste Schritte.**
+1. Einreichungen zu #657, #658, #681 bis #683 prüfen.
+2. Nach #657/#658: aus allen `bug`/`take-next` die restlichen 0.3.2-Aufgaben schneiden; Kandidaten und offene Entscheidungen in `docs/plan.md`, Meilenstein 3. Die Klassen der Sichtung sind Vorschläge: vor jedem Schnitt gegen den Code prüfen (#656 war kein Fehler).
+3. Nach dem Merge von #611: README-Link `## [API reference]` umstellen, sobald die Referenz auf GitHub Pages liegt.
+4. Offen beim Visionär: Rest von #90 (Actions, Issues, private Sicherheitsmeldungen, #807), PyPI für E11/E12.
+
 ## 24.11.2026, Zyklus des Lead-Dienstes (Sichtung neu geschnitten)
 
 **Lage.** Der Visionär hat #90 und #96/#99 umgesetzt (`cdb986c`): Job `build` in `ci.yml` und der Export der offenen Issues (478) und Pull Requests (46) des Originals unter `docs/inherited-issues/`. Keine Einreichungen, kein Agent aktiv.
