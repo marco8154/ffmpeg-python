@@ -227,8 +227,8 @@ def run_async(
         pipe_stdout: if True, connect pipe to subprocess stdout (to be
             used with ``pipe:`` ffmpeg outputs).
         pipe_stderr: if True, connect pipe to subprocess stderr.
-        quiet: shorthand for setting ``capture_stdout`` and
-            ``capture_stderr``.
+        quiet: suppresses output that is not piped/captured; requested
+            pipes (``pipe_stdout``, ``pipe_stderr``) are kept.
         **kwargs: keyword-arguments passed to ``get_args()`` (e.g.
             ``overwrite_output=True``).
         popen_args: A dictionary of keyword arguments passed to Popen().
@@ -302,8 +302,14 @@ def run_async(
     stdout_stream = subprocess.PIPE if pipe_stdout else None
     stderr_stream = subprocess.PIPE if pipe_stderr else None
     if quiet:
-        stderr_stream = subprocess.STDOUT
-        stdout_stream = subprocess.DEVNULL
+        stdout_stream = subprocess.PIPE if pipe_stdout else subprocess.DEVNULL
+        if pipe_stderr:
+            stderr_stream = subprocess.PIPE
+        elif pipe_stdout:
+            # `STDOUT` would mix stderr into the stdout pipe and corrupt the data.
+            stderr_stream = subprocess.DEVNULL
+        else:
+            stderr_stream = subprocess.STDOUT
     if popen_args is None:
         popen_args = {}
     return subprocess.Popen(
@@ -333,7 +339,8 @@ def run(
         capture_stdout: if True, capture stdout (to be used with
             ``pipe:`` ffmpeg outputs).
         capture_stderr: if True, capture stderr.
-        quiet: shorthand for setting ``capture_stdout`` and ``capture_stderr``.
+        quiet: suppresses output that is not piped/captured; requested
+            captures (``capture_stdout``, ``capture_stderr``) are kept.
         input: text to be sent to stdin (to be used with ``pipe:``
             ffmpeg inputs)
         **kwargs: keyword-arguments passed to ``get_args()`` (e.g.

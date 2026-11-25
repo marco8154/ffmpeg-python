@@ -22,6 +22,7 @@ The format follows Keep a Changelog, and the project uses Semantic Versioning.
 - `ffmpeg/_view.py` imports the package relatively, so a vendored copy under another name works; patch by Shimpei Yamaguchi.
 - `get_args()` handles large graphs: visited nodes are kept in sets, and long filter chains (2000 filters) no longer raise `RecursionError`.
 - `repr()` of a node no longer raises `TypeError`.
+- `run_async()` and `run()` with `quiet=True` keep requested pipes (`pipe_stdout`, `pipe_stderr`, `capture_stdout`, `capture_stderr`); reported by ArchieMeng (original PR #538).
 
 ## [0.3.0] - unreleased
 
