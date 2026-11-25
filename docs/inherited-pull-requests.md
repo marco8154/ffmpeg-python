@@ -1,0 +1,62 @@
+# Open pull requests of the original (triage)
+
+Cut-off date: 2026-11-24. Count: 46 open pull requests of `kkroening/ffmpeg-python`, read from the offline export `docs/inherited-issues/raw-pulls.json`. There are no diffs in the export, so each entry is judged on title, body and comments. Classes: `taken`, `take-next`, `take-later`, `keep-linked`, `decline`.
+
+| Number | Title | Author | Last updated | Draft | Class | Reason |
+|---|---|---|---|---|---|---|
+| [#201](https://github.com/kkroening/ffmpeg-python/pull/201) | Asyncio support async/await | akolpakov | 2022-03-07 | no | decline | Duplicate of #362, the revised asyncio attempt, which is itself declined because an async API is a non-goal. |
+| [#220](https://github.com/kkroening/ffmpeg-python/pull/220) | upd: _filters.py : add "vstack" & "hstack" | russiaman | 2022-03-07 | no | take-next | Registers the `vstack` and `hstack` filters, a small addition that only extends the API and leaves existing argument lists unchanged. |
+| [#233](https://github.com/kkroening/ffmpeg-python/pull/233) | Drop `future` install-requirement | kkroening | 2022-08-17 | no | decline | Duplicate of #795, the newer full removal of `future`, which the continuation already carried out (CHANGELOG 0.3.0 Removed: "The runtime dependency `future`"). |
+| [#249](https://github.com/kkroening/ffmpeg-python/pull/249) | Add support for extracting ffmpeg build data, such as hwaccels | rpatterson | 2022-03-07 | no | take-next | Read-only helper that extracts ffmpeg build data such as hwaccels, extending the API without touching existing argument lists. |
+| [#298](https://github.com/kkroening/ffmpeg-python/pull/298) | Changed the order of the argumets for output to appear last | Nitaym | 2022-03-07 | no | decline | Reorders generated output arguments, changing the command line `get_args()`/`compile()` produce for existing graphs, which is kept fixed (project brief G14). |
+| [#300](https://github.com/kkroening/ffmpeg-python/pull/300) | Added an example for checking if a video is good/bad and cuda example | cbitterfield | 2022-03-07 | no | keep-linked | Example code only (video validation with CUDA), and examples are not part of the package. |
+| [#341](https://github.com/kkroening/ffmpeg-python/pull/341) | Add sub parameters syntaxe for filters | cmehay | 2026-04-01 | no | take-later | Sub-parameter dictionaries for filters are useful but rework filter argument escaping, and the discussion about a better approach is still open. |
+| [#362](https://github.com/kkroening/ffmpeg-python/pull/362) | Asyncio support | hdk5 | 2022-11-26 | no | decline | An async API contradicts the non-goal "async-API" in docs/out-of-scope.md, because it would be a new API. |
+| [#403](https://github.com/kkroening/ffmpeg-python/pull/403) | Explicit maps option | e1ty | 2022-03-07 | no | taken | Already carried over: CREDITS.md row "explicit_maps for get_args() and compile()" (#403). |
+| [#418](https://github.com/kkroening/ffmpeg-python/pull/418) | Source node (revamp of #62) | silviot | 2023-02-23 | no | take-later | Source node support is a substantial change to the graph model with a long open discussion (revamp of #62). |
+| [#438](https://github.com/kkroening/ffmpeg-python/pull/438) | subtitles example with show progress | innayatullah | 2022-03-07 | no | keep-linked | Example only (merging subtitles with ASS templates). |
+| [#447](https://github.com/kkroening/ffmpeg-python/pull/447) | add referfrence to ffmpeg-go | u2takey | 2022-03-07 | no | keep-linked | Documentation-only pointer to another project (ffmpeg-go). |
+| [#449](https://github.com/kkroening/ffmpeg-python/pull/449) | Adds atrim filter. | jcordial | 2024-11-27 | no | taken | Already carried over: CREDITS.md row "atrim filter" (#449); CHANGELOG Added "New filter `atrim`". |
+| [#482](https://github.com/kkroening/ffmpeg-python/pull/482) | Running utests (tox+pytest) on Github Action CI | yoyonel | 2022-03-07 | no | keep-linked | CI for the original's tox-based setup, and the continuation builds and tests on its own (CHANGELOG 0.3.0 Changed). |
+| [#485](https://github.com/kkroening/ffmpeg-python/pull/485) | Add an example for assembling a video from numpy frames | Noiredd | 2022-03-07 | no | keep-linked | Example only (assembling a video from numpy frames). |
+| [#490](https://github.com/kkroening/ffmpeg-python/pull/490) | Support zero index stream selectors | e1ty | 2022-03-07 | no | taken | Already carried over: CREDITS.md row "Stream selector with index 0" (#490). |
+| [#538](https://github.com/kkroening/ffmpeg-python/pull/538) | Avoid overriding "pipe" option with "quiet" | ArchieMeng | 2022-03-09 | no | take-next | Bug fix so `quiet` no longer overrides explicitly requested `pipe_stdout`/`pipe_stderr`; it changes run-time plumbing, not argument lists. |
+| [#553](https://github.com/kkroening/ffmpeg-python/pull/553) | Support path-like objects as well | Harsh-br0 | 2021-05-16 | no | decline | Duplicate of #700, the path-like support that was carried over (CREDITS.md "Path-like objects as filenames"). |
+| [#588](https://github.com/kkroening/ffmpeg-python/pull/588) | Support pipe input in ffprobe | misaka-10032 | 2022-03-07 | no | taken | Already carried over: CREDITS.md row "Pipe input for probe()" (#588). |
+| [#609](https://github.com/kkroening/ffmpeg-python/pull/609) | new param on probe to get stderr | ezequielramos | 2022-03-07 | no | taken | Already carried over: CREDITS.md row "capture_stderr for probe()" (#609). |
+| [#625](https://github.com/kkroening/ffmpeg-python/pull/625) | Fix Issue #92 | sota0121 | 2022-03-07 | no | decline | Adds the public name `ffmpeg.__version__`, decided against in project brief B3 (version lives in package metadata) and a new API is out of scope. |
+| [#640](https://github.com/kkroening/ffmpeg-python/pull/640) | Bump numpy from 1.16.4 to 1.21.0 | dependabot[bot] | 2022-03-07 | no | keep-linked | Numpy bump in `requirements.txt`, a file the new build no longer has (CHANGELOG 0.3.0 Changed). |
+| [#675](https://github.com/kkroening/ffmpeg-python/pull/675) | Added popen_args parameter to run_async() | michaelitvin | 2022-06-26 | no | taken | Already carried over: CREDITS.md row "popen_args for run_async()" (#675). |
+| [#700](https://github.com/kkroening/ffmpeg-python/pull/700) | Use fspath to consistently support PathLike objects as input/output filenames. | brianhou | 2022-08-22 | no | taken | Already carried over: CREDITS.md row "Path-like objects as filenames" (#700). |
+| [#711](https://github.com/kkroening/ffmpeg-python/pull/711) | Introduce script_filename parameter to get_args | utdemir | 2024-04-27 | no | take-later | Backwards-compatible fix for long command lines, but it adds a parameter to `get_args()`/`compile()`, the most compatibility-sensitive functions, so it needs careful review. |
+| [#719](https://github.com/kkroening/ffmpeg-python/pull/719) | Quote filenames to handle paths with spaces in commands created with `.compile()` | alexdelorenzo | 2025-10-04 | no | decline | Quoting changes the output of `compile()` for existing inputs, breaking the promise that the produced command list stays identical (project brief G14). |
+| [#726](https://github.com/kkroening/ffmpeg-python/pull/726) | Fix ffmpeg/tests/test_ffmpeg.py: test_pipe() (v1: ignore duplicate frames) | xiota | 2024-08-04 | no | taken | Resolved by the continuation: CHANGELOG 0.3.0 Fixed "Tests no longer depend on the ffmpeg version (`test_pipe`, `test__probe`)". |
+| [#730](https://github.com/kkroening/ffmpeg-python/pull/730) | fix(sec): upgrade py to 1.10.0 | chncaption | 2022-12-23 | no | keep-linked | Dependency bump in `requirements.txt` (py), a file the new build no longer has (CHANGELOG 0.3.0 Changed). |
+| [#734](https://github.com/kkroening/ffmpeg-python/pull/734) | fix(sec): upgrade urllib3 to 1.26.5 | chncaption | 2023-01-09 | no | keep-linked | Dependency bump in `requirements.txt` (urllib3), a file the new build no longer has (CHANGELOG 0.3.0 Changed). |
+| [#751](https://github.com/kkroening/ffmpeg-python/pull/751) | Feature error cmdline | mattia-lecci | 2023-03-06 | no | decline | Extends the exception `ffmpeg.Error`, which the project keeps exactly as in the original (project brief G14 lists it as untouchable). |
+| [#766](https://github.com/kkroening/ffmpeg-python/pull/766) | Fix hashlib error on FIPS=1 systems | zberry | 2023-05-04 | no | taken | Already carried over: CREDITS.md row "get_hash on FIPS systems" (#766). |
+| [#772](https://github.com/kkroening/ffmpeg-python/pull/772) | fix _view.py import | ShimYama | 2023-06-08 | no | taken | Already carried over: CREDITS.md row "Relative import in `_view.py`" (#772). |
+| [#777](https://github.com/kkroening/ffmpeg-python/pull/777) | fix a typo in README.md | mightbesimon | 2023-06-24 | no | keep-linked | Typo fix in the original's README. |
+| [#783](https://github.com/kkroening/ffmpeg-python/pull/783) | Fix #782: Force stdin=subprocess.DEVNULL for compatibility with joblib/loki | charlienewey | 2023-07-17 | no | take-later | Plausible fix for the loky/joblib hang (#782), but forcing `stdin=DEVNULL` changes the process setup of every run and needs a decision on inherited stdin first. |
+| [#790](https://github.com/kkroening/ffmpeg-python/pull/790) | disabled window creation on windows | amamic1803 | 2024-06-16 | no | take-later | Useful Windows console fix (#686), but applied unconditionally and with an unresolved discussion about prompts and hanging runs. |
+| [#791](https://github.com/kkroening/ffmpeg-python/pull/791) | Use mkstemp instead of unsafe mktemp | kingroryg | 2023-09-02 | no | taken | Already carried over: CREDITS.md row "view() uses `tempfile.mkstemp` instead of `mktemp`" (released in 0.3.0). |
+| [#795](https://github.com/kkroening/ffmpeg-python/pull/795) | Remove dependency on `future` | frenzymadness | 2025-08-20 | no | taken | Already done by the continuation: CHANGELOG 0.3.0 Removed "The runtime dependency `future`; the package has no runtime dependencies". |
+| [#814](https://github.com/kkroening/ffmpeg-python/pull/814) | [kkroening/ffmpeg-python/issues/463] add basic metadata file support | grantnegri | 2025-04-07 | no | take-later | Basic metadata file support (#463) looks useful, but without a diff the approach and its effect on the generated maps stay unclear. |
+| [#829](https://github.com/kkroening/ffmpeg-python/pull/829) | Fixed potential issues in examples/show_progress.py | DavidSingh3 | 2024-03-29 | no | keep-linked | Fix to the example examples/show_progress.py (gevent monkey-patching); examples only. |
+| [#844](https://github.com/kkroening/ffmpeg-python/pull/844) | Fix empty strings returned in arguments | AmirhBrt | 2024-06-26 | no | decline | Filtering empty strings changes the list `get_args()` returns for existing inputs, and that output is kept fixed (project brief G14). |
+| [#848](https://github.com/kkroening/ffmpeg-python/pull/848) | Fix `test__probe` on FFmpeg 7 | emilazy | 2024-08-04 | no | taken | Resolved by the continuation: CHANGELOG 0.3.0 Fixed "Tests no longer depend on the ffmpeg version (`test_pipe`, `test__probe`)". |
+| [#858](https://github.com/kkroening/ffmpeg-python/pull/858) | Fixed formatting of filter_multi_output() docstring. | abingham | 2024-10-22 | no | keep-linked | Docstring formatting fix, documentation only. |
+| [#863](https://github.com/kkroening/ffmpeg-python/pull/863) | Update split_silence.py | emamirazavi | 2024-11-07 | no | keep-linked | Fix to the example split_silence.py; examples only. |
+| [#864](https://github.com/kkroening/ffmpeg-python/pull/864) | Correct -re argument in example readme | LazerLotus | 2024-11-07 | no | keep-linked | Correction of an example in the README, documentation/examples only. |
+| [#871](https://github.com/kkroening/ffmpeg-python/pull/871) | make overwrite_output=None default & False pass '-n' arg | curtiola | 2025-03-22 | no | decline | Changes `overwrite_output` semantics so existing calls would pass `-n`, changing generated arguments and behavior for existing code (project brief G14). |
+| [#886](https://github.com/kkroening/ffmpeg-python/pull/886) | Fix potentially vulnerable cloned function | npt-1707 | 2026-08-30 | no | keep-linked | Touches the original's generated docs in `doc/html/_static` (vendored jquery); the continuation rebuilds its docs with Sphinx (project brief T12), so the artifact is gone. |
+
+## Counts
+
+- taken: 13
+- take-next: 3
+- take-later: 6
+- keep-linked: 14
+- decline: 10
+
+Total: 46
