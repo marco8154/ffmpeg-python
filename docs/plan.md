@@ -81,6 +81,8 @@ Quelle: die Sichtung des Originals (#652 bis #658; angenommen 25.11.: #897, #898
 
 Offen zur Entscheidung (ändern die Argumentliste für heute fehlerhafte Eingaben, also nur mit Ruling oder Visionär): #406 (Dateiname mit `-`), #416 (Apostroph-Escaping), #461/PR #844 (leere Flag-Argumente); #108/#116/PR #783 (stdin). Kandidaten ohne Bedenken: PR #220 (`vstack`/`hstack`, ergänzt nur Filter wie `atrim`).
 
+Aus Block 5 (#657, angenommen 25.11.), vor dem Schnitt am Code prüfen: #745 (Filter-Escaping verdoppelt Backslash bei `subtitles`-Pfaden, Patch in Kommentar C5), #756 (zwei gleiche `input()` verschmelzen zu einem Knoten, Reproduktion in C1), #703 (Doku: boolesche Flags brauchen `None`). Wünsche: #707 (`global_args`/`overwrite_output` auf Filterströmen), #740 (Helfer für Standbild plus Ton).
+
 ## Grundausstattung
 
 Steht im Projektbrief, Abschnitt Grundausstattung; vom Visionär am 17.11.2026 bestätigt.

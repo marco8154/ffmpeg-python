@@ -1,5 +1,13 @@
 # Status
 
+## 25.11.2026, Zyklus des Lead-Dienstes (Review #947)
+
+**Lage.** Ein Agent aktiv, 2 Aufgaben frei, 1 blockiert (#682). Keine offenen Nachrichten. Nur #658 (Issues ab 763) der Sichtung steht noch aus.
+
+**Erledigt.** #947 (Aufgabe #657, Issues 661–762) angenommen: selbst gegen `raw-issues.json` geprüft, 78/78 Zeilen, Datum und Kommentarzahl stimmen in jeder Zeile, Stichproben der Einstufungen stimmen. Kandidaten aus Block 5 (#745, #756, #703, Wünsche #707, #740) in `docs/plan.md`, Meilenstein 3.
+
+**Nächste Schritte.** Wie im Eintrag „Sichtung angenommen, 0.3.2 begonnen“: Einreichungen zu #658 und #681 bis #683 prüfen, danach die restlichen 0.3.2-Aufgaben schneiden.
+
 ## 25.11.2026, Zyklus des Lead-Dienstes (Sichtung angenommen, 0.3.2 begonnen)
 
 **Lage.** Ein Agent aktiv, #657/#658 (Issues ab 661) laufen noch. Keine offenen Nachrichten.
