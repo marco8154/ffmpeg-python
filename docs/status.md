@@ -1,5 +1,13 @@
 # Status
 
+## 25.11.2026, Zyklus des Lead-Dienstes (Review #948)
+
+**Lage.** Kein Agent aktiv, 2 Aufgaben frei (#658, #683), #682 wird nach dem Merge von #681 frei. Keine offenen Nachrichten.
+
+**Erledigt.** #948 (Aufgabe #681, `quiet=True` behält Pipes, PR #538) angenommen: selbst nachgeprüft, der neue Test ist auf dem alten Code in genau den Fällen 2–4 rot, mit dem Patch grün; volle Suite 124 passed.
+
+**Nächste Schritte.** Einreichungen zu #658, #682, #683 prüfen; danach die restlichen 0.3.2-Aufgaben aus den Kandidaten in `docs/plan.md`, Meilenstein 3, schneiden (vorher gegen den Code prüfen). Offene Punkte beim Visionär unverändert (Rest von #90, PyPI für E11/E12).
+
 ## 25.11.2026, Zyklus des Lead-Dienstes (Review #947)
 
 **Lage.** Ein Agent aktiv, 2 Aufgaben frei, 1 blockiert (#682). Keine offenen Nachrichten. Nur #658 (Issues ab 763) der Sichtung steht noch aus.

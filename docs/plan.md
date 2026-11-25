@@ -75,7 +75,7 @@ Quelle: die Sichtung des Originals (#652 bis #658; angenommen 25.11.: #897, #898
 
 | Aufgabe | Inhalt | Quelle | Dateien | Hängt ab von |
 |---|---|---|---|---|
-| #681 | `quiet=True` behält angeforderte Pipes | PR #538 (ArchieMeng) | `ffmpeg/_run.py`, `CHANGELOG.md` | – |
+| #681 (angenommen, #948) | `quiet=True` behält angeforderte Pipes | PR #538 (ArchieMeng) | `ffmpeg/_run.py`, `CHANGELOG.md` | – |
 | #682 | `get_args()` ohne Ausgang: klare `TypeError`-Meldung (Klasse bleibt) | Fund #176 | `ffmpeg/_run.py` | #681 |
 | #683 | RTSP-Beispiel ohne Platzhalter | Issue #310 | `examples/README.md` | – |
 
