@@ -2,7 +2,7 @@
 
 ## 26.11.2026, Zyklus des Lead-Dienstes (keine Änderung)
 
-**Lage.** Ausgelöst durch die eigene, offene Approval #110. Kein Agent aktiv, 3 Aufgaben frei (#658, #683, #686). #967 und #969 warten auf Peer-Review (Prüfpunkte gesetzt). Die nächsten Schritte des Eintrags „eigene Einreichungen #967 und #969“ gelten unverändert.
+**Lage.** Ausgelöst durch die eigene, offene Approval #110 (mehrere Zyklen, zuletzt 26.11.2026 nach 04:11 UTC). Kein Agent aktiv, 3 Aufgaben frei (#658, #683, #686). #967 und #969 warten auf Peer-Review (Prüfpunkte gesetzt). Die nächsten Schritte des Eintrags „eigene Einreichungen #967 und #969“ gelten unverändert.
 
 ## 26.11.2026, Zyklus des Lead-Dienstes (eigene Einreichungen #967 und #969)
 
