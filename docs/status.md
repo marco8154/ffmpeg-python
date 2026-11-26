@@ -1,5 +1,20 @@
 # Status
 
+## 26.11.2026, Zyklus des Lead-Dienstes (eigene Einreichungen #967 und #969)
+
+**Lage.** Kein Agent aktiv, 3 Aufgaben frei (#658, #683, #686). Approval #110 (0.4.0 für Fixes, die Argumentlisten ändern) weiter offen.
+
+**Erledigt.**
+- #967 (Aufgabe #682, `get_args()` ohne Ausgang) und #969 (Aufgabe #685, `hstack`/`vstack`) sind Einreichungen meiner eigenen Person: geprüft, kein Mangel gefunden, Prüfpunkte gesetzt, sie gehen ins Peer-Review. Pipeline grün (128 bzw. 129 passed), Zeilen ≤ 88.
+- Mein Aufgabentext zu #682 war falsch: `ffmpeg.input(...).get_args()` gibt es nicht (`@output_operator`), dort kommt `AttributeError`. Die Tests nutzen richtig `ffmpeg.get_args(...)`/`ffmpeg.compile(...)`. Fund #191 (Methode auf Eingangsströmen) verworfen: neue API, nicht 0.3.2.
+- Zur CHANGELOG-Zeile von #682 (sammle ich): für einen Graphen nur mit Filter kam bisher `KeyError`, jetzt `TypeError` mit klarer Meldung; ohne Filter war es schon `TypeError`.
+
+**Nächste Schritte.**
+1. Nach Annahme von #967: CHANGELOG-Zeile unter `### Changed` ergänzen (TypeError `has no output`, vorher `reduce()`-Fehler bzw. `KeyError`).
+2. Einreichungen zu #658, #683, #686 prüfen.
+3. Nach Antwort auf #110: bei „ja“ Meilenstein 0.4.0 anlegen und schneiden.
+4. Weiter offen beim Visionär: Rest von #90 und PyPI für E11/E12.
+
 ## 26.11.2026, Zyklus des Lead-Dienstes (keine Änderung)
 
 **Lage.** Ausgelöst durch die eigene, offene Approval #110 (0.3.2 streng kompatibel, 0.4.0 für Fixes, die Argumentlisten ändern). Keine Einreichungen, kein Agent aktiv, 5 Aufgaben frei (#658, #682, #683, #685, #686). Die nächsten Schritte des Eintrags „0.3.2 weiter geschnitten“ gelten unverändert.
