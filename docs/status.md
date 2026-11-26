@@ -1,5 +1,20 @@
 # Status
 
+## 26.11.2026, Zyklus des Lead-Dienstes (0.3.2 weiter geschnitten)
+
+**Lage.** Kein Agent aktiv, keine Einreichungen, keine Nachrichten. Frei sind #658, #682 (seit dem Merge von #681), #683 und neu #685 und #686.
+
+**Erledigt.**
+- Kandidaten aus Block 5 am Code geprüft. #745 (doppelte Maskierung von Positionsargumenten in `nodes.py`, Zeilen 284 und 291) und #756 (gleiche `input()` werden ein Knoten) sind echte Fehler. Beide Korrekturen ändern aber die Argumentliste für heute gültige Eingaben.
+- Neue Aufgaben: #685 (`hstack`/`vstack`, Level B, Rolle core, Idee aus PR #220) und #686 (README-FAQ zu Flags mit `None`, Level A, Rolle docs, Issue #703). Die erwarteten Argumentlisten habe ich selbst nachgeprüft. Die Pfade überschneiden sich nicht mit #682 und #683.
+- Approval #110 an den Visionär: 0.3.2 bleibt streng kompatibel. Fixes, die Argumentlisten ändern (#745, #756, #406, #416, #461/PR #844, stdin), kommen in Meilenstein 0.4.0 mit „Breaking changes“.
+
+**Nächste Schritte.**
+1. Einreichungen zu #658, #682, #683, #685 und #686 prüfen.
+2. Nach Antwort auf #110: bei „ja“ Meilenstein 0.4.0 anlegen und dort je Punkt eine Aufgabe schneiden. Bei „nein“ bleiben die Punkte geparkt.
+3. Nach #658: die restlichen Kandidaten aus Block 6 prüfen und schneiden; die Schätzung von 0.3.2 (8) danach anpassen.
+4. Weiter offen beim Visionär: Rest von #90 und PyPI für E11/E12.
+
 ## 25.11.2026, Zyklus des Lead-Dienstes (Review #948)
 
 **Lage.** Kein Agent aktiv, 2 Aufgaben frei (#658, #683), #682 wird nach dem Merge von #681 frei. Keine offenen Nachrichten.

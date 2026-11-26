@@ -78,10 +78,12 @@ Quelle: die Sichtung des Originals (#652 bis #658; angenommen 25.11.: #897, #898
 | #681 (angenommen, #948) | `quiet=True` behält angeforderte Pipes | PR #538 (ArchieMeng) | `ffmpeg/_run.py`, `CHANGELOG.md` | – |
 | #682 | `get_args()` ohne Ausgang: klare `TypeError`-Meldung (Klasse bleibt) | Fund #176 | `ffmpeg/_run.py` | #681 |
 | #683 | RTSP-Beispiel ohne Platzhalter | Issue #310 | `examples/README.md` | – |
+| #685 | Filter `hstack`/`vstack` | Wunsch PR #220 (russiaman, nur Idee) | `ffmpeg/_filters.py`, `CHANGELOG.md`, Test | – |
+| #686 | README-FAQ: Flags ohne Wert mit `None` | Issue #703 | `README.md` | – |
 
 Offen zur Entscheidung (ändern die Argumentliste für heute fehlerhafte Eingaben, also nur mit Ruling oder Visionär): #406 (Dateiname mit `-`), #416 (Apostroph-Escaping), #461/PR #844 (leere Flag-Argumente); #108/#116/PR #783 (stdin). Kandidaten ohne Bedenken: PR #220 (`vstack`/`hstack`, ergänzt nur Filter wie `atrim`).
 
-Aus Block 5 (#657, angenommen 25.11.), vor dem Schnitt am Code prüfen: #745 (Filter-Escaping verdoppelt Backslash bei `subtitles`-Pfaden, Patch in Kommentar C5), #756 (zwei gleiche `input()` verschmelzen zu einem Knoten, Reproduktion in C1), #703 (Doku: boolesche Flags brauchen `None`). Wünsche: #707 (`global_args`/`overwrite_output` auf Filterströmen), #740 (Helfer für Standbild plus Ton).
+Aus Block 5 am Code geprüft (26.11.): #745 (Positionsargumente von Filtern werden in `nodes.py` zweimal auf Ebene 1 maskiert) und #756 (gleiche `input()` werden ein Knoten) ändern beide `get_args()` für heute gültige Eingaben. Sie gehören deshalb zu den offenen Entscheidungen oben. Approval #110 an den Visionär: 0.3.2 bleibt streng kompatibel, diese Punkte kommen in 0.4.0 mit „Breaking changes“. #703 → #686. Wünsche: #707 (`global_args`/`overwrite_output` auf Filterströmen), #740 (Helfer für Standbild plus Ton).
 
 ## Grundausstattung
 
