@@ -12,6 +12,7 @@ The format follows Keep a Changelog, and the project uses Semantic Versioning.
 - `probe()` accepts `capture_stderr=True` and then returns `(info, stderr)`; patch by Ezequiel Ramos.
 - `input()` and `output()` accept path-like objects such as `pathlib.Path`; patch by Brian Hou.
 - New filter `atrim`; patch by Jason Cordial.
+- New filters `hstack` and `vstack`; suggested by russiaman (original PR #220).
 
 ### Changed
 - `output(..., filename=None)` raises `TypeError` when the graph is built instead of failing later in `run()`.

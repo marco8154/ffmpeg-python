@@ -464,6 +464,38 @@ def concat(*streams, **kwargs):
 
 
 @filter_operator()
+def hstack(*streams, **kwargs):
+    """Stack input videos horizontally.
+
+    All streams must be of the same pixel format and of the same height.
+
+    Args:
+        shortest: If set to 1, force the output to terminate when the shortest input
+            terminates. Default is 0.
+
+    Official documentation: `hstack <https://ffmpeg.org/ffmpeg-filters.html#hstack>`__
+    """
+    kwargs['inputs'] = len(streams)
+    return FilterNode(streams, hstack.__name__, kwargs=kwargs, max_inputs=None).stream()
+
+
+@filter_operator()
+def vstack(*streams, **kwargs):
+    """Stack input videos vertically.
+
+    All streams must be of the same pixel format and of the same width.
+
+    Args:
+        shortest: If set to 1, force the output to terminate when the shortest input
+            terminates. Default is 0.
+
+    Official documentation: `vstack <https://ffmpeg.org/ffmpeg-filters.html#vstack>`__
+    """
+    kwargs['inputs'] = len(streams)
+    return FilterNode(streams, vstack.__name__, kwargs=kwargs, max_inputs=None).stream()
+
+
+@filter_operator()
 def zoompan(stream, **kwargs):
     """Apply Zoom & Pan effect.
 
@@ -521,10 +553,12 @@ __all__ = [
     'filter_',
     'filter_multi_output',
     'hflip',
+    'hstack',
     'hue',
     'overlay',
     'setpts',
     'trim',
     'vflip',
+    'vstack',
     'zoompan',
 ]
