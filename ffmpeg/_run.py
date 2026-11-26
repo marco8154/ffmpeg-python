@@ -164,6 +164,11 @@ def get_args(stream_spec, overwrite_output=False, explicit_maps=False):
     sorted_nodes, outgoing_edge_maps = topo_sort(nodes)
     input_nodes = [node for node in sorted_nodes if isinstance(node, InputNode)]
     output_nodes = [node for node in sorted_nodes if isinstance(node, OutputNode)]
+    if not output_nodes:
+        raise TypeError(
+            'stream_spec has no output; '
+            'call .output(...) before get_args(), compile() or run()'
+        )
     global_nodes = [node for node in sorted_nodes if isinstance(node, GlobalNode)]
     filter_nodes = [node for node in sorted_nodes if isinstance(node, FilterNode)]
     stream_name_map = {(node, None): str(i) for i, node in enumerate(input_nodes)}
