@@ -16,6 +16,7 @@ The format follows Keep a Changelog, and the project uses Semantic Versioning.
 
 ### Changed
 - `output(..., filename=None)` raises `TypeError` when the graph is built instead of failing later in `run()`.
+- `get_args()` and `compile()` on a graph without an output raise `TypeError` with the message `has no output`; before, the error came from `reduce()` or was a `KeyError`.
 
 ### Fixed
 - A stream selector with index 0 (for example `stream[0]`) is no longer dropped; patch by Artem Eltyshev.

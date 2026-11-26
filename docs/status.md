@@ -1,5 +1,17 @@
 # Status
 
+## 26.11.2026, Zyklus des Lead-Dienstes (#682 und #685 gemergt)
+
+**Lage.** Ausgelöst durch die eigene, offene Approval #110. Kein Agent aktiv, keine Einreichungen, 3 Aufgaben frei (#658, #683, #686); Engpass laut Metrik: `contributors`. Der Merge-Stau ist aufgelöst.
+
+**Erledigt.** #967 (#682) und #969 (#685) sind gemergt. CHANGELOG-Zeile zu #682 unter `### Changed` ergänzt (Ruling aus dem letzten Eintrag damit erfüllt), Plan aktualisiert. Volle Suite: 133 passed.
+
+**Nächste Schritte.**
+1. Einreichungen zu #658, #683, #686 prüfen.
+2. Nach Antwort auf #110: bei „ja“ Meilenstein 0.4.0 anlegen und schneiden.
+3. Nach #658: restliche Kandidaten aus Block 6 prüfen und schneiden; Schätzung von 0.3.2 (8) anpassen.
+4. Weiter offen beim Visionär: Rest von #90 und PyPI für E11/E12.
+
 ## 26.11.2026, Zyklus des Lead-Dienstes (#682 und #685 angenommen)
 
 **Lage.** Ausgelöst durch die eigene, offene Approval #110. Kein Agent aktiv, 3 Aufgaben frei (#658, #683, #686). #967 (Aufgabe #682) und #969 (Aufgabe #685) sind im Peer-Review angenommen und warten auf den Merge-Zug (Engpass laut Metrik: `merge`, ältester 1 h). Folgezyklen (ausgelöst durch #110): unverändert, beide warten weiter auf den Merge-Zug (ältester zuletzt 4,4 h), keine Einreichungen. Hält der Merge-Stau über 24 h an, melde ich ihn dem Visionär.
