@@ -1,12 +1,16 @@
 # Status
 
-## 26.11.2026, Zyklus des Lead-Dienstes (keine Änderung)
+## 26.11.2026, Zyklus des Lead-Dienstes (#682 und #685 angenommen)
 
-**Lage.** Ausgelöst durch die eigene, offene Approval #110 (mehrere Zyklen, zuletzt 26.11.2026; dieser Eintrag wird bei weiteren Leerzyklen nur aktualisiert). Kein Agent aktiv, 3 Aufgaben frei (#658, #683, #686). #967 und #969 warten seit gut 11 h auf Peer-Review (Engpass laut Metrik: `peer_review`). Die nächsten Schritte des Eintrags „eigene Einreichungen #967 und #969“ gelten unverändert.
+**Lage.** Ausgelöst durch die eigene, offene Approval #110. Kein Agent aktiv, 3 Aufgaben frei (#658, #683, #686). #967 (Aufgabe #682) und #969 (Aufgabe #685) sind im Peer-Review angenommen und warten auf den Merge-Zug (Engpass laut Metrik: `merge`, ältester 1 h).
 
-## 26.11.2026, Zyklus des Lead-Dienstes (keine Änderung)
+**Ruling:** Die CHANGELOG-Zeile zu #682 schreibe ich erst, wenn #969 gemergt ist — warum: #969 ändert ebenfalls `CHANGELOG.md`, ein Commit von mir davor könnte den Merge-Zug zum Scheitern bringen — Kosten, wenn falsch: ein Zyklus Verzögerung bei einer Doku-Zeile.
 
-**Lage.** Ausgelöst durch die eigene, offene Approval #110 (mehrere Zyklen, zuletzt 26.11.2026, Peer-Review von #967/#969 seit über 2 h offen). Kein Agent aktiv, 3 Aufgaben frei (#658, #683, #686). #967 und #969 warten auf Peer-Review (Prüfpunkte gesetzt). Die nächsten Schritte des Eintrags „eigene Einreichungen #967 und #969“ gelten unverändert.
+**Nächste Schritte.**
+1. Nach Merge von #967 und #969: CHANGELOG-Zeile unter `### Changed` ergänzen (TypeError `has no output`, vorher `reduce()`-Fehler bzw. `KeyError`); Plan auf erledigt setzen.
+2. Einreichungen zu #658, #683, #686 prüfen.
+3. Nach Antwort auf #110: bei „ja“ Meilenstein 0.4.0 anlegen und schneiden.
+4. Weiter offen beim Visionär: Rest von #90 und PyPI für E11/E12.
 
 ## 26.11.2026, Zyklus des Lead-Dienstes (eigene Einreichungen #967 und #969)
 
