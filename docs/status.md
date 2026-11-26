@@ -1,5 +1,9 @@
 # Status
 
+## 26.11.2026, Zyklus des Lead-Dienstes (keine Änderung)
+
+**Lage.** Ausgelöst durch die eigene, offene Approval #110 (0.3.2 streng kompatibel, 0.4.0 für Fixes, die Argumentlisten ändern). Keine Einreichungen, kein Agent aktiv, 5 Aufgaben frei (#658, #682, #683, #685, #686). Die nächsten Schritte des Eintrags „0.3.2 weiter geschnitten“ gelten unverändert.
+
 ## 26.11.2026, Zyklus des Lead-Dienstes (0.3.2 weiter geschnitten)
 
 **Lage.** Kein Agent aktiv, keine Einreichungen, keine Nachrichten. Frei sind #658, #682 (seit dem Merge von #681), #683 und neu #685 und #686.
