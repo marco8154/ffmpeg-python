@@ -2,7 +2,7 @@
 
 ## 26.11.2026, Zyklus des Lead-Dienstes (#682 und #685 angenommen)
 
-**Lage.** Ausgelöst durch die eigene, offene Approval #110. Kein Agent aktiv, 3 Aufgaben frei (#658, #683, #686). #967 (Aufgabe #682) und #969 (Aufgabe #685) sind im Peer-Review angenommen und warten auf den Merge-Zug (Engpass laut Metrik: `merge`, ältester 1 h). Folgezyklus (ausgelöst durch #110): unverändert, beide warten weiter auf den Merge-Zug (ältester 2,4 h), keine Einreichungen.
+**Lage.** Ausgelöst durch die eigene, offene Approval #110. Kein Agent aktiv, 3 Aufgaben frei (#658, #683, #686). #967 (Aufgabe #682) und #969 (Aufgabe #685) sind im Peer-Review angenommen und warten auf den Merge-Zug (Engpass laut Metrik: `merge`, ältester 1 h). Folgezyklen (ausgelöst durch #110): unverändert, beide warten weiter auf den Merge-Zug (ältester zuletzt 3,4 h), keine Einreichungen.
 
 **Ruling:** Die CHANGELOG-Zeile zu #682 schreibe ich erst, wenn #969 gemergt ist — warum: #969 ändert ebenfalls `CHANGELOG.md`, ein Commit von mir davor könnte den Merge-Zug zum Scheitern bringen — Kosten, wenn falsch: ein Zyklus Verzögerung bei einer Doku-Zeile.
 
