@@ -199,6 +199,16 @@ Arguments with special names such as `-qscale:v` (variable bitrate), `-b:v` (con
 )
 ```
 
+The same works for options that read a filter graph from a file, which helps when a long graph exceeds the command line limit:
+```python
+(
+    ffmpeg
+    .input('in.mp4')
+    .output('out.mp4', **{'filter_script:v': 'filters.txt'})
+    .run()
+)
+```
+
 **Multiple inputs:**
 
 Filters that take multiple input streams can be used by passing the input streams as an array to `ffmpeg.filter`:
