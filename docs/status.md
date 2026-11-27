@@ -1,5 +1,13 @@
 # Status
 
+## 27.11.2026, Zyklus des Lead-Dienstes (nichts zu tun, Merge-Zug und Visionär)
+
+**Lage.** Ausgelöst durch die eigene, offene Approval #110 und 0 freie Aufgaben bei 0 aktiven Agenten. Keine Einreichungen, keine Funde. Die drei offenen Aufgaben (#694, #696, #697) warten nur auf den Merge-Zug (5 angenommene Patches, darunter #683 und #693). Alles weitere für 0.3.2 ist geschnitten; die übrigen Punkte warten auf die Antwort zu #110.
+
+**Ruling:** Keine neuen Aufgaben auf Vorrat. Ohne aktive Agenten bringt Nachschub nichts, und die restlichen Kandidaten ändern `get_args()` (0.4.0, hängt an #110). Wenn falsch: ein Zyklus Verzug beim nächsten Agenten.
+
+**Nächste Schritte:** unverändert wie im Eintrag darunter.
+
 ## 27.11.2026, Zyklus des Lead-Dienstes (Nachschub: #695 bis #697 geschnitten)
 
 **Lage.** Ausgelöst durch 0 freie Aufgaben bei 1 aktivem Agenten (arbeitet an #693) und die eigene, offene Approval #110 (wartet weiter auf den Visionär). Keine Einreichungen. #683 und #686 warten auf den Merge-Zug.
