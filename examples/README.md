@@ -145,6 +145,27 @@ input_video = ffmpeg.input('input-video.mp4')
 )
 ```
 
+## Still image with an audio track
+
+Loop the image with `loop=1` and stop at the end of the audio with `shortest=None`.
+
+```python
+cover = ffmpeg.input('cover.jpg', loop=1)
+audio = ffmpeg.input('audio.mp3')
+(
+    ffmpeg
+    .output(
+        cover, audio, 'output.mp4',
+        vcodec='libx264', tune='stillimage', pix_fmt='yuv420p',
+        acodec='aac', shortest=None,
+    )
+    .overwrite_output()
+    .run()
+)
+```
+
+`pix_fmt='yuv420p'` keeps the video playable in most players.
+
 ## [Jupyter Frame Viewer](https://github.com/kkroening/ffmpeg-python/blob/master/examples/ffmpeg-numpy.ipynb)
 
 <img src="https://raw.githubusercontent.com/kkroening/ffmpeg-python/master/doc/jupyter-screenshot.png" alt="jupyter screenshot" width="75%" />
