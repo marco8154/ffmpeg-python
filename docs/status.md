@@ -1,5 +1,17 @@
 # Status
 
+## 27.11.2026, Zyklus des Lead-Dienstes (#658, #683, #686 angenommen; #693/#694 geschnitten)
+
+**Lage.** Ausgelöst durch drei geprüfte Einreichungen. Kein Agent aktiv. Approval #110 (0.3.2 streng kompatibel, Breaking Fixes in 0.4.0) ist weiter offen beim Visionär.
+
+**Erledigt.** Angenommen: #997 (#658, Sichtung Block 6, 78 Issues; Hinweis: #880 hätte `decline` als Duplikat von #756 sein sollen, im Plan zusammengeführt), #999 (#683, RTSP-Beispiel), #1007 (#686, FAQ Flags ohne Wert; Beispiel selbst nachgeprüft). Die Issue-Sichtung ist damit vollständig. Neu geschnitten: #693 (B, `run()` mit `popen_args`, Docstrings von `run()`/`run_async()` ohne falsches `**kwargs`) und #694 (A, README-FAQ, hängt an #693).
+
+**Nächste Schritte.**
+1. Einreichungen zu #693 und danach #694 prüfen.
+2. Nach Antwort auf #110: bei „ja“ Meilenstein 0.4.0 anlegen und schneiden (#745, #756/#880, #406, #416, #461/PR #844, #108/#116/PR #783).
+3. Wünsche aus Block 5/6 (#707, #740, #764, #775, #833) am Code prüfen; nur rein ergänzende kommen in 0.3.2 oder später.
+4. Weiter offen beim Visionär: Rest von #90 und PyPI für E11/E12.
+
 ## 26.11.2026, Zyklus des Lead-Dienstes (#682 und #685 gemergt)
 
 **Lage.** Ausgelöst durch die eigene, offene Approval #110. Kein Agent aktiv, keine Einreichungen, 3 Aufgaben frei (#658, #683, #686); Engpass laut Metrik: `contributors`. Der Merge-Stau ist aufgelöst.
