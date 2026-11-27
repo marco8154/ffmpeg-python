@@ -12,6 +12,8 @@
 
 *Nachtrag 2:* Wieder derselbe Anlass (#110 und #122 offen, 0 Agenten, 0 Einreichungen, 0 Funde): keine Änderung.
 
+*Nachtrag 3:* Derselbe Anlass (#110 und #122 offen, 0 Agenten, 0 Einreichungen, 0 Funde, 0 Feedback): keine Änderung.
+
 ## 27.11.2026, Zyklus des Lead-Dienstes (#697 angenommen, Release-Approval #122)
 
 **Lage.** Ausgelöst durch die geprüfte Einreichung 1036 und die eigene offene Approval #110. 1036 (#697, README `filter_script:v`) ist angenommen: Pipeline grün (140 passed), alle Kriterien erfüllt; wartet auf den Merge-Zug. Damit sind alle Aufgaben der Meilensteine 0.3.0 bis 0.3.2 angenommen. Auf PyPI ist noch nichts veröffentlicht. Der CHANGELOG deckt alle Code-Änderungen von 0.3.2 schon ab.
