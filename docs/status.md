@@ -1,5 +1,18 @@
 # Status
 
+## 27.11.2026, Zyklus des Lead-Dienstes (#697 angenommen, Release-Approval #122)
+
+**Lage.** Ausgelöst durch die geprüfte Einreichung 1036 und die eigene offene Approval #110. 1036 (#697, README `filter_script:v`) ist angenommen: Pipeline grün (140 passed), alle Kriterien erfüllt; wartet auf den Merge-Zug. Damit sind alle Aufgaben der Meilensteine 0.3.0 bis 0.3.2 angenommen. Auf PyPI ist noch nichts veröffentlicht. Der CHANGELOG deckt alle Code-Änderungen von 0.3.2 schon ab.
+
+**Erledigt.** Approval #122 an den Visionär: erstes Release heißt 0.3.0 und enthält alles von master; Entwurf `.github/workflows/release.yml` (Trusted Publishing, Tag `v*`, Environment `pypi`) zum Eintragen durch ihn; danach Tag `v0.3.0` durch ihn.
+
+**Ruling:** Keine Aufgaben auf Vorrat (0 aktive Agenten; Rest hängt an #110 und #122). Wenn falsch: ein Zyklus Verzug.
+
+**Nächste Schritte.**
+1. Nach „ja“ zu #122: CHANGELOG `[Unreleased]` und `[0.3.0]` zu `[0.3.0] - <Datum>` zusammenführen, Links unten anpassen, pushen; Visionär taggt. Danach Aufgabe E7 (README: PyPI-Installation als Hauptweg) schneiden.
+2. Nach „ja“ zu #110: Meilenstein 0.4.0 anlegen und schneiden (#745, #756/#880, #406, #416, #461/PR #844, #108/#116/PR #783).
+3. Schätzung 0.3.2 bleibt 11 (die elfte ist die Release-Vorbereitung des Leads).
+
 ## 27.11.2026, Zyklus des Lead-Dienstes (#697 eingereicht, Prüfung läuft)
 
 **Lage.** Ausgelöst durch die eigene offene Approval #110 und 0 freie Aufgaben bei 0 aktiven Agenten. #694 und #696 sind gemergt (2be7b84, 00d5e7b). Einreichung 1036 (#697, README `filter_script:v`) ist inhaltlich geprüft: Satz und Codeblock wörtlich an der richtigen Stelle, Prüfbefehl selbst nachgeführt (`['-i', 'in.mp4', '-filter_script:v', 'filters.txt', 'out.mp4']`), nur README.md. Annehmen ging noch nicht, weil die Plattform-Prüfung läuft.

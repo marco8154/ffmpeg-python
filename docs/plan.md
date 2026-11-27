@@ -31,8 +31,8 @@ Liste nach `templates/continuation.md` (W-1 bis W-12).
 | E9 | W-9: offene Issues des Originals gesichtet, sechs Blöcke nach Nummern unter `docs/inherited-issues/` | Schwarm | A | F0 | offen: Aufgaben #653 bis #658 (offline aus `raw-issues.json`, Export des Visionärs `cdb986c`; ersetzen #612 bis #615) |
 | E10 | `SECURITY.md` (GitHub Security Advisories) | Schwarm | A | F0 | angenommen: Aufgabe #432 |
 | E14 | Issue-Vorlage für Fehlerberichte (`.github/ISSUE_TEMPLATE/`) | Lead | D | F0 | erledigt: Aufgabe #556 am 19.11.2026; wirkt, sobald Issues auf dem Repo eingeschaltet sind |
-| E11 | Release-Workflow mit PyPI Trusted Publishing | Lead | D | E5 | geplant; braucht den Visionär auf PyPI |
-| E12 | W-11: Release 0.3.0 | Visionär gibt frei | – | alle | geplant |
+| E11 | Release-Workflow mit PyPI Trusted Publishing | Lead | D | E5 | Workflow entworfen, Approval #122 an den Visionär (er legt `release.yml` und den Publisher auf PyPI an) |
+| E12 | W-11: Release 0.3.0 | Visionär gibt frei | – | alle | Approval #122: erstes Release 0.3.0 mit allem aus 0.3.0 bis 0.3.2 |
 | E13 | W-12: Nutzern Bescheid geben (#807, #877 im Original) | Visionär | – | E12 | geplant |
 | E15 | Antrag nach PEP 541 auf den PyPI-Namen `ffmpeg-python` (Issue an `pypi/support`), frühestens 17.12.2026 und erst nach dem Release (Entscheidung 0003) | Visionär | – | E12 | geplant |
 
@@ -84,7 +84,7 @@ Quelle: die Sichtung des Originals (#652 bis #658; angenommen 25.11.: #897, #898
 | #694 (angenommen, #1029) | README-FAQ: Konsolenfenster unter Windows über `popen_args` | Issue #805 | `README.md` | #693 |
 | #695 (gemergt) | Test: Optionen mit Stream-Kennung (`c:v`, `filter_script:v`) in `get_args()` festschreiben | Issue #833 | `ffmpeg/tests/test_stream_specifier_kwargs.py` | – |
 | #696 (angenommen, #1030) | Beispiel Standbild plus Tonspur | Issue #740 | `examples/README.md` | #683 |
-| #697 | README: `filter_script:v` unter „Special option names“ | Issue #833 | `README.md` | #694 |
+| #697 (angenommen, #1036) | README: `filter_script:v` unter „Special option names“ | Issue #833 | `README.md` | #694 |
 
 Offen zur Entscheidung (ändern die Argumentliste für heute fehlerhafte Eingaben, also nur mit Ruling oder Visionär): #406 (Dateiname mit `-`), #416 (Apostroph-Escaping), #461/PR #844 (leere Flag-Argumente); #108/#116/PR #783 (stdin). Kandidaten ohne Bedenken: PR #220 (`vstack`/`hstack`, ergänzt nur Filter wie `atrim`).
 
