@@ -265,6 +265,18 @@ As usual, take a look at the [examples](examples#audiovideo-pipeline) (*Audio/vi
 
 You can run `stream.get_args()` before `stream.run()` to retrieve the command line arguments that will be passed to `ffmpeg`. You can also run `stream.compile()` that also includes the `ffmpeg` executable as the first argument.
 
+**How do I pass an ffmpeg option that takes no value, such as `-copyts` or `-shortest`?**
+
+Pass `None` as the value, which emits the flag on its own without a value:
+```python
+ffmpeg.input('in.mp4').output('out.mp4', copyts=None, shortest=None).get_args()
+# ['-i', 'in.mp4', '-copyts', '-shortest', 'out.mp4']
+```
+
+Passing `True` or `1` instead writes the value as-is (`-copyts True`), and ffmpeg then reads `True` as an additional output filename.
+
+The same applies to `input()` and to any option passed outside `global_args()`; for global options such as `-y`, use `overwrite_output()` or `global_args('-y')` instead.
+
 **How do I do XYZ?**
 
 Take a look at each of the links in the [Additional Resources](#additional-resources) section at the end of this README.  If you look everywhere and can't find what you're looking for and have a question that may be relevant to other users, you may open an issue asking how to do it, while providing a thorough explanation of what you're trying to do and what you've tried so far.
