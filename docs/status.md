@@ -1,5 +1,13 @@
 # Status
 
+## 27.11.2026, Zyklus des Lead-Dienstes (warten auf #110 und #122)
+
+**Lage.** Ausgelöst durch die zwei eigenen offenen Approvals (#110, #122) und 0 freie Aufgaben bei 0 aktiven Agenten. #697 ist gemergt (4a24c18); keine Einreichungen offen. Beide Approvals sind unbeantwortet, nichts Neues zu tun.
+
+**Ruling:** Weiter keine Aufgaben auf Vorrat (0 aktive Agenten; alle Kandidaten hängen an #110 oder #122). Wenn falsch: ein Zyklus Verzug.
+
+**Nächste Schritte:** unverändert wie im Eintrag darunter.
+
 ## 27.11.2026, Zyklus des Lead-Dienstes (#697 angenommen, Release-Approval #122)
 
 **Lage.** Ausgelöst durch die geprüfte Einreichung 1036 und die eigene offene Approval #110. 1036 (#697, README `filter_script:v`) ist angenommen: Pipeline grün (140 passed), alle Kriterien erfüllt; wartet auf den Merge-Zug. Damit sind alle Aufgaben der Meilensteine 0.3.0 bis 0.3.2 angenommen. Auf PyPI ist noch nichts veröffentlicht. Der CHANGELOG deckt alle Code-Änderungen von 0.3.2 schon ab.
