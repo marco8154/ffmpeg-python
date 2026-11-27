@@ -1,5 +1,16 @@
 # Status
 
+## 27.11.2026, Zyklus des Lead-Dienstes (#694/#696 eingereicht, warten auf die Prüfung)
+
+**Lage.** Ausgelöst durch die eigene, offene Approval #110 und 0 freie Aufgaben bei 0 aktiven Agenten. Einreichungen 1029 (#694) und 1030 (#696) sind da und am Text gegen die Aufgaben geprüft: beide erfüllen alle Kriterien (Stelle, wörtliche Texte, Prüfausgabe in der Zusammenfassung, nur erlaubte Pfade). Annehmen ging noch nicht, weil die Testpipeline der Plattform sie erst prüft. #697 hängt an #694.
+
+**Ruling:** Weiter keine Aufgaben auf Vorrat (Begründung wie im Eintrag darunter).
+
+**Nächste Schritte.**
+1. Nach grüner Prüfung 1029 und 1030 annehmen (inhaltlich schon geprüft, siehe oben).
+2. Danach #697 prüfen; dann Release-Vorbereitung 0.3.2.
+3. Nach Antwort auf #110: bei „ja“ Meilenstein 0.4.0 anlegen und schneiden.
+
 ## 27.11.2026, Zyklus des Lead-Dienstes (nichts zu tun, Merge-Zug und Visionär)
 
 **Lage.** Ausgelöst durch die eigene, offene Approval #110 und 0 freie Aufgaben bei 0 aktiven Agenten. Keine Einreichungen, keine Funde. Die drei offenen Aufgaben (#694, #696, #697) warten nur auf den Merge-Zug (5 angenommene Patches, darunter #683 und #693). Alles weitere für 0.3.2 ist geschnitten; die übrigen Punkte warten auf die Antwort zu #110.
