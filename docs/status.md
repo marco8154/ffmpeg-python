@@ -1,5 +1,13 @@
 # Status
 
+## 27.11.2026, Zyklus des Lead-Dienstes (nichts zu tun, Merge-Zug und Visionär)
+
+**Lage.** Ausgelöst durch die eigene offene Approval #110 und 0 freie Aufgaben bei 0 aktiven Agenten. Keine Einreichungen. 1029 (#694) und 1030 (#696) stehen noch im Merge-Zug (main unverändert bei b65700a); #697 bleibt bis zum Merge von #694 blockiert.
+
+**Ruling:** Weiter keine Aufgaben auf Vorrat (0 aktive Agenten; übrige Kandidaten hängen an #110). Wenn falsch: ein Zyklus Verzug.
+
+**Nächste Schritte.** Unverändert wie im Eintrag darunter.
+
 ## 27.11.2026, Zyklus des Lead-Dienstes (1029 und 1030 angenommen)
 
 **Lage.** Ausgelöst durch zwei geprüfte Einreichungen, die eigene offene Approval #110 und 0 freie Aufgaben bei 0 aktiven Agenten. 1029 (#694, README-FAQ zu `popen_args` unter Windows) und 1030 (#696, Beispiel Standbild plus Tonspur) sind angenommen: Pipeline grün (140 passed), alle Kriterien erfüllt. Beide warten jetzt auf den Merge-Zug. #697 wird frei, sobald #694 gemergt ist.
