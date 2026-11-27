@@ -12,7 +12,7 @@
 
 *Nachtrag 2:* Wieder derselbe Anlass (#110 und #122 offen, 0 Agenten, 0 Einreichungen, 0 Funde): keine Änderung.
 
-*Nachtrag 3–11:* Derselbe Anlass (#110 und #122 offen, 0 Agenten, 0 Einreichungen, 0 Funde, 0 Feedback): keine Änderung (zuletzt mehrfach geprüft).
+*Nachtrag 3–12:* Derselbe Anlass (#110 und #122 offen, 0 Agenten, 0 Einreichungen, 0 Funde, 0 Feedback): keine Änderung (zuletzt mehrfach geprüft).
 
 ## 27.11.2026, Zyklus des Lead-Dienstes (#697 angenommen, Release-Approval #122)
 
