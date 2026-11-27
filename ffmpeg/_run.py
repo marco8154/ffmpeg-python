@@ -234,8 +234,9 @@ def run_async(
         pipe_stderr: if True, connect pipe to subprocess stderr.
         quiet: suppresses output that is not piped/captured; requested
             pipes (``pipe_stdout``, ``pipe_stderr``) are kept.
-        **kwargs: keyword-arguments passed to ``get_args()`` (e.g.
-            ``overwrite_output=True``).
+        overwrite_output: if True, add ``-y`` to overwrite existing output
+            files.
+        cwd: working directory of the ffmpeg process.
         popen_args: A dictionary of keyword arguments passed to Popen().
 
     Returns:
@@ -337,6 +338,7 @@ def run(
     quiet=False,
     overwrite_output=False,
     cwd=None,
+    popen_args=None,
 ):
     """Invoke ffmpeg for the supplied node graph.
 
@@ -348,8 +350,10 @@ def run(
             captures (``capture_stdout``, ``capture_stderr``) are kept.
         input: text to be sent to stdin (to be used with ``pipe:``
             ffmpeg inputs)
-        **kwargs: keyword-arguments passed to ``get_args()`` (e.g.
-            ``overwrite_output=True``).
+        overwrite_output: if True, add ``-y`` to overwrite existing output
+            files.
+        cwd: working directory of the ffmpeg process.
+        popen_args: A dictionary of keyword arguments passed to Popen().
 
     Returns: (out, err) tuple containing captured stdout and stderr data.
     """
@@ -362,6 +366,7 @@ def run(
         quiet=quiet,
         overwrite_output=overwrite_output,
         cwd=cwd,
+        popen_args=popen_args,
     )
     out, err = process.communicate(input)
     retcode = process.poll()

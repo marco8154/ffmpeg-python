@@ -8,6 +8,7 @@ The format follows Keep a Changelog, and the project uses Semantic Versioning.
 ### Added
 - `get_args()` and `compile()` accept `explicit_maps=True` to write a `-map` before every output; patch by Artem Eltyshev.
 - `run_async()` accepts `popen_args`, a dict of extra keyword arguments for `subprocess.Popen`; patch by Michael Litvin.
+- `run()` accepts `popen_args` and passes it to `run_async()`; requested in original issue #805.
 - `probe()` accepts `input=` to read the media from a pipe; patch by Rocky Cai.
 - `probe()` accepts `capture_stderr=True` and then returns `(info, stderr)`; patch by Ezequiel Ramos.
 - `input()` and `output()` accept path-like objects such as `pathlib.Path`; patch by Brian Hou.
