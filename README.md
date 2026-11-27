@@ -277,6 +277,19 @@ Passing `True` or `1` instead writes the value as-is (`-copyts True`), and ffmpe
 
 The same applies to `input()` and to any option passed outside `global_args()`; for global options such as `-y`, use `overwrite_output()` or `global_args('-y')` instead.
 
+**How do I hide the ffmpeg console window on Windows?**
+
+`run()` and `run_async()` pass `popen_args`, a dict, as extra keyword arguments to `subprocess.Popen`:
+```python
+import subprocess
+
+ffmpeg.input('in.mp4').output('out.mp4').run(
+    popen_args={'creationflags': subprocess.CREATE_NO_WINDOW}
+)
+```
+
+`subprocess.CREATE_NO_WINDOW` exists only on Windows.
+
 **How do I do XYZ?**
 
 Take a look at each of the links in the [Additional Resources](#additional-resources) section at the end of this README.  If you look everywhere and can't find what you're looking for and have a question that may be relevant to other users, you may open an issue asking how to do it, while providing a thorough explanation of what you're trying to do and what you've tried so far.
