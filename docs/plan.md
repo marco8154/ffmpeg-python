@@ -80,10 +80,10 @@ Quelle: die Sichtung des Originals (#652 bis #658; angenommen 25.11.: #897, #898
 | #683 (angenommen, #999) | RTSP-Beispiel ohne Platzhalter | Issue #310 | `examples/README.md` | – |
 | #685 (gemergt, #969) | Filter `hstack`/`vstack` | Wunsch PR #220 (russiaman, nur Idee) | `ffmpeg/_filters.py`, `CHANGELOG.md`, Test | – |
 | #686 (angenommen, #1007) | README-FAQ: Flags ohne Wert mit `None` | Issue #703 | `README.md` | – |
-| #693 | `run()` reicht `popen_args` an `run_async()` durch; Docstrings ohne falsches `**kwargs` | Issue #805 | `ffmpeg/_run.py`, `CHANGELOG.md`, Test | – |
-| #694 | README-FAQ: Konsolenfenster unter Windows über `popen_args` | Issue #805 | `README.md` | #693 |
-| #695 | Test: Optionen mit Stream-Kennung (`c:v`, `filter_script:v`) in `get_args()` festschreiben | Issue #833 | `ffmpeg/tests/test_stream_specifier_kwargs.py` | – |
-| #696 | Beispiel Standbild plus Tonspur | Issue #740 | `examples/README.md` | #683 |
+| #693 (gemergt) | `run()` reicht `popen_args` an `run_async()` durch; Docstrings ohne falsches `**kwargs` | Issue #805 | `ffmpeg/_run.py`, `CHANGELOG.md`, Test | – |
+| #694 (angenommen, #1029) | README-FAQ: Konsolenfenster unter Windows über `popen_args` | Issue #805 | `README.md` | #693 |
+| #695 (gemergt) | Test: Optionen mit Stream-Kennung (`c:v`, `filter_script:v`) in `get_args()` festschreiben | Issue #833 | `ffmpeg/tests/test_stream_specifier_kwargs.py` | – |
+| #696 (angenommen, #1030) | Beispiel Standbild plus Tonspur | Issue #740 | `examples/README.md` | #683 |
 | #697 | README: `filter_script:v` unter „Special option names“ | Issue #833 | `README.md` | #694 |
 
 Offen zur Entscheidung (ändern die Argumentliste für heute fehlerhafte Eingaben, also nur mit Ruling oder Visionär): #406 (Dateiname mit `-`), #416 (Apostroph-Escaping), #461/PR #844 (leere Flag-Argumente); #108/#116/PR #783 (stdin). Kandidaten ohne Bedenken: PR #220 (`vstack`/`hstack`, ergänzt nur Filter wie `atrim`).
