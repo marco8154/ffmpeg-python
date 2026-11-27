@@ -82,12 +82,17 @@ Quelle: die Sichtung des Originals (#652 bis #658; angenommen 25.11.: #897, #898
 | #686 (angenommen, #1007) | README-FAQ: Flags ohne Wert mit `None` | Issue #703 | `README.md` | – |
 | #693 | `run()` reicht `popen_args` an `run_async()` durch; Docstrings ohne falsches `**kwargs` | Issue #805 | `ffmpeg/_run.py`, `CHANGELOG.md`, Test | – |
 | #694 | README-FAQ: Konsolenfenster unter Windows über `popen_args` | Issue #805 | `README.md` | #693 |
+| #695 | Test: Optionen mit Stream-Kennung (`c:v`, `filter_script:v`) in `get_args()` festschreiben | Issue #833 | `ffmpeg/tests/test_stream_specifier_kwargs.py` | – |
+| #696 | Beispiel Standbild plus Tonspur | Issue #740 | `examples/README.md` | #683 |
+| #697 | README: `filter_script:v` unter „Special option names“ | Issue #833 | `README.md` | #694 |
 
 Offen zur Entscheidung (ändern die Argumentliste für heute fehlerhafte Eingaben, also nur mit Ruling oder Visionär): #406 (Dateiname mit `-`), #416 (Apostroph-Escaping), #461/PR #844 (leere Flag-Argumente); #108/#116/PR #783 (stdin). Kandidaten ohne Bedenken: PR #220 (`vstack`/`hstack`, ergänzt nur Filter wie `atrim`).
 
 Aus Block 5 am Code geprüft (26.11.): #745 (Positionsargumente von Filtern werden in `nodes.py` zweimal auf Ebene 1 maskiert) und #756 (gleiche `input()` werden ein Knoten) ändern beide `get_args()` für heute gültige Eingaben. Sie gehören deshalb zu den offenen Entscheidungen oben. Approval #110 an den Visionär: 0.3.2 bleibt streng kompatibel, diese Punkte kommen in 0.4.0 mit „Breaking changes“. #703 → #686. Wünsche: #707 (`global_args`/`overwrite_output` auf Filterströmen), #740 (Helfer für Standbild plus Ton).
 
 Aus Block 6 (#658 angenommen, #997, 27.11.): #880 ist dasselbe wie #756 (gleiche `input()` werden ein Knoten) und gehört mit ihm nach 0.4.0. #805 → #693/#694. Wünsche, ungeprüft: #764 (Filter ohne Ausgang, `nullsink`), #775 (lineare Filterketten), #780 (verständlichere Meldung bei `BrokenPipeError`; ändert Ausnahmeverhalten, also nicht in 0.3.2), #833 (`filter_script`). Damit ist die Sichtung der Issues vollständig (Blöcke 1 bis 6).
+
+Wünsche am Code geprüft (27.11.): #740 und #833 gehen schon mit der heutigen API → Doku und Test (#695 bis #697). #707 (`global_args`/`overwrite_output` auf `FilterableStream`), #764 (Filter ohne Ausgang, `nullsink`) und #775 (lineare Filterketten) brauchen neues Verhalten im Graphen bzw. ändern `get_args()`. Sie kommen nicht in 0.3.2. Kandidaten für einen späteren Meilenstein, mit Visionär (neue API ist Nicht-Ziel).
 
 ## Grundausstattung
 

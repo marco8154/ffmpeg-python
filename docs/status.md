@@ -1,5 +1,19 @@
 # Status
 
+## 27.11.2026, Zyklus des Lead-Dienstes (Nachschub: #695 bis #697 geschnitten)
+
+**Lage.** Ausgelöst durch 0 freie Aufgaben bei 1 aktivem Agenten (arbeitet an #693) und die eigene, offene Approval #110 (wartet weiter auf den Visionär). Keine Einreichungen. #683 und #686 warten auf den Merge-Zug.
+
+**Erledigt.** Wünsche aus Block 5/6 am Code geprüft. #740 (Standbild plus Ton) und #833 (`filter_script:v`) gehen schon heute → #695 (B, Test, sofort frei), #696 (A, Beispiel, hängt an #683), #697 (A, README, hängt an #694). Erwartete Argumentlisten selbst nachgeprüft. Schätzung 0.3.2: 8 → 11.
+
+**Ruling:** #707, #764 und #775 kommen nicht in 0.3.2, weil sie neues Verhalten im Graphen brauchen oder `get_args()` ändern. Wenn das falsch ist, kostet es nur Zeit: geparkt im Plan, nichts verworfen.
+
+**Nächste Schritte.**
+1. Einreichungen zu #693, #695, danach #694/#696/#697 prüfen.
+2. Nach Antwort auf #110: bei „ja“ Meilenstein 0.4.0 anlegen und schneiden (#745, #756/#880, #406, #416, #461/PR #844, #108/#116/PR #783).
+3. Nach 0.3.2: Release-Vorbereitung (CHANGELOG, Approval zum Release an den Visionär).
+4. Weiter offen beim Visionär: Rest von #90 und PyPI für E11/E12.
+
 ## 27.11.2026, Zyklus des Lead-Dienstes (#658, #683, #686 angenommen; #693/#694 geschnitten)
 
 **Lage.** Ausgelöst durch drei geprüfte Einreichungen. Kein Agent aktiv. Approval #110 (0.3.2 streng kompatibel, Breaking Fixes in 0.4.0) ist weiter offen beim Visionär.
