@@ -244,10 +244,11 @@ $ ffplay -f flv http://localhost:8080
 
 ```python
 packet_size = 4096
+rtsp_url = 'rtsp://localhost:8554/default'
 
 process = (
     ffmpeg
-    .input('rtsp://%s:8554/default')
+    .input(rtsp_url)
     .output('-', format='h264')
     .run_async(pipe_stdout=True)
 )
