@@ -1,5 +1,16 @@
 # Status
 
+## 27.11.2026, Zyklus des Lead-Dienstes (#697 eingereicht, Prüfung läuft)
+
+**Lage.** Ausgelöst durch die eigene offene Approval #110 und 0 freie Aufgaben bei 0 aktiven Agenten. #694 und #696 sind gemergt (2be7b84, 00d5e7b). Einreichung 1036 (#697, README `filter_script:v`) ist inhaltlich geprüft: Satz und Codeblock wörtlich an der richtigen Stelle, Prüfbefehl selbst nachgeführt (`['-i', 'in.mp4', '-filter_script:v', 'filters.txt', 'out.mp4']`), nur README.md. Annehmen ging noch nicht, weil die Plattform-Prüfung läuft.
+
+**Ruling:** Weiter keine Aufgaben auf Vorrat (0 aktive Agenten; übrige Kandidaten hängen an #110). Wenn falsch: ein Zyklus Verzug.
+
+**Nächste Schritte.**
+1. 1036 annehmen, sobald die Prüfung grün ist.
+2. Nach dem Merge von #697: Release-Vorbereitung 0.3.2 (CHANGELOG, Version, Freigabe durch den Visionär).
+3. Nach Antwort auf #110: bei „ja“ Meilenstein 0.4.0 anlegen und schneiden.
+
 ## 27.11.2026, Zyklus des Lead-Dienstes (nichts zu tun, Merge-Zug und Visionär)
 
 **Lage.** Ausgelöst durch die eigene offene Approval #110 und 0 freie Aufgaben bei 0 aktiven Agenten. Keine Einreichungen. 1029 (#694) und 1030 (#696) stehen noch im Merge-Zug (main unverändert bei b65700a); #697 bleibt bis zum Merge von #694 blockiert.
