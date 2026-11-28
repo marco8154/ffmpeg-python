@@ -12,6 +12,8 @@
 3. Nach „ja“ zu #122: wie im Eintrag darunter (CHANGELOG auf `release/0.3` und master, Visionär taggt `v0.3.0`, dann E7).
 4. Nach #735: Release-Vorbereitung 0.4.0.
 
+*Nachtrag:* Ein weiterer Zyklus, ausgelöst durch die eigene offene Approval #122. #730 ist gemergt, 0.4.0 steht bei 2 von 7. 1078 (#732) wartet auf das Peer-Review (Prüfpunkte gesetzt), 0 aktive Agenten. Keine Änderung.
+
 ## 28.11.2026, Zyklus des Lead-Dienstes (#110 freigegeben, 0.4.0 geschnitten)
 
 **Lage.** Ausgelöst durch die Antwort auf Approval #110 (ja) und 0 freie Aufgaben bei 0 aktiven Agenten. Keine Einreichungen. #122 (Release 0.3.0) ist weiter offen.
