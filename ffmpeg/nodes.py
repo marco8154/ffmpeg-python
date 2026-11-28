@@ -1,5 +1,6 @@
 from .dag import KwargReprNode
 from ._utils import basestring, escape_chars, get_hash_int
+import itertools
 import os
 
 
@@ -242,7 +243,11 @@ class FilterableStream(Stream):
 class InputNode(Node):
     """InputNode type"""
 
+    _counter = itertools.count()
+
     def __init__(self, name, args=[], kwargs={}):
+        # Every input() call is its own input; set before the hash is computed.
+        self.unique_id = next(InputNode._counter)
         super(InputNode, self).__init__(
             stream_spec=None,
             name=name,

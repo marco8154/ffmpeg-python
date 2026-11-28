@@ -144,6 +144,9 @@ class KwargReprNode(DagNode):
     @property
     def __inner_hash(self):
         props = {'args': self.args, 'kwargs': self.kwargs}
+        unique_id = getattr(self, 'unique_id', None)
+        if unique_id is not None:
+            props['unique_id'] = unique_id
         return get_hash(props)
 
     def __get_hash(self):

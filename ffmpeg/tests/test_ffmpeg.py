@@ -40,7 +40,7 @@ def test_fluent_equality():
     t5 = base3.trim(start_frame=10, end_frame=20)
     assert t1 == t2
     assert t1 != t3
-    assert t1 == t4
+    assert t1 != t4
     assert t1 != t5
 
 
