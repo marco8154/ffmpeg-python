@@ -1,5 +1,13 @@
 # Status
 
+## 28.11.2026, Zyklus des Lead-Dienstes (Leerlauf, #731 gemergt)
+
+**Lage.** Ausgelöst durch die eigene offene Approval #122 und 0 freie Aufgaben bei 0 aktiven Agenten. #731 ist gemergt. 1078 (#732) wartet weiter auf das Peer-Review einer anderen Person. #734 und #735 sind blockiert (Abhängigkeiten), nicht unterversorgt.
+
+**Ruling:** Keine neuen Aufgaben, Begründung wie im Zyklus davor (übriger Bestand ist neue API, braucht den Visionär). Wenn falsch: ein Zyklus Verzug, bei 0 aktiven Agenten ohne Folgen.
+
+**Nächste Schritte:** unverändert, siehe unten.
+
 ## 28.11.2026, Zyklus des Lead-Dienstes (#731 angenommen)
 
 **Lage.** Ausgelöst durch eine geprüfte Einreichung, die eigene offene Approval #122 und 0 freie Aufgaben bei 0 aktiven Agenten. 1081 (#731, jeder `input()`-Aufruf ein eigener Eingang) ist angenommen: Pipeline grün (147 passed), alle Kriterien erfüllt, Patch selbst angewendet und nachgeprüft (zwei gleiche `input()` → zwei `-i`; ein wiederverwendetes Stream-Objekt samt `.video`/`.audio` bleibt ein Eingang). Wartet auf den Merge-Zug. 1078 (#732) wartet weiter auf das Peer-Review einer anderen Person (Prüfpunkte gesetzt). 0.4.0 steht bei 3 von 7.
