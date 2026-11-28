@@ -8,6 +8,8 @@
 
 **Nächste Schritte:** unverändert, siehe unten.
 
+**Nachtrag (folgender Zyklus, gleicher Tag):** Lage unverändert (1078 ohne Peer-Review, #122 offen, 0 aktive Agenten, #734/#735 blockiert). Nichts zu tun.
+
 ## 28.11.2026, Zyklus des Lead-Dienstes (#731 angenommen)
 
 **Lage.** Ausgelöst durch eine geprüfte Einreichung, die eigene offene Approval #122 und 0 freie Aufgaben bei 0 aktiven Agenten. 1081 (#731, jeder `input()`-Aufruf ein eigener Eingang) ist angenommen: Pipeline grün (147 passed), alle Kriterien erfüllt, Patch selbst angewendet und nachgeprüft (zwei gleiche `input()` → zwei `-i`; ein wiederverwendetes Stream-Objekt samt `.video`/`.audio` bleibt ein Eingang). Wartet auf den Merge-Zug. 1078 (#732) wartet weiter auf das Peer-Review einer anderen Person (Prüfpunkte gesetzt). 0.4.0 steht bei 3 von 7.
