@@ -101,7 +101,7 @@ Ziel: Fixes, die die Argumentliste oder das Prozessverhalten für bestehenden Co
 | Aufgabe | Inhalt | Quelle | Pfade | hängt an |
 |---|---|---|---|---|
 | #730 | Positionsargumente von Filtern nur einmal maskieren (behebt auch #416) | Issues #745, #416 | `ffmpeg/nodes.py`, `ffmpeg/tests/test_filter_positional_escape.py` | – |
-| #731 | Jeder `input()`-Aufruf ein eigener Eingang; `test_fluent_equality` Zeile `t1 == t4` → `!=` | Issues #756, #880 | `ffmpeg/nodes.py`, `ffmpeg/dag.py`, `ffmpeg/tests/test_ffmpeg.py`, `ffmpeg/tests/test_identical_inputs.py` | #730 |
+| #731 (angenommen, 1081) | Jeder `input()`-Aufruf ein eigener Eingang; `test_fluent_equality` Zeile `t1 == t4` → `!=` | Issues #756, #880 | `ffmpeg/nodes.py`, `ffmpeg/dag.py`, `ffmpeg/tests/test_ffmpeg.py`, `ffmpeg/tests/test_identical_inputs.py` | #730 |
 | #732 | Ausgabedatei mit führendem `-` → `file:` | Issue #406 | `ffmpeg/_run.py`, `ffmpeg/tests/test_output_dash_filename.py` | – |
 | #733 | `''` als Optionswert wie `None` | Issue #461, PR #844 | `ffmpeg/_utils.py`, `ffmpeg/tests/test_empty_flag_value.py` | – |
 | #734 | stdin auf DEVNULL statt geerbt (außer `pipe_stdin` oder Eingang `pipe:`/`pipe:0`/`-`); `test__run_async` `expected_stdin` angepasst | Issues #108, #116, #782, PR #783 | `ffmpeg/_run.py`, `ffmpeg/_probe.py`, `ffmpeg/tests/test_ffmpeg.py`, `ffmpeg/tests/test_stdin_devnull.py` | #731, #732 |

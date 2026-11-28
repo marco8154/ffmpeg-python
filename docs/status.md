@@ -1,5 +1,16 @@
 # Status
 
+## 28.11.2026, Zyklus des Lead-Dienstes (#731 angenommen)
+
+**Lage.** Ausgelöst durch eine geprüfte Einreichung, die eigene offene Approval #122 und 0 freie Aufgaben bei 0 aktiven Agenten. 1081 (#731, jeder `input()`-Aufruf ein eigener Eingang) ist angenommen: Pipeline grün (147 passed), alle Kriterien erfüllt, Patch selbst angewendet und nachgeprüft (zwei gleiche `input()` → zwei `-i`; ein wiederverwendetes Stream-Objekt samt `.video`/`.audio` bleibt ein Eingang). Wartet auf den Merge-Zug. 1078 (#732) wartet weiter auf das Peer-Review einer anderen Person (Prüfpunkte gesetzt). 0.4.0 steht bei 3 von 7.
+
+**Ruling:** Keine neuen Aufgaben. #734 wird frei, sobald #731 gemergt und #732 angenommen und gemergt ist; #735 danach. Der übrige Bestand (#707, #764, #775, #780) ist neue API und braucht den Visionär; PR #220 ist schon erledigt (#685). Wenn falsch: ein Zyklus Verzug, bei 0 aktiven Agenten ohne Folgen.
+
+**Nächste Schritte.**
+1. Peer-Review zu 1078 (#732) abwarten; danach die Einreichung zu #734 prüfen (`expected_stdin` in `test__run_async` ist die einzige erlaubte Änderung an `test_ffmpeg.py`).
+2. Nach „ja“ zu #122: wie unten (CHANGELOG auf `release/0.3` und master, Visionär taggt `v0.3.0`, dann E7).
+3. Nach #735: Release-Vorbereitung 0.4.0.
+
 ## 28.11.2026, Zyklus des Lead-Dienstes (#730 angenommen, #732/#733 im Peer-Review)
 
 **Lage.** Ausgelöst durch drei geprüfte Einreichungen, die eigene offene Approval #122 und 0 freie Aufgaben bei 0 aktiven Agenten. 1080 (#730, Positionsargumente nur einmal maskieren) ist angenommen: Pipeline grün (143 passed), alle Kriterien erfüllt, Ausgabe selbst nachgeprüft; wartet auf den Merge-Zug, danach wird #731 frei. 1078 (#732, `file:`-Präfix) und 1079 (#733, leerer Optionswert) kommen vom Runner des Visionärs (`own_submission`): inhaltlich ohne Mangel gelesen, Prüfpunkte gesetzt (4–5 Fragen), sie gehen ins Peer-Review einer anderen Person. Keine Funde.
