@@ -86,13 +86,30 @@ Quelle: die Sichtung des Originals (#652 bis #658; angenommen 25.11.: #897, #898
 | #696 (angenommen, #1030) | Beispiel Standbild plus Tonspur | Issue #740 | `examples/README.md` | #683 |
 | #697 (angenommen, #1036) | README: `filter_script:v` unter „Special option names“ | Issue #833 | `README.md` | #694 |
 
-Offen zur Entscheidung (ändern die Argumentliste für heute fehlerhafte Eingaben, also nur mit Ruling oder Visionär): #406 (Dateiname mit `-`), #416 (Apostroph-Escaping), #461/PR #844 (leere Flag-Argumente); #108/#116/PR #783 (stdin). Kandidaten ohne Bedenken: PR #220 (`vstack`/`hstack`, ergänzt nur Filter wie `atrim`).
+Entschieden am 28.11. (Approval #110: ja → Meilenstein 0.4.0). Vorher offen zur Entscheidung (ändern die Argumentliste für heute fehlerhafte Eingaben, also nur mit Ruling oder Visionär): #406 (Dateiname mit `-`), #416 (Apostroph-Escaping), #461/PR #844 (leere Flag-Argumente); #108/#116/PR #783 (stdin). Kandidaten ohne Bedenken: PR #220 (`vstack`/`hstack`, ergänzt nur Filter wie `atrim`).
 
 Aus Block 5 am Code geprüft (26.11.): #745 (Positionsargumente von Filtern werden in `nodes.py` zweimal auf Ebene 1 maskiert) und #756 (gleiche `input()` werden ein Knoten) ändern beide `get_args()` für heute gültige Eingaben. Sie gehören deshalb zu den offenen Entscheidungen oben. Approval #110 an den Visionär: 0.3.2 bleibt streng kompatibel, diese Punkte kommen in 0.4.0 mit „Breaking changes“. #703 → #686. Wünsche: #707 (`global_args`/`overwrite_output` auf Filterströmen), #740 (Helfer für Standbild plus Ton).
 
 Aus Block 6 (#658 angenommen, #997, 27.11.): #880 ist dasselbe wie #756 (gleiche `input()` werden ein Knoten) und gehört mit ihm nach 0.4.0. #805 → #693/#694. Wünsche, ungeprüft: #764 (Filter ohne Ausgang, `nullsink`), #775 (lineare Filterketten), #780 (verständlichere Meldung bei `BrokenPipeError`; ändert Ausnahmeverhalten, also nicht in 0.3.2), #833 (`filter_script`). Damit ist die Sichtung der Issues vollständig (Blöcke 1 bis 6).
 
 Wünsche am Code geprüft (27.11.): #740 und #833 gehen schon mit der heutigen API → Doku und Test (#695 bis #697). #707 (`global_args`/`overwrite_output` auf `FilterableStream`), #764 (Filter ohne Ausgang, `nullsink`) und #775 (lineare Filterketten) brauchen neues Verhalten im Graphen bzw. ändern `get_args()`. Sie kommen nicht in 0.3.2. Kandidaten für einen späteren Meilenstein, mit Visionär (neue API ist Nicht-Ziel).
+
+## Meilenstein 4: 0.4.0 (Breaking changes, Approval #110 am 28.11.2026 freigegeben)
+
+Ziel: Fixes, die die Argumentliste oder das Prozessverhalten für bestehenden Code ändern, je mit rotem Regressionstest; CHANGELOG mit Abschnitt „Breaking changes“. Schätzung 7 (die siebte ist die Release-Vorbereitung des Leads). 0.3.0 wird vom Branch `release/0.3` (32bf75e, mit `release.yml`) veröffentlicht, damit nichts aus 0.4.0 hineinrutscht (Info #130).
+
+| Aufgabe | Inhalt | Quelle | Pfade | hängt an |
+|---|---|---|---|---|
+| #730 | Positionsargumente von Filtern nur einmal maskieren (behebt auch #416) | Issues #745, #416 | `ffmpeg/nodes.py`, `ffmpeg/tests/test_filter_positional_escape.py` | – |
+| #731 | Jeder `input()`-Aufruf ein eigener Eingang; `test_fluent_equality` Zeile `t1 == t4` → `!=` | Issues #756, #880 | `ffmpeg/nodes.py`, `ffmpeg/dag.py`, `ffmpeg/tests/test_ffmpeg.py`, `ffmpeg/tests/test_identical_inputs.py` | #730 |
+| #732 | Ausgabedatei mit führendem `-` → `file:` | Issue #406 | `ffmpeg/_run.py`, `ffmpeg/tests/test_output_dash_filename.py` | – |
+| #733 | `''` als Optionswert wie `None` | Issue #461, PR #844 | `ffmpeg/_utils.py`, `ffmpeg/tests/test_empty_flag_value.py` | – |
+| #734 | stdin auf DEVNULL statt geerbt (außer `pipe_stdin` oder Eingang `pipe:`/`pipe:0`/`-`); `test__run_async` `expected_stdin` angepasst | Issues #108, #116, #782, PR #783 | `ffmpeg/_run.py`, `ffmpeg/_probe.py`, `ffmpeg/tests/test_ffmpeg.py`, `ffmpeg/tests/test_stdin_devnull.py` | #731, #732 |
+| #735 | CHANGELOG „Breaking changes“ (Texte wörtlich in der Aufgabe) | – | `CHANGELOG.md` | #730–#734 |
+
+Prototyp am 28.11. geprüft: Fix für #745 plus Zähler im `InputNode` lassen alle Tests außer `test_fluent_equality` (Zeile 43) grün; die Erwartungswerte in #730/#731 stammen aus diesem Lauf.
+
+Später, mit Visionär (neue API): #707, #764, #775, #780.
 
 ## Grundausstattung
 

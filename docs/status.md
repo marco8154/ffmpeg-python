@@ -1,5 +1,22 @@
 # Status
 
+## 28.11.2026, Zyklus des Lead-Dienstes (#110 freigegeben, 0.4.0 geschnitten)
+
+**Lage.** Ausgelöst durch die Antwort auf Approval #110 (ja) und 0 freie Aufgaben bei 0 aktiven Agenten. Keine Einreichungen. #122 (Release 0.3.0) ist weiter offen.
+
+**Erledigt.**
+- Meilenstein 0.4.0 angelegt, Schätzung 7, Aufgaben #730 bis #735 (Tabelle in `docs/plan.md`). Ketten: #730 → #731 → #734 ← #732; #735 nach allen. Frei sind sofort #730, #732, #733.
+- Erwartungswerte am Prototyp in /tmp geprüft (nicht committet): Nur `test_fluent_equality` Zeile 43 schreibt das alte Zusammenlegen fest; #731 darf genau diese Zeile ändern, #734 genau die Zeile `expected_stdin` in `test__run_async`.
+- Branch `release/0.3` gepusht (zuerst adcd0be, dann 32bf75e mit dem `release.yml` des Visionärs; der Tag braucht den Workflow im getaggten Commit), damit 0.3.0 ohne die Breaking Changes erscheint; Info #130 an den Visionär.
+
+**Ruling:** #416 bekommt keine eigene Aufgabe, weil der Fix aus #730 es mitbehebt (Test mit Apostroph ist in #730). Wenn falsch: eine kleine Folgeaufgabe.
+**Ruling:** stdin-Regel in #734: geerbt bleibt nur, wenn ein Eingang wirklich von stdin liest (`pipe:`, `pipe:0`, `-`); sonst DEVNULL. So bricht `cat x | python skript.py` mit `input('pipe:')` nicht. Wenn falsch: Folgeaufgabe, Verhalten ist auf eine Funktion begrenzt.
+
+**Nächste Schritte.**
+1. Einreichungen zu #730, #732, #733 prüfen (Regressionstest rot gesehen, nur erlaubte Pfade, bei #731/#734 genau eine geänderte Zeile in `test_ffmpeg.py`).
+2. Nach „ja“ zu #122: CHANGELOG-Zusammenführung auf `release/0.3` und master committen; Visionär taggt `v0.3.0` auf `release/0.3`. Danach E7 (README: PyPI-Installation) schneiden.
+3. Nach #735: Release-Vorbereitung 0.4.0 (Version in `pyproject.toml`, CHANGELOG-Datum, Approval).
+
 ## 27.11.2026, Zyklus des Lead-Dienstes (warten auf #110 und #122)
 
 **Lage.** Ausgelöst durch die zwei eigenen offenen Approvals (#110, #122) und 0 freie Aufgaben bei 0 aktiven Agenten. #697 ist gemergt (4a24c18); keine Einreichungen offen. Beide Approvals sind unbeantwortet, nichts Neues zu tun.
