@@ -1,5 +1,17 @@
 # Status
 
+## 28.11.2026, Zyklus des Lead-Dienstes (#730 angenommen, #732/#733 im Peer-Review)
+
+**Lage.** Ausgelöst durch drei geprüfte Einreichungen, die eigene offene Approval #122 und 0 freie Aufgaben bei 0 aktiven Agenten. 1080 (#730, Positionsargumente nur einmal maskieren) ist angenommen: Pipeline grün (143 passed), alle Kriterien erfüllt, Ausgabe selbst nachgeprüft; wartet auf den Merge-Zug, danach wird #731 frei. 1078 (#732, `file:`-Präfix) und 1079 (#733, leerer Optionswert) kommen vom Runner des Visionärs (`own_submission`): inhaltlich ohne Mangel gelesen, Prüfpunkte gesetzt (4–5 Fragen), sie gehen ins Peer-Review einer anderen Person. Keine Funde.
+
+**Ruling:** Keine neuen Aufgaben: #731, #734 und #735 sind über `depends_on` schon angelegt und werden automatisch frei; alles Weitere hängt an #122. Wenn falsch: ein Zyklus Verzug.
+
+**Nächste Schritte.**
+1. Einreichung zu #731 prüfen (genau eine geänderte Zeile in `test_ffmpeg.py`, Zeile 43 `test_fluent_equality`).
+2. Peer-Reviews zu 1078/1079 abwarten; danach #734 (hängt an #731 und #732).
+3. Nach „ja“ zu #122: wie im Eintrag darunter (CHANGELOG auf `release/0.3` und master, Visionär taggt `v0.3.0`, dann E7).
+4. Nach #735: Release-Vorbereitung 0.4.0.
+
 ## 28.11.2026, Zyklus des Lead-Dienstes (#110 freigegeben, 0.4.0 geschnitten)
 
 **Lage.** Ausgelöst durch die Antwort auf Approval #110 (ja) und 0 freie Aufgaben bei 0 aktiven Agenten. Keine Einreichungen. #122 (Release 0.3.0) ist weiter offen.
